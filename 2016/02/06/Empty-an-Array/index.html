@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Empty an Array in JavaScript | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="For instance: 12var arrayList &#x3D;  [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;]; How can we empty the array above? There are a couple of ways by which we can empty an array, So let’s discuss all the possible way by w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Empty an Array in JavaScript">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="For instance: 12var arrayList &#x3D;  [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;]; How can we empty the array above? There are a couple of ways by which we can empty an array, So let’s discuss all the possible way by w">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-02-06T15:23:56.000Z">
+<meta property="article:modified_time" content="2020-05-12T11:41:48.427Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Empty-an-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/02/06/Empty-an-Array/" class="article-date">
+  <time datetime="2016-02-06T15:23:56.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Empty an Array in JavaScript
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>For instance:</em></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arrayList =  [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><strong><em>How can we empty the array above?</em></strong></p>
+<p>There are a couple of ways by which we can empty an array, So let’s discuss all the possible way by which we can empty an array.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList = [];</span><br></pre></td></tr></table></figure>
+<p>The code above will set the variable arrayList to a new empty array. This is recommended if you don’t have references to the original array arrayList anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable arrayList.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList = []; // Empty the array</span><br><span class="line">console.log(anotherArrayList); // Output [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.length = 0;</span><br></pre></td></tr></table></figure>
+<p>The code above will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.length = 0; // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.splice(0, arrayList.length);</span><br></pre></td></tr></table></figure>
+<p>Above implementation will also work perfectly. This way of empty the array will also update all the references of the original array.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.splice(0, arrayList.length); // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(arrayList.length) &#123;</span><br><span class="line">  arrayList.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Above implementation can also empty the array. But not recommended to use often.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="cka3yyf8t0002lwu2hvncggte" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Check if an object is an array or not
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/01/29/Question-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Simple Example of Nested Functions</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

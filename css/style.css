@@ -308,9 +308,11 @@ body {
   font-weight: bold;
 }
 #header {
-  height: 300px;
   position: relative;
-  border-bottom: 1px solid #ddd;
+  background-color: #000;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 30% auto;
 }
 #header:before,
 #header:after {
@@ -320,19 +322,11 @@ body {
   right: 0;
   height: 40px;
 }
-#header:before {
-  top: 0;
-  background: -webkit-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -moz-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: -ms-linear-gradient(rgba(0,0,0,0.2), transparent);
-  background: linear-gradient(rgba(0,0,0,0.2), transparent);
+nav {
+  justify-self: right;
 }
-#header:after {
-  bottom: 0;
-  background: -webkit-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -moz-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: -ms-linear-gradient(transparent, rgba(0,0,0,0.2));
-  background: linear-gradient(transparent, rgba(0,0,0,0.2));
+nav ul li {
+  display: inline;
 }
 #header-outer {
   height: 100%;
@@ -1094,7 +1088,7 @@ a.article-title:hover {
 .article-entry pre,
 .article-entry .highlight {
   background: #2d2d2d;
-  margin: 0 -20px;
+  margin: 0;
   padding: 15px 20px;
   border-style: solid;
   border-color: #ddd;

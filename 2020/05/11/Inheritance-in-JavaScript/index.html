@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Inheritance in JavaScript | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="What is Inheritance?In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class, retaining similar implementati">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Inheritance in JavaScript">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2020/05/11/Inheritance-in-JavaScript/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="What is Inheritance?In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class, retaining similar implementati">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-11T16:36:31.000Z">
+<meta property="article:modified_time" content="2020-05-12T10:50:20.640Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Inheritance-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/11/Inheritance-in-JavaScript/" class="article-date">
+  <time datetime="2020-05-11T16:36:31.000Z" itemprop="datePublished">2020-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Inheritance in JavaScript
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="What-is-Inheritance"><a href="#What-is-Inheritance" class="headerlink" title="What is Inheritance?"></a>What is <strong><code>Inheritance</code></strong>?</h2><p><code>In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class, retaining similar implementation</code> . Also defined as deriving new classes (sub classes) from existing ones such as super class or base class and then forming them into a hierarchy of classes.</p>
+<p> In most class-based object-oriented languages, an object created through inheritance, a <code>child object</code> , acquires all the properties and behaviors of the <code>parent object</code> , with the exception of constructors, destructor, overloaded operators and friend functions of the base class.</p>
+<p> Inheritance allows programmers to create classes that are built upon existing classes, to specify a new implementation while maintaining the same behaviors, to reuse code and to independently extend original software via public classes and interfaces.</p>
+<h2 id="What-is-class"><a href="#What-is-class" class="headerlink" title="What is class?"></a>What is <em><code>class</code></em>?</h2><p>A <em><code>class</code></em> is a definition for an <em><code>object</code></em>. All objects are created from classes and can’t exist without them. A class holds information or details about an object. In <code>object oriented programming</code> classes are used like a <strong>blueprint</strong> or <strong>template</strong> to create new objects from.</p>
+<h2 id="What-is-object"><a href="#What-is-object" class="headerlink" title="What is object"></a>What is <em><code>object</code></em></h2><p>In object oriented programming we combine a group of related variables and functions into a unit, we call that unit an <strong><code>object</code></strong>. We refer to these variables as properties and functions as methods.</p>
+<p><strong>In JavaScript, inheritance is supported by using prototype object. Some people call it</strong> <strong><em><code>Prototypal Inheritance</code></em></strong> <strong>and some call it</strong> <strong><em><code>Behaviour of Delegation</code></em></strong></p>
+<h2 id="Difference-between-Class-and-Prototypal-Inheritance"><a href="#Difference-between-Class-and-Prototypal-Inheritance" class="headerlink" title="Difference between Class and Prototypal Inheritance"></a>Difference between Class and Prototypal Inheritance</h2><p><strong>Class Inheritannce:</strong> <strong><em>A class is like a blueprint–a description of the object to be created.</em></strong> Classes inherit from classes and <em>create subclass relationships:</em>hierarchical class taxonomies(classification).</p>
+<p>Instances are typically instantiated via constructor functions with the <code>new</code> keyword. Class inheritance may or may not use the <code>class</code> keyword from ES6. Classes as you may know them from languages like Java don’t technically exist in JavaScript. Constructor functions are used, instead. The ES6 <code>class</code> keyword desugars to a constructor function:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Foo &#123;&#125;</span><br><span class="line">typeof Foo // <span class="string">'function'</span></span><br></pre></td></tr></table></figure>
+<p>In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing:<br>JavaScript’s class inheritance uses the prototype chain to wire the child <code>Constructor.prototype</code> to the parent <code>Constructor.prototype</code> for delegation. Usually, the <code>super()</code> constructor is also called. Those steps form <strong>single-ancestor parent/child hierarchies and create the tightest coupling available in OO design.</strong></p>
+<p><strong>Prototypal Inheritance:</strong> <strong><em>A prototype is a working object instance.</em></strong> Objects inherit directly from other objects.</p>
+<p>Instances may be composed from many different source objects, allowing for easy selective inheritance and a flat [Prototype] delegation hierarchy. In other words, class taxonomies are not an automatic side-effect of prototypal OO: a critical distinction.<br>Instances are typically instantiated via factory functions, object literals, or <em><code>Object.create()</code></em>.</p>
+<p><em><code>Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems.</code></em></p>
+<p><strong>Class inheritance creates parent/child object taxonomies as a side-effect.</strong></p>
+<p>Those taxonomies are virtually impossible to get right for all new use cases, and widespread use of a base class leads to the fragile base class problem, which makes them difficult to fix when you get them wrong. In fact, class inheritance causes many well known problems in OO design:</p>
+<ol>
+<li><strong>The tight coupling problem-</strong> (class inheritance is the tightest coupling available in oo design) Tight coupling in general is when two things depends on one another, that is, changing one may have impact on another., which leads to the next one…</li>
+<li><strong>*The fragile base class problem-</strong>The fragile base class problem is a fundamental architectural problem of object-oriented programming systems where base classes (superclasses) are considered “fragile” because seemingly safe modifications to a base class, when inherited by the derived classes, may cause the derived classes to malfunction.</li>
+<li><strong>Inflexible hierarchy problem</strong> (eventually, all evolving hierarchies are wrong for new uses)</li>
+<li><strong>The duplication by necessity problem</strong> (due to inflexible hierarchies, new use cases are often shoe-horned in by duplicating, rather than adapting existing code)</li>
+<li><strong>The Gorilla/banana problem</strong> (What you wanted was a banana, but what you got was a gorilla holding the banana, and the entire jungle)</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Inheritance-in-JavaScript/" data-id="cka3yyf8u0003lwu2hxqp7pn1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/05/11/Cloning-an-Object/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Cloning an Object
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2020/05/09/Array-function/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Array.prototype.function()</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

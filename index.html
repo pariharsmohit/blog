@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>msp Writes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="msp Writes">
 <meta property="og:url" content="https://mohitsparihar.github.io/blog/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="msp Writes">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/blog/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -32,42 +32,29 @@
   <div id="container">
     <div id="wrap">
       <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
+
       <h1 id="logo-wrap">
-        <a href="/blog/" id="logo">Hexo</a>
+        <a href="/blog/" id="logo">msp Writes</a>
       </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+
+      <nav>
+        <ul>
         
-          <a class="main-nav-link" href="/blog/">Home</a>
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
         
-          <a class="main-nav-link" href="/blog/archives">Archives</a>
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
         
+      </ul>
       </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://mohitsparihar.github.io/blog"></form>
-      </div>
-    </div>
-  </div>
+
 </header>
       <div class="outer">
         <section id="main">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Cloning-an-Object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/08/hello-world/" class="article-date">
-  <time datetime="2020-05-08T09:34:09.903Z" itemprop="datePublished">2020-05-08</time>
+    <a href="/blog/2020/05/11/Cloning-an-Object/" class="article-date">
+  <time datetime="2020-05-11T17:55:50.000Z" itemprop="datePublished">2020-05-11</time>
 </a>
     
   </div>
@@ -78,7 +65,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/08/hello-world/">Hello World</a>
+      <a class="article-title" href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
     </h1>
   
 
@@ -86,24 +73,537 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>Here we are going to create a function which will clone or copy an object to another object.</p>
+<p>If the Object only contains primitive value such as <strong><code>strings</code></strong>, <strong><code>numbers</code></strong>, <strong><code>booleans</code></strong> etc. We can use the function <strong><em><code>Object.assign()</code></em></strong>. </p>
+<p><strong><em><code>Object.assign()</code></em></strong> function takes two arguments -</p>
+<ol>
+<li>new object which is going to be generated</li>
+<li>source object from which the data is to be copied.</li>
+</ol>
+<p>Example:- </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> swift = &#123;</span><br><span class="line">    brand: <span class="string">'Maruti'</span>,</span><br><span class="line">    fuel: <span class="string">'petrol'</span>,</span><br><span class="line">    doors: 4,</span><br><span class="line">    <span class="built_in">type</span>: <span class="string">'hatchback'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> baleno = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">Object.assign(baleno, swift);</span><br><span class="line"></span><br><span class="line">baleno.type = <span class="string">'premium hatchback'</span>;</span><br><span class="line"></span><br><span class="line">console.log(baleno, swift);</span><br></pre></td></tr></table></figure>
+<p>This results in:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;brand: <span class="string">"Maruti"</span>, fuel: <span class="string">"petrol"</span>, doors: 4, <span class="built_in">type</span>: <span class="string">"hatchback"</span>&#125;</span><br><span class="line">&#123;brand: <span class="string">"Maruti"</span>, fuel: <span class="string">"petrol"</span>, doors: 4, <span class="built_in">type</span>: <span class="string">"premium hatchback"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>This solution does not allows us to peform deep cloning. <em>Deep Cloning</em> stands for copying the object which contains objects inside it as its properties.<br>For that purpose we can use <strong><em><code>JSON.parse(JSON.stringify(source_object))</code></em></strong>. This method first converts the whole <code>source-object</code> into a string and then parse(resolve into its component parts) it to another object.</p>
+<p>Apart from doing the above two we can simply create our own function that will do the same using the recursion.<br>For Example:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bmw = &#123;</span><br><span class="line">  model: <span class="string">'x4'</span>,</span><br><span class="line">  fuel: <span class="string">'petrol'</span>,</span><br><span class="line">  engine: &#123;</span><br><span class="line">  	<span class="built_in">type</span>: <span class="string">'v6'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> car = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="built_in">clone</span>(src)&#123;</span><br><span class="line">    <span class="built_in">let</span> result = &#123;&#125;;</span><br><span class="line">    <span class="built_in">let</span> keys = Object.keys(src);</span><br><span class="line">    //[<span class="string">'model'</span>, <span class="string">'fuel'</span>, <span class="string">'engine'</span>];</span><br><span class="line">    keys.forEach(key =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(typeof src[key] === <span class="string">"object"</span>) &#123;</span><br><span class="line">            result[key] = <span class="built_in">clone</span>(src[key]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            result[key] = src[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">car = <span class="built_in">clone</span>(bmw);</span><br><span class="line"></span><br><span class="line">car.fuel = <span class="string">'disel'</span>;</span><br><span class="line">car.engine.type=<span class="string">'v8'</span>;</span><br><span class="line"></span><br><span class="line">console.log(car,bmw);</span><br></pre></td></tr></table></figure>
+<p>This results in-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;model: <span class="string">"x4"</span>, fuel: <span class="string">"disel"</span>, engine: &#123;<span class="built_in">type</span>: <span class="string">"v8"</span>&#125;&#125;</span><br><span class="line">&#123;model: <span class="string">"x4"</span>, fuel: <span class="string">"petrol"</span>, engine: &#123;<span class="built_in">type</span>: <span class="string">"v6"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>In this we are providing an <strong><code>if statement</code></strong> which compares the keys inside the object and if the key returns value equal to the <code>object</code> we will call the same function again, but this time inside the conditional statement.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/08/hello-world/" data-id="ck9y1gkin0000n0u23s0e8g0a" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka3yyf8k0000lwu236n81xxk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Inheritance-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/11/Inheritance-in-JavaScript/" class="article-date">
+  <time datetime="2020-05-11T16:36:31.000Z" itemprop="datePublished">2020-05-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="What-is-Inheritance"><a href="#What-is-Inheritance" class="headerlink" title="What is Inheritance?"></a>What is <strong><code>Inheritance</code></strong>?</h2><p><code>In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class, retaining similar implementation</code> . Also defined as deriving new classes (sub classes) from existing ones such as super class or base class and then forming them into a hierarchy of classes.</p>
+<p> In most class-based object-oriented languages, an object created through inheritance, a <code>child object</code> , acquires all the properties and behaviors of the <code>parent object</code> , with the exception of constructors, destructor, overloaded operators and friend functions of the base class.</p>
+<p> Inheritance allows programmers to create classes that are built upon existing classes, to specify a new implementation while maintaining the same behaviors, to reuse code and to independently extend original software via public classes and interfaces.</p>
+<h2 id="What-is-class"><a href="#What-is-class" class="headerlink" title="What is class?"></a>What is <em><code>class</code></em>?</h2><p>A <em><code>class</code></em> is a definition for an <em><code>object</code></em>. All objects are created from classes and can’t exist without them. A class holds information or details about an object. In <code>object oriented programming</code> classes are used like a <strong>blueprint</strong> or <strong>template</strong> to create new objects from.</p>
+<h2 id="What-is-object"><a href="#What-is-object" class="headerlink" title="What is object"></a>What is <em><code>object</code></em></h2><p>In object oriented programming we combine a group of related variables and functions into a unit, we call that unit an <strong><code>object</code></strong>. We refer to these variables as properties and functions as methods.</p>
+<p><strong>In JavaScript, inheritance is supported by using prototype object. Some people call it</strong> <strong><em><code>Prototypal Inheritance</code></em></strong> <strong>and some call it</strong> <strong><em><code>Behaviour of Delegation</code></em></strong></p>
+<h2 id="Difference-between-Class-and-Prototypal-Inheritance"><a href="#Difference-between-Class-and-Prototypal-Inheritance" class="headerlink" title="Difference between Class and Prototypal Inheritance"></a>Difference between Class and Prototypal Inheritance</h2><p><strong>Class Inheritannce:</strong> <strong><em>A class is like a blueprint–a description of the object to be created.</em></strong> Classes inherit from classes and <em>create subclass relationships:</em>hierarchical class taxonomies(classification).</p>
+<p>Instances are typically instantiated via constructor functions with the <code>new</code> keyword. Class inheritance may or may not use the <code>class</code> keyword from ES6. Classes as you may know them from languages like Java don’t technically exist in JavaScript. Constructor functions are used, instead. The ES6 <code>class</code> keyword desugars to a constructor function:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Foo &#123;&#125;</span><br><span class="line">typeof Foo // <span class="string">'function'</span></span><br></pre></td></tr></table></figure>
+<p>In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing:<br>JavaScript’s class inheritance uses the prototype chain to wire the child <code>Constructor.prototype</code> to the parent <code>Constructor.prototype</code> for delegation. Usually, the <code>super()</code> constructor is also called. Those steps form <strong>single-ancestor parent/child hierarchies and create the tightest coupling available in OO design.</strong></p>
+<p><strong>Prototypal Inheritance:</strong> <strong><em>A prototype is a working object instance.</em></strong> Objects inherit directly from other objects.</p>
+<p>Instances may be composed from many different source objects, allowing for easy selective inheritance and a flat [Prototype] delegation hierarchy. In other words, class taxonomies are not an automatic side-effect of prototypal OO: a critical distinction.<br>Instances are typically instantiated via factory functions, object literals, or <em><code>Object.create()</code></em>.</p>
+<p><em><code>Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems.</code></em></p>
+<p><strong>Class inheritance creates parent/child object taxonomies as a side-effect.</strong></p>
+<p>Those taxonomies are virtually impossible to get right for all new use cases, and widespread use of a base class leads to the fragile base class problem, which makes them difficult to fix when you get them wrong. In fact, class inheritance causes many well known problems in OO design:</p>
+<ol>
+<li><strong>The tight coupling problem-</strong> (class inheritance is the tightest coupling available in oo design) Tight coupling in general is when two things depends on one another, that is, changing one may have impact on another., which leads to the next one…</li>
+<li><strong>*The fragile base class problem-</strong>The fragile base class problem is a fundamental architectural problem of object-oriented programming systems where base classes (superclasses) are considered “fragile” because seemingly safe modifications to a base class, when inherited by the derived classes, may cause the derived classes to malfunction.</li>
+<li><strong>Inflexible hierarchy problem</strong> (eventually, all evolving hierarchies are wrong for new uses)</li>
+<li><strong>The duplication by necessity problem</strong> (due to inflexible hierarchies, new use cases are often shoe-horned in by duplicating, rather than adapting existing code)</li>
+<li><strong>The Gorilla/banana problem</strong> (What you wanted was a banana, but what you got was a gorilla holding the banana, and the entire jungle)</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Inheritance-in-JavaScript/" data-id="cka3yyf8u0003lwu2hxqp7pn1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Array-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/09/Array-function/" class="article-date">
+  <time datetime="2020-05-09T05:38:33.000Z" itemprop="datePublished">2020-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Function-Syntax"><a href="#Function-Syntax" class="headerlink" title="Function Syntax"></a>Function Syntax</h2><p>A function in JavaScript comprises of three statements.</p>
+<ul>
+<li>The name of the function.</li>
+<li>A list of arguments to the function enclosed in parentheses and separated by commas.</li>
+<li>The JavaScript statements that define the function, enclosed</li>
+</ul>
+<p>Function in Javascript is defined in a number of ways. the common function definition is</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> function_name(arg1,arg2,...) &#123;</span><br><span class="line">//operation to be carried out by the <span class="keyword">function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>Prototypes are the mechanism by which JavaScript objects inherit features from one another.</p>
+<p>JavaScript is often described as a prototype-based language — to provide inheritance, objects can have a prototype object, which acts as a template object that it inherits methods and properties from.</p>
+<p>In JavaScript, a link is made between the object instance and its prototype, and the properties and methods are found by walking up the chain of prototypes.</p>
+<h2 id="My-forEach"><a href="#My-forEach" class="headerlink" title="My forEach"></a>My forEach</h2><p>The <strong><em><code>myForEach()</code></em></strong> method calls a provided callback function once for each element in an array in ascending order.</p>
+<ul>
+<li><strong><code>callback</code></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myForEach() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myForEach = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">f(this[i], i ,this);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myArray = [1, 2, 3, 4];</span><br><span class="line">myArray.myForEach((item,index,arr) =&gt; &#123;</span><br><span class="line">console.log(item, index, arr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>This results in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 0 (4) [1, 2, 3, 4]</span><br><span class="line">2 1 (4) [1, 2, 3, 4]</span><br><span class="line">3 2 (4) [1, 2, 3, 4]</span><br><span class="line">4 3 (4) [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Map"><a href="#My-Map" class="headerlink" title="My Map"></a>My Map</h2><p>The <strong><em><code>myMap()</code></em></strong> method creates a new array populated with the results of calling a provided function on every element in the calling array.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myMap() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myMap = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">result.push(f(this[i], i, this));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 7, 14, 21]</span><br><span class="line">console.log(arr.myMap(item =&gt; item % 7 === 0));</span><br></pre></td></tr></table></figure>
+<p>This reults in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>,]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Some"><a href="#My-Some" class="headerlink" title="My Some"></a>My Some</h2><p>The <strong><em><code>mySome()</code></em></strong> method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array mySome() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.mySome = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(f(this[i], i, this)) &#123;</span><br><span class="line">result = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 7]</span><br><span class="line">arr.mySome(item =&gt; item % 7 === 0);</span><br></pre></td></tr></table></figure>
+<p>This results in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Includes"><a href="#My-Includes" class="headerlink" title="My Includes"></a>My Includes</h2><p>The <strong><em><code>myIncludes()</code></em></strong> method determines whether an array includes a certain value among its entries, returning true or false as appropriate.</p>
+<ul>
+<li><strong><em><code>valueToFind</code></em></strong> - The value to be looked for.</li>
+<li><strong><em><code>fromIndex</code></em></strong> - The index currentValue in the array.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myIncludes = <span class="keyword">function</span>(valueToFind, fromIndex = 0) &#123;</span><br><span class="line"><span class="built_in">let</span> result = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = fromIndex; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(this[i] === valueToFind) &#123;</span><br><span class="line">result = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log([1, 2, 3, 4].myIncludes(1));</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log([1,2,3,4].myIncludes(4,3));</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Filter"><a href="#My-Filter" class="headerlink" title="My Filter"></a>My Filter</h2><p>The <strong><em><code>myFilter()</code></em></strong> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myFilter() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myFilter = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(f(this[i], i, this)) &#123;</span><br><span class="line">result.push(this[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const cars = [<span class="string">'BMW'</span>, <span class="string">'Suzuki'</span>, <span class="string">'Mercedes'</span>, <span class="string">'Honda'</span>, <span class="string">'Mahindra'</span>, <span class="string">'Tata'</span>];</span><br><span class="line"></span><br><span class="line">const result = cars.myFilter(item =&gt; item.length&gt;5);</span><br></pre></td></tr></table></figure>
+<p>This results in-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'Suzuki'</span>, <span class="string">'Mercedes'</span>, <span class="string">'Mahindra'</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Reducer-Function"><a href="#My-Reducer-Function" class="headerlink" title="My Reducer Function"></a>My Reducer Function</h2><p>The <strong><em><code>myReduce()</code></em></strong> method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts two arguments</li>
+<li><strong><em><code>initialValue</code></em></strong> - To be passed in to the callback function<ul>
+<li><strong><em><code>startValue</code></em></strong> - The value to start from in the callback function.</li>
+<li><strong><em><code>currentValue</code></em></strong> - The value that is present in the loop.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myReduce = <span class="keyword">function</span>(f, initialValue) &#123;</span><br><span class="line"><span class="built_in">let</span> result = initialValue;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">result = f(result, this[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4];</span><br><span class="line">console.log(arr.myReduce((a,c) =&gt; a + c, 5));</span><br></pre></td></tr></table></figure>
+<p>This resullts in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">15</span><br><span class="line">/* initialValue = 5</span><br><span class="line"><span class="keyword">function</span> performs the fucntion of adding all the array elements</span><br><span class="line">result = 5 + 1 + 2 + 3 + 4 = 15 */</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka3yyf9c0009lwu2afhv8qea" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-check-if-an-object-is-an-array-or-not" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" class="article-date">
+  <time datetime="2016-02-13T16:39:56.000Z" itemprop="datePublished">2016-02-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The best way to find whether an object is instance of a particular class or not using <code>toString</code> method from <code>Object.prototype</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [1 , 2, 3];</span><br></pre></td></tr></table></figure>
+<p>One of the best use cases of type checking of an object is when we do method overloading in JavaScript. To understand this, let’s say we have a method called greet which can take a single string and also a list of strings. To make our greet method workable in both situation we need to know what kind of parameter is being passed: is it single value or list of values?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> greet(param) &#123;</span><br><span class="line">  <span class="function"><span class="title">if</span></span>() &#123;</span><br><span class="line">    // here have to check whether param is array or not</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>However, in the above implementation it might not necessary to check the type of the array, we can check for single value string and put array logic code in else block, let see below code for the same.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> greet(param) &#123;</span><br><span class="line">  <span class="keyword">if</span>(typeof param === <span class="string">'string'</span>) &#123;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    // If param is of <span class="built_in">type</span> array <span class="keyword">then</span> this block of code would execute</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now it’s fine we can go with the previous two implementations, but when we have a situation like a parameter can be single value, array, and object type then we will be in trouble.</p>
+<p>Coming back to checking the type of an object, As we mentioned that we can use <code>Object.prototype.toString</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(Object.prototype.toString.call(arrayList) === <span class="string">'[object Array]'</span>) &#123;</span><br><span class="line">  console.log(<span class="string">'Array!'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If you are using jQuery then you can also used jQuery isArray method:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>($.isArray(arrayList)) &#123;</span><br><span class="line">  console.log(<span class="string">'Array'</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  console.log(<span class="string">'Not an array'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>FYI jQuery uses <code>Object.prototype.toString.call</code> internally to check whether an object is an array or not.</p>
+<p>In modern browser, you can also use:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.isArray(arrayList);</span><br></pre></td></tr></table></figure>
+<p><code>Array.isArray</code> is supported by all the latest versions of Chrome, Firefox, IE, Opera and Safari.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" data-id="cka3yyf910008lwu25md0ezh7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Empty-an-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/02/06/Empty-an-Array/" class="article-date">
+  <time datetime="2016-02-06T15:23:56.000Z" itemprop="datePublished">2016-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>For instance:</em></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arrayList =  [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><strong><em>How can we empty the array above?</em></strong></p>
+<p>There are a couple of ways by which we can empty an array, So let’s discuss all the possible way by which we can empty an array.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList = [];</span><br></pre></td></tr></table></figure>
+<p>The code above will set the variable arrayList to a new empty array. This is recommended if you don’t have references to the original array arrayList anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable arrayList.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList = []; // Empty the array</span><br><span class="line">console.log(anotherArrayList); // Output [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.length = 0;</span><br></pre></td></tr></table></figure>
+<p>The code above will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.length = 0; // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.splice(0, arrayList.length);</span><br></pre></td></tr></table></figure>
+<p>Above implementation will also work perfectly. This way of empty the array will also update all the references of the original array.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.splice(0, arrayList.length); // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(arrayList.length) &#123;</span><br><span class="line">  arrayList.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Above implementation can also empty the array. But not recommended to use often.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="cka3yyf8t0002lwu2hvncggte" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/01/29/Question-5/" class="article-date">
+  <time datetime="2016-01-29T04:23:56.000Z" itemprop="datePublished">2016-01-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/01/29/Question-5/">Simple Example of Nested Functions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-mul-function-which-will-work-properly-when-invoked-with-following-syntax"><a href="#A-mul-function-which-will-work-properly-when-invoked-with-following-syntax" class="headerlink" title="A mul function which will work properly when invoked with following syntax."></a>A <strong><code>mul</code></strong> function which will work properly when invoked with following syntax.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(mul(2)(3)(4)); // output : 24</span><br><span class="line">console.log(mul(4)(3)(4)); // output : 48</span><br></pre></td></tr></table></figure>
+<p>Below is the code followed by the explanation of how it works:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> mul (x) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> (y) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (z) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">      <span class="built_in">return</span> x * y * z;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Here the <code>mul</code> function accepts the first argument and returns the anonymous function which takes the second parameter and returns the anonymous function which takes the third parameter and returns the multiplication of arguments which is being passed in successive</p>
+<p>In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by the function as well and passed as an argument in another function.</p>
+<ul>
+<li>A function is an instance of the Object type</li>
+<li>A function can have properties and has a link back to its constructor method</li>
+<li>A function can be stored as variable</li>
+<li>A function can be pass as a parameter to another function</li>
+<li>A function can be returned from another function</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="cka3yyf8y0005lwu2a3r23lna" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-What-is-closure" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/01/22/What-is-closure/" class="article-date">
+  <time datetime="2016-01-22T05:09:25.000Z" itemprop="datePublished">2016-01-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/01/22/What-is-closure/">What is closure?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em><code>A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.</code></em></strong></p>
+<p>The closure has access to the variable in three scopes:</p>
+<p>Variable declared in his own scope<br>Variable declared in parent function scope<br>Variable declared in the global namespace</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var globalVar = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">// Parent self invoking <span class="keyword">function</span></span><br><span class="line">(<span class="keyword">function</span> outerFunction (outerArg) &#123; // begin of scope outerFunction</span><br><span class="line">  // Variable declared <span class="keyword">in</span> outerFunction <span class="keyword">function</span> scope</span><br><span class="line">  var outerFuncVar = <span class="string">'x'</span>;    </span><br><span class="line">  // Closure self-invoking <span class="keyword">function</span></span><br><span class="line">  (<span class="keyword">function</span> innerFunction (innerArg) &#123; // begin of scope innerFunction</span><br><span class="line">    // variable declared <span class="keyword">in</span> innerFunction <span class="keyword">function</span> scope</span><br><span class="line">    var innerFuncVar = <span class="string">"y"</span>;</span><br><span class="line">    console.log(         </span><br><span class="line">      <span class="string">"outerArg = "</span> + outerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"outerFuncVar = "</span> + outerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerArg = "</span> + innerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerFuncVar = "</span> + innerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"globalVar = "</span> + globalVar);</span><br><span class="line">  // end of scope innerFunction</span><br><span class="line">  &#125;)(5); // Pass 5 as parameter</span><br><span class="line">// end of scope outerFunction</span><br><span class="line">&#125;)(7); // Pass 7 as parameter</span><br></pre></td></tr></table></figure>
+<p><code>innerFunction</code> is closure which is defined inside <code>outerFunction</code> and has access to all variable which is declared and defined in <code>outerFunction</code> scope. In addition to this function defined inside the function as closure has access to the variable which is declared in <code>global namespace</code>.</p>
+<p>Output of above code would be:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">outerArg = 7</span><br><span class="line">outerFuncVar = x</span><br><span class="line">innerArg = 5</span><br><span class="line">innerFuncVar = y</span><br><span class="line">globalVar = abc</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="cka3yyf900007lwu24vea25cw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Drawback-of-declaring-methods-directly-in-JavaScript-Objects" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" class="article-date">
+  <time datetime="2016-01-15T12:05:14.000Z" itemprop="datePublished">2016-01-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/">The drawback of declaring methods directly in JavaScript objects</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>One of the drawback of declaring methods directly in JavaScript objects is that they are very memory inefficient. When you do that, a new copy of the method is created for each instance of an object. Let’s see it on example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var Employee = <span class="keyword">function</span> (name, company, salary) &#123;</span><br><span class="line">  this.name = name || <span class="string">""</span>;       </span><br><span class="line">  this.company = company || <span class="string">""</span>;</span><br><span class="line">  this.salary = salary || 5000;</span><br><span class="line"></span><br><span class="line">  // We can create a method like this:</span><br><span class="line">  this.formatSalary = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> <span class="string">"$ "</span> + this.salary;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// we can also create method <span class="keyword">in</span> Employee<span class="string">'s prototype:</span></span><br><span class="line"><span class="string">Employee.prototype.formatSalary2 = function() &#123;</span></span><br><span class="line"><span class="string">    return "$ " + this.salary;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//creating objects</span></span><br><span class="line"><span class="string">var emp1 = new Employee('</span>Yuri Garagin<span class="string">', '</span>Company 1<span class="string">', 1000000);</span></span><br><span class="line"><span class="string">var emp2 = new Employee('</span>Dinesh Gupta<span class="string">', '</span>Company 2<span class="string">', 1039999);</span></span><br><span class="line"><span class="string">var emp3 = new Employee('</span>Erich Fromm<span class="string">', '</span>Company 3<span class="string">', 1299483);</span></span><br></pre></td></tr></table></figure>
+<p>Here each instance variable <code>emp1</code>, <code>emp2</code>, <code>emp3</code> has own copy of <code>formatSalary</code> method. However the <code>formatSalary2</code> will only be added once to an object <code>Employee.prototype</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="cka3yyf8q0001lwu29wc92csu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question 2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/01/08/Question%202/" class="article-date">
+  <time datetime="2016-01-08T08:41:14.000Z" itemprop="datePublished">2016-01-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/01/08/Question%202/">For which value of x the results of the following statements are not the same?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>For which value of x the results of the following statements are not the same?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>( x &lt;= 100 ) &#123;...&#125;</span><br><span class="line"><span class="keyword">if</span>( !(x &gt; 100) ) &#123;...&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><em><code>Solution</code></em></strong><br><code>NaN &lt;= 100</code> is <code>false</code> and <code>NaN &gt; 100</code> is also <code>false</code>, so if the value of <code>x</code> is <code>NaN</code>, the statements are not the same.</p>
+<p>The same holds true for any value of x that being converted to Number, returns <code>NaN</code>, e.g.: <code>undefined</code>, [1,2,5], <code>{a:22}</code> , etc.</p>
+<p>This is why you need to pay attention when you deal with numeric variables. NaN can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is NaN, is to use <code>isNaN()</code> function.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka3yyf8w0004lwu2414qhizv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Undefined-and-Not-Defined" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2016/01/01/Undefined-and-Not-Defined/" class="article-date">
+  <time datetime="2016-01-01T08:41:14.000Z" itemprop="datePublished">2016-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/01/01/Undefined-and-Not-Defined/">Undefined vs Not Defined</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In JavaScript if you try to use a variable that doesn’t exist and has not been declared, then JavaScript will throw an error <code>var name is not defined</code> and the script will stop executing thereafter. But If you use <code>typeof undeclared_variable</code> then it will return <code>undefined</code>.</p>
+<p>Before starting further discussion let’s understand the difference between declaration and definition.</p>
+<p><code>var x</code> is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need for memory allocation.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> x; // declaring x</span><br><span class="line">console.log(x); // output: undefined</span><br></pre></td></tr></table></figure>
+<p><code>var x = 1</code> is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it’s declared then assignment happen in order this term is called <em><code>hoisting</code></em>.</p>
+<p>A variable can be declared but not defined. When we try to access it, It will result <code>undefined</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x; // Declaration</span><br><span class="line">typeof x === <span class="string">'undefined'</span>; // Will <span class="built_in">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>A variable can be neither declared nor defined. When we try to reference such variable then the result will be not defined.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(y);  // Output: ReferenceError: y is not defined</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/01/Undefined-and-Not-Defined/" data-id="cka3yyf8z0006lwu2ggoe18ud" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -144,7 +644,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2020/05/08/hello-world/">Hello World</a>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
           </li>
         
       </ul>
@@ -159,7 +675,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
+      &copy; 2020 Mohit Singh Parihar<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

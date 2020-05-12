@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Array.prototype.function() | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Function SyntaxA function in JavaScript comprises of three statements.  The name of the function. A list of arguments to the function enclosed in parentheses and separated by commas. The JavaScript st">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Array.prototype.function()">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="Function SyntaxA function in JavaScript comprises of three statements.  The name of the function. A list of arguments to the function enclosed in parentheses and separated by commas. The JavaScript st">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-09T05:38:33.000Z">
+<meta property="article:modified_time" content="2020-05-09T09:49:12.658Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Array-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/2020/05/09/Array-function/" class="article-date">
+  <time datetime="2020-05-09T05:38:33.000Z" itemprop="datePublished">2020-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Array.prototype.function()
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Function-Syntax"><a href="#Function-Syntax" class="headerlink" title="Function Syntax"></a>Function Syntax</h2><p>A function in JavaScript comprises of three statements.</p>
+<ul>
+<li>The name of the function.</li>
+<li>A list of arguments to the function enclosed in parentheses and separated by commas.</li>
+<li>The JavaScript statements that define the function, enclosed</li>
+</ul>
+<p>Function in Javascript is defined in a number of ways. the common function definition is</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> function_name(arg1,arg2,...) &#123;</span><br><span class="line">//operation to be carried out by the <span class="keyword">function</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h2><p>Prototypes are the mechanism by which JavaScript objects inherit features from one another.</p>
+<p>JavaScript is often described as a prototype-based language — to provide inheritance, objects can have a prototype object, which acts as a template object that it inherits methods and properties from.</p>
+<p>In JavaScript, a link is made between the object instance and its prototype, and the properties and methods are found by walking up the chain of prototypes.</p>
+<h2 id="My-forEach"><a href="#My-forEach" class="headerlink" title="My forEach"></a>My forEach</h2><p>The <strong><em><code>myForEach()</code></em></strong> method calls a provided callback function once for each element in an array in ascending order.</p>
+<ul>
+<li><strong><code>callback</code></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myForEach() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myForEach = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">f(this[i], i ,this);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">myArray = [1, 2, 3, 4];</span><br><span class="line">myArray.myForEach((item,index,arr) =&gt; &#123;</span><br><span class="line">console.log(item, index, arr);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>This results in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 0 (4) [1, 2, 3, 4]</span><br><span class="line">2 1 (4) [1, 2, 3, 4]</span><br><span class="line">3 2 (4) [1, 2, 3, 4]</span><br><span class="line">4 3 (4) [1, 2, 3, 4]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Map"><a href="#My-Map" class="headerlink" title="My Map"></a>My Map</h2><p>The <strong><em><code>myMap()</code></em></strong> method creates a new array populated with the results of calling a provided function on every element in the calling array.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myMap() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myMap = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">result.push(f(this[i], i, this));</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 7, 14, 21]</span><br><span class="line">console.log(arr.myMap(item =&gt; item % 7 === 0));</span><br></pre></td></tr></table></figure>
+<p>This reults in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>,]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Some"><a href="#My-Some" class="headerlink" title="My Some"></a>My Some</h2><p>The <strong><em><code>mySome()</code></em></strong> method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array mySome() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.mySome = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(f(this[i], i, this)) &#123;</span><br><span class="line">result = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4, 7]</span><br><span class="line">arr.mySome(item =&gt; item % 7 === 0);</span><br></pre></td></tr></table></figure>
+<p>This results in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Includes"><a href="#My-Includes" class="headerlink" title="My Includes"></a>My Includes</h2><p>The <strong><em><code>myIncludes()</code></em></strong> method determines whether an array includes a certain value among its entries, returning true or false as appropriate.</p>
+<ul>
+<li><strong><em><code>valueToFind</code></em></strong> - The value to be looked for.</li>
+<li><strong><em><code>fromIndex</code></em></strong> - The index currentValue in the array.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myIncludes = <span class="keyword">function</span>(valueToFind, fromIndex = 0) &#123;</span><br><span class="line"><span class="built_in">let</span> result = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = fromIndex; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(this[i] === valueToFind) &#123;</span><br><span class="line">result = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log([1, 2, 3, 4].myIncludes(1));</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log([1,2,3,4].myIncludes(4,3));</span><br><span class="line">//<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Filter"><a href="#My-Filter" class="headerlink" title="My Filter"></a>My Filter</h2><p>The <strong><em><code>myFilter()</code></em></strong> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts between one and three arguments:<ul>
+<li><strong><em><code>currentValue</code></em></strong> - The current element being processed in the array.</li>
+<li><strong><em><code>index Optional</code></em></strong> - The index currentValue in the array.</li>
+<li><strong><em><code>array Optional</code></em></strong> - The array myFilter() was called upon.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myFilter = <span class="keyword">function</span>(f) &#123;</span><br><span class="line"><span class="built_in">let</span> result = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(f(this[i], i, this)) &#123;</span><br><span class="line">result.push(this[i]);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const cars = [<span class="string">'BMW'</span>, <span class="string">'Suzuki'</span>, <span class="string">'Mercedes'</span>, <span class="string">'Honda'</span>, <span class="string">'Mahindra'</span>, <span class="string">'Tata'</span>];</span><br><span class="line"></span><br><span class="line">const result = cars.myFilter(item =&gt; item.length&gt;5);</span><br></pre></td></tr></table></figure>
+<p>This results in-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">'Suzuki'</span>, <span class="string">'Mercedes'</span>, <span class="string">'Mahindra'</span>]</span><br></pre></td></tr></table></figure>
+
+<h2 id="My-Reducer-Function"><a href="#My-Reducer-Function" class="headerlink" title="My Reducer Function"></a>My Reducer Function</h2><p>The <strong><em><code>myReduce()</code></em></strong> method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.</p>
+<ul>
+<li><strong><em><code>callback</code></em></strong> - Function to execute on each element. It accepts two arguments</li>
+<li><strong><em><code>initialValue</code></em></strong> - To be passed in to the callback function<ul>
+<li><strong><em><code>startValue</code></em></strong> - The value to start from in the callback function.</li>
+<li><strong><em><code>currentValue</code></em></strong> - The value that is present in the loop.</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.myReduce = <span class="keyword">function</span>(f, initialValue) &#123;</span><br><span class="line"><span class="built_in">let</span> result = initialValue;</span><br><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">result = f(result, this[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Example :-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4];</span><br><span class="line">console.log(arr.myReduce((a,c) =&gt; a + c, 5));</span><br></pre></td></tr></table></figure>
+<p>This resullts in -</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">15</span><br><span class="line">/* initialValue = 5</span><br><span class="line"><span class="keyword">function</span> performs the fucntion of adding all the array elements</span><br><span class="line">result = 5 + 1 + 2 + 3 + 4 = 15 */</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka3yyf9c0009lwu2afhv8qea" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/05/11/Inheritance-in-JavaScript/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Inheritance in JavaScript
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Check if an object is an array or not</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
