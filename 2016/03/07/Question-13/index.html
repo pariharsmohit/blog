@@ -5,17 +5,17 @@
   
 
   
-  <title>For which value of x the results of the following statements are not the same? | msp Writes</title>
+  <title>Use of delete operator | msp Writes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="For which value of x the results of the following statements are not the same? 12&#x2F;&#x2F;  if( x &lt;&#x3D; 100 ) &amp;#123;...&amp;#125;if( !(x &gt; 100) ) &amp;#123;...&amp;#125; SolutionNaN &lt;&#x3D; 100 is false and NaN &gt; 10">
+  <meta name="description" content="123var trees &#x3D; [&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, &quot;ryan&quot;, &quot;apple&quot;];delete trees[3];console.log(trees.length); The code above will output 5 as output. When we used delete operator for deleting an array element th">
 <meta property="og:type" content="article">
-<meta property="og:title" content="For which value of x the results of the following statements are not the same?">
-<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/index.html">
+<meta property="og:title" content="Use of delete operator">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/03/07/Question-13/index.html">
 <meta property="og:site_name" content="msp Writes">
-<meta property="og:description" content="For which value of x the results of the following statements are not the same? 12&#x2F;&#x2F;  if( x &lt;&#x3D; 100 ) &amp;#123;...&amp;#125;if( !(x &gt; 100) ) &amp;#123;...&amp;#125; SolutionNaN &lt;&#x3D; 100 is false and NaN &gt; 10">
+<meta property="og:description" content="123var trees &#x3D; [&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, &quot;ryan&quot;, &quot;apple&quot;];delete trees[3];console.log(trees.length); The code above will output 5 as output. When we used delete operator for deleting an array element th">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-01-08T08:41:14.000Z">
-<meta property="article:modified_time" content="2020-05-12T11:07:42.055Z">
+<meta property="article:published_time" content="2016-03-07T09:39:56.000Z">
+<meta property="article:modified_time" content="2020-05-13T09:07:47.749Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -53,7 +53,7 @@
 
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Question 2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Question-13" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -65,7 +65,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      For which value of x the results of the following statements are not the same?
+      Use of delete operator
     </h1>
   
 
@@ -73,16 +73,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>For which value of x the results of the following statements are not the same?</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>( x &lt;= 100 ) &#123;...&#125;</span><br><span class="line"><span class="keyword">if</span>( !(x &gt; 100) ) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><em><code>Solution</code></em></strong><br><code>NaN &lt;= 100</code> is <code>false</code> and <code>NaN &gt; 100</code> is also <code>false</code>, so if the value of <code>x</code> is <code>NaN</code>, the statements are not the same.</p>
-<p>The same holds true for any value of x that being converted to Number, returns <code>NaN</code>, e.g.: <code>undefined</code>, [1,2,5], <code>{a:22}</code> , etc.</p>
-<p>This is why you need to pay attention when you deal with numeric variables. NaN can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is NaN, is to use <code>isNaN()</code> function.</p>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"xyz"</span>, <span class="string">"xxxx"</span>, <span class="string">"test"</span>, <span class="string">"ryan"</span>, <span class="string">"apple"</span>];</span><br><span class="line">delete trees[3];</span><br><span class="line">console.log(trees.length);</span><br></pre></td></tr></table></figure>
+<p>The code above will output <code>5</code> as output. When we used <code>delete</code> operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using <code>delete</code> operator.</p>
+<p>So when delete operator removes an array element that deleted element is no longer present in the array. In place of value at deleted index undefined x 1 in chrome and undefined is placed at the index. If you do <code>console.log(trees)</code> output <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined × 1, &quot;apple&quot;]</code> in Chrome and in Firefox <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined, &quot;apple&quot;]</code>.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka54rr9n0008c4u267ag2lr5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/07/Question-13/" data-id="cka54rr9g0004c4u248iac4ff" class="article-share-link">Share</a>
       
       
     </footer>
@@ -91,19 +89,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2020/05/09/Array-function/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          The drawback of declaring methods directly in JavaScript objects
+          Array.prototype.function()
         
       </div>
     </a>
   
   
-    <a href="/blog/2016/01/01/Undefined-and-Not-Defined/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/02/29/undefined-x1/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Undefined vs Not Defined</div>
+      <div class="article-nav-title">undefined x 1</div>
     </a>
   
 </nav>

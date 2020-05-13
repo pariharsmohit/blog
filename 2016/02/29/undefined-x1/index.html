@@ -5,17 +5,17 @@
   
 
   
-  <title>For which value of x the results of the following statements are not the same? | msp Writes</title>
+  <title>undefined x 1 | msp Writes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="For which value of x the results of the following statements are not the same? 12&#x2F;&#x2F;  if( x &lt;&#x3D; 100 ) &amp;#123;...&amp;#125;if( !(x &gt; 100) ) &amp;#123;...&amp;#125; SolutionNaN &lt;&#x3D; 100 is false and NaN &gt; 10">
+  <meta name="description" content="12var trees &#x3D; [&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, &quot;oak&quot;, &quot;maple&quot;];delete trees[3];  When you run the code above and do console.log(trees); in chrome developer console then you will get [&quot;redwood&quot;, &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="For which value of x the results of the following statements are not the same?">
-<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/index.html">
+<meta property="og:title" content="undefined x 1">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/index.html">
 <meta property="og:site_name" content="msp Writes">
-<meta property="og:description" content="For which value of x the results of the following statements are not the same? 12&#x2F;&#x2F;  if( x &lt;&#x3D; 100 ) &amp;#123;...&amp;#125;if( !(x &gt; 100) ) &amp;#123;...&amp;#125; SolutionNaN &lt;&#x3D; 100 is false and NaN &gt; 10">
+<meta property="og:description" content="12var trees &#x3D; [&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, &quot;oak&quot;, &quot;maple&quot;];delete trees[3];  When you run the code above and do console.log(trees); in chrome developer console then you will get [&quot;redwood&quot;, &amp;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-01-08T08:41:14.000Z">
-<meta property="article:modified_time" content="2020-05-12T11:07:42.055Z">
+<meta property="article:published_time" content="2016-02-29T09:39:56.000Z">
+<meta property="article:modified_time" content="2020-05-12T18:25:15.172Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -53,7 +53,7 @@
 
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Question 2" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-undefined-x1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -65,7 +65,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      For which value of x the results of the following statements are not the same?
+      undefined x 1
     </h1>
   
 
@@ -73,16 +73,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>For which value of x the results of the following statements are not the same?</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>( x &lt;= 100 ) &#123;...&#125;</span><br><span class="line"><span class="keyword">if</span>( !(x &gt; 100) ) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><em><code>Solution</code></em></strong><br><code>NaN &lt;= 100</code> is <code>false</code> and <code>NaN &gt; 100</code> is also <code>false</code>, so if the value of <code>x</code> is <code>NaN</code>, the statements are not the same.</p>
-<p>The same holds true for any value of x that being converted to Number, returns <code>NaN</code>, e.g.: <code>undefined</code>, [1,2,5], <code>{a:22}</code> , etc.</p>
-<p>This is why you need to pay attention when you deal with numeric variables. NaN can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is NaN, is to use <code>isNaN()</code> function.</p>
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"redwood"</span>, <span class="string">"bay"</span>, <span class="string">"cedar"</span>, <span class="string">"oak"</span>, <span class="string">"maple"</span>];</span><br><span class="line">delete trees[3];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>When you run the code above and do <code>console.log(trees);</code> in chrome developer console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined × 1, &quot;maple&quot;]</code>.</li>
+<li>In the recent versions of Chrome you will see the word <code>empty</code> of <code>undefined x 1</code>.</li>
+<li>When you run the same code in Firefox browser console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined, &quot;maple&quot;]</code></li>
+</ul>
+<p>Clearly we can see that Chrome has its own way of displaying uninitialized index in arrays. However when you check <code>trees[3] === undefined</code>in any browser you will get similar output as <code>true</code>.</p>
+<p><strong>Note</strong>: Please remember that you need not check for the uninitialized index of the array in trees[3] === ‘undefined × 1’ it will give an error because ‘undefined × 1’ this is just way of displaying an uninitialized index of an array in chrome.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka54rr9n0008c4u267ag2lr5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/" data-id="cka54rr9r000ac4u23avng5k9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -91,19 +94,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2016/03/07/Question-13/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          The drawback of declaring methods directly in JavaScript objects
+          Use of delete operator
         
       </div>
     </a>
   
   
-    <a href="/blog/2016/01/01/Undefined-and-Not-Defined/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/02/21/Find-the-Output/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Undefined vs Not Defined</div>
+      <div class="article-nav-title">Find the Output</div>
     </a>
   
 </nav>

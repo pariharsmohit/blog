@@ -53,9 +53,7 @@
   
     <article id="post-Cloning-an-Object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/11/Cloning-an-Object/" class="article-date">
-  <time datetime="2020-05-11T17:55:50.000Z" itemprop="datePublished">2020-05-11</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -94,65 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka3yyf8k0000lwu236n81xxk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Inheritance-in-JavaScript" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2020/05/11/Inheritance-in-JavaScript/" class="article-date">
-  <time datetime="2020-05-11T16:36:31.000Z" itemprop="datePublished">2020-05-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="What-is-Inheritance"><a href="#What-is-Inheritance" class="headerlink" title="What is Inheritance?"></a>What is <strong><code>Inheritance</code></strong>?</h2><p><code>In object-oriented programming, inheritance is the mechanism of basing an object or class upon another object (prototype-based inheritance) or class, retaining similar implementation</code> . Also defined as deriving new classes (sub classes) from existing ones such as super class or base class and then forming them into a hierarchy of classes.</p>
-<p> In most class-based object-oriented languages, an object created through inheritance, a <code>child object</code> , acquires all the properties and behaviors of the <code>parent object</code> , with the exception of constructors, destructor, overloaded operators and friend functions of the base class.</p>
-<p> Inheritance allows programmers to create classes that are built upon existing classes, to specify a new implementation while maintaining the same behaviors, to reuse code and to independently extend original software via public classes and interfaces.</p>
-<h2 id="What-is-class"><a href="#What-is-class" class="headerlink" title="What is class?"></a>What is <em><code>class</code></em>?</h2><p>A <em><code>class</code></em> is a definition for an <em><code>object</code></em>. All objects are created from classes and can’t exist without them. A class holds information or details about an object. In <code>object oriented programming</code> classes are used like a <strong>blueprint</strong> or <strong>template</strong> to create new objects from.</p>
-<h2 id="What-is-object"><a href="#What-is-object" class="headerlink" title="What is object"></a>What is <em><code>object</code></em></h2><p>In object oriented programming we combine a group of related variables and functions into a unit, we call that unit an <strong><code>object</code></strong>. We refer to these variables as properties and functions as methods.</p>
-<p><strong>In JavaScript, inheritance is supported by using prototype object. Some people call it</strong> <strong><em><code>Prototypal Inheritance</code></em></strong> <strong>and some call it</strong> <strong><em><code>Behaviour of Delegation</code></em></strong></p>
-<h2 id="Difference-between-Class-and-Prototypal-Inheritance"><a href="#Difference-between-Class-and-Prototypal-Inheritance" class="headerlink" title="Difference between Class and Prototypal Inheritance"></a>Difference between Class and Prototypal Inheritance</h2><p><strong>Class Inheritannce:</strong> <strong><em>A class is like a blueprint–a description of the object to be created.</em></strong> Classes inherit from classes and <em>create subclass relationships:</em>hierarchical class taxonomies(classification).</p>
-<p>Instances are typically instantiated via constructor functions with the <code>new</code> keyword. Class inheritance may or may not use the <code>class</code> keyword from ES6. Classes as you may know them from languages like Java don’t technically exist in JavaScript. Constructor functions are used, instead. The ES6 <code>class</code> keyword desugars to a constructor function:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">class Foo &#123;&#125;</span><br><span class="line">typeof Foo // <span class="string">'function'</span></span><br></pre></td></tr></table></figure>
-<p>In JavaScript, class inheritance is implemented on top of prototypal inheritance, but that does not mean that it does the same thing:<br>JavaScript’s class inheritance uses the prototype chain to wire the child <code>Constructor.prototype</code> to the parent <code>Constructor.prototype</code> for delegation. Usually, the <code>super()</code> constructor is also called. Those steps form <strong>single-ancestor parent/child hierarchies and create the tightest coupling available in OO design.</strong></p>
-<p><strong>Prototypal Inheritance:</strong> <strong><em>A prototype is a working object instance.</em></strong> Objects inherit directly from other objects.</p>
-<p>Instances may be composed from many different source objects, allowing for easy selective inheritance and a flat [Prototype] delegation hierarchy. In other words, class taxonomies are not an automatic side-effect of prototypal OO: a critical distinction.<br>Instances are typically instantiated via factory functions, object literals, or <em><code>Object.create()</code></em>.</p>
-<p><em><code>Inheritance is fundamentally a code reuse mechanism: A way for different kinds of objects to share code. The way that you share code matters because if you get it wrong, it can create a lot of problems.</code></em></p>
-<p><strong>Class inheritance creates parent/child object taxonomies as a side-effect.</strong></p>
-<p>Those taxonomies are virtually impossible to get right for all new use cases, and widespread use of a base class leads to the fragile base class problem, which makes them difficult to fix when you get them wrong. In fact, class inheritance causes many well known problems in OO design:</p>
-<ol>
-<li><strong>The tight coupling problem-</strong> (class inheritance is the tightest coupling available in oo design) Tight coupling in general is when two things depends on one another, that is, changing one may have impact on another., which leads to the next one…</li>
-<li><strong>*The fragile base class problem-</strong>The fragile base class problem is a fundamental architectural problem of object-oriented programming systems where base classes (superclasses) are considered “fragile” because seemingly safe modifications to a base class, when inherited by the derived classes, may cause the derived classes to malfunction.</li>
-<li><strong>Inflexible hierarchy problem</strong> (eventually, all evolving hierarchies are wrong for new uses)</li>
-<li><strong>The duplication by necessity problem</strong> (due to inflexible hierarchies, new use cases are often shoe-horned in by duplicating, rather than adapting existing code)</li>
-<li><strong>The Gorilla/banana problem</strong> (What you wanted was a banana, but what you got was a gorilla holding the banana, and the entire jungle)</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Inheritance-in-JavaScript/" data-id="cka3yyf8u0003lwu2hxqp7pn1" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka54rr9f0003c4u27hx2d220" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,9 +104,7 @@
   
     <article id="post-Array-function" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2020/05/09/Array-function/" class="article-date">
-  <time datetime="2020-05-09T05:38:33.000Z" itemprop="datePublished">2020-05-09</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -280,11 +218,133 @@
 <p>Example :-</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> arr = [1, 2, 3, 4];</span><br><span class="line">console.log(arr.myReduce((a,c) =&gt; a + c, 5));</span><br></pre></td></tr></table></figure>
 <p>This resullts in -</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">15</span><br><span class="line">/* initialValue = 5</span><br><span class="line"><span class="keyword">function</span> performs the fucntion of adding all the array elements</span><br><span class="line">result = 5 + 1 + 2 + 3 + 4 = 15 */</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">15</span><br><span class="line">/* initialValue = 5</span><br><span class="line"><span class="keyword">function</span> performs the <span class="keyword">function</span> of adding all the array elements</span><br><span class="line">result = 5 + 1 + 2 + 3 + 4 = 15 */</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka3yyf9c0009lwu2afhv8qea" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka54rr940000c4u2hic885ie" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/07/Question-13/">Use of delete operator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"xyz"</span>, <span class="string">"xxxx"</span>, <span class="string">"test"</span>, <span class="string">"ryan"</span>, <span class="string">"apple"</span>];</span><br><span class="line">delete trees[3];</span><br><span class="line">console.log(trees.length);</span><br></pre></td></tr></table></figure>
+<p>The code above will output <code>5</code> as output. When we used <code>delete</code> operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using <code>delete</code> operator.</p>
+<p>So when delete operator removes an array element that deleted element is no longer present in the array. In place of value at deleted index undefined x 1 in chrome and undefined is placed at the index. If you do <code>console.log(trees)</code> output <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined × 1, &quot;apple&quot;]</code> in Chrome and in Firefox <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined, &quot;apple&quot;]</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/07/Question-13/" data-id="cka54rr9g0004c4u248iac4ff" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-undefined-x1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/02/29/undefined-x1/">undefined x 1</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"redwood"</span>, <span class="string">"bay"</span>, <span class="string">"cedar"</span>, <span class="string">"oak"</span>, <span class="string">"maple"</span>];</span><br><span class="line">delete trees[3];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>When you run the code above and do <code>console.log(trees);</code> in chrome developer console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined × 1, &quot;maple&quot;]</code>.</li>
+<li>In the recent versions of Chrome you will see the word <code>empty</code> of <code>undefined x 1</code>.</li>
+<li>When you run the same code in Firefox browser console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined, &quot;maple&quot;]</code></li>
+</ul>
+<p>Clearly we can see that Chrome has its own way of displaying uninitialized index in arrays. However when you check <code>trees[3] === undefined</code>in any browser you will get similar output as <code>true</code>.</p>
+<p><strong>Note</strong>: Please remember that you need not check for the uninitialized index of the array in trees[3] === ‘undefined × 1’ it will give an error because ‘undefined × 1’ this is just way of displaying an uninitialized index of an array in chrome.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/" data-id="cka54rr9r000ac4u23avng5k9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Find-the-Output" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/02/21/Find-the-Output/">Find the Output</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="What-will-be-the-output-of-the-following-code"><a href="#What-will-be-the-output-of-the-following-code" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var output = (<span class="keyword">function</span>(x) &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(0); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+<h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output 0 as output. <code>delete</code> operator is used to delete a property from an object. Here x is not an object it’s <strong><code>local variable</code></strong>. <code>delete</code> operator doesn’t affect local variables.</p>
+<h2 id="What-will-be-the-output-of-the-following-code-1"><a href="#What-will-be-the-output-of-the-following-code-1" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = 1; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+<h3 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>1</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is not an object it’s global variable of type <code>number</code>.</p>
+<h2 id="What-will-be-the-output-of-the-following-code-2"><a href="#What-will-be-the-output-of-the-following-code-2" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = &#123; foo : 1&#125;; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x.foo; </span><br><span class="line">  <span class="built_in">return</span> x.foo; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+<h3 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>undefined</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is an object which has foo as a property and from a self-invoking function, we are deleting the <code>foo</code> property of object <code>x</code> and after deletion, we are trying to reference deleted property <code>foo</code> which result <code>undefined</code>.</p>
+<h2 id="What-will-be-the-output-of-the-following-code-3"><a href="#What-will-be-the-output-of-the-following-code-3" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Employee = &#123;</span><br><span class="line">  company: <span class="string">'xyz'</span></span><br><span class="line">&#125;</span><br><span class="line">var emp1 = Object.create(Employee); </span><br><span class="line">delete emp1.company</span><br><span class="line">console.log(emp1.company);</span><br></pre></td></tr></table></figure>
+<h3 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output xyz as output. Here emp1 object got company as prototype property. delete operator doesn’t delete prototype property.</p>
+<p><code>emp1</code> object doesn’t have company as its own property. you can test it <code>console.log(emp1.hasOwnProperty(&#39;company&#39;));</code> <code>//output : false</code> However, we can delete company property directly from Employee object using delete Employee.company or we can also delete from emp1 object using <code>__proto__</code> property <code>delete emp1.__proto__.company.</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/21/Find-the-Output/" data-id="cka54rr9d0002c4u22nd3dnze" class="article-share-link">Share</a>
       
       
     </footer>
@@ -296,9 +356,7 @@
   
     <article id="post-check-if-an-object-is-an-array-or-not" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" class="article-date">
-  <time datetime="2016-02-13T16:39:56.000Z" itemprop="datePublished">2016-02-13</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -336,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" data-id="cka3yyf910008lwu25md0ezh7" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" data-id="cka54rr9s000bc4u2bo9q3tlc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -348,9 +406,7 @@
   
     <article id="post-Empty-an-Array" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/02/06/Empty-an-Array/" class="article-date">
-  <time datetime="2016-02-06T15:23:56.000Z" itemprop="datePublished">2016-02-06</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -389,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="cka3yyf8t0002lwu2hvncggte" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="cka54rr9b0001c4u2cetu37cf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,9 +457,7 @@
   
     <article id="post-Question-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/01/29/Question-5/" class="article-date">
-  <time datetime="2016-01-29T04:23:56.000Z" itemprop="datePublished">2016-01-29</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -437,7 +491,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="cka3yyf8y0005lwu2a3r23lna" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="cka54rr9l0007c4u2c1bde6hu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -449,9 +503,7 @@
   
     <article id="post-What-is-closure" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/01/22/What-is-closure/" class="article-date">
-  <time datetime="2016-01-22T05:09:25.000Z" itemprop="datePublished">2016-01-22</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -479,7 +531,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="cka3yyf900007lwu24vea25cw" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="cka54rr9k0006c4u24pom32hp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -491,9 +543,7 @@
   
     <article id="post-Drawback-of-declaring-methods-directly-in-JavaScript-Objects" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" class="article-date">
-  <time datetime="2016-01-15T12:05:14.000Z" itemprop="datePublished">2016-01-15</time>
-</a>
+    
     
   </div>
   <div class="article-inner">
@@ -518,92 +568,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="cka3yyf8q0001lwu29wc92csu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question 2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/01/08/Question%202/" class="article-date">
-  <time datetime="2016-01-08T08:41:14.000Z" itemprop="datePublished">2016-01-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/01/08/Question%202/">For which value of x the results of the following statements are not the same?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>For which value of x the results of the following statements are not the same?</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>( x &lt;= 100 ) &#123;...&#125;</span><br><span class="line"><span class="keyword">if</span>( !(x &gt; 100) ) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><em><code>Solution</code></em></strong><br><code>NaN &lt;= 100</code> is <code>false</code> and <code>NaN &gt; 100</code> is also <code>false</code>, so if the value of <code>x</code> is <code>NaN</code>, the statements are not the same.</p>
-<p>The same holds true for any value of x that being converted to Number, returns <code>NaN</code>, e.g.: <code>undefined</code>, [1,2,5], <code>{a:22}</code> , etc.</p>
-<p>This is why you need to pay attention when you deal with numeric variables. NaN can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is NaN, is to use <code>isNaN()</code> function.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka3yyf8w0004lwu2414qhizv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Undefined-and-Not-Defined" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/2016/01/01/Undefined-and-Not-Defined/" class="article-date">
-  <time datetime="2016-01-01T08:41:14.000Z" itemprop="datePublished">2016-01-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/01/01/Undefined-and-Not-Defined/">Undefined vs Not Defined</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In JavaScript if you try to use a variable that doesn’t exist and has not been declared, then JavaScript will throw an error <code>var name is not defined</code> and the script will stop executing thereafter. But If you use <code>typeof undeclared_variable</code> then it will return <code>undefined</code>.</p>
-<p>Before starting further discussion let’s understand the difference between declaration and definition.</p>
-<p><code>var x</code> is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need for memory allocation.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> x; // declaring x</span><br><span class="line">console.log(x); // output: undefined</span><br></pre></td></tr></table></figure>
-<p><code>var x = 1</code> is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it’s declared then assignment happen in order this term is called <em><code>hoisting</code></em>.</p>
-<p>A variable can be declared but not defined. When we try to access it, It will result <code>undefined</code>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x; // Declaration</span><br><span class="line">typeof x === <span class="string">'undefined'</span>; // Will <span class="built_in">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>A variable can be neither declared nor defined. When we try to reference such variable then the result will be not defined.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(y);  // Output: ReferenceError: y is not defined</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/01/Undefined-and-Not-Defined/" data-id="cka3yyf8z0006lwu2ggoe18ud" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="cka54rr9h0005c4u2drmq3fpl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -614,6 +579,11 @@
 
   
 
+
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+  </nav>
 
 </section>
         
@@ -631,7 +601,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -648,19 +618,19 @@
           </li>
         
           <li>
-            <a href="/blog/2020/05/11/Inheritance-in-JavaScript/">Inheritance in JavaScript</a>
-          </li>
-        
-          <li>
             <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
           </li>
         
           <li>
-            <a href="/blog/2016/02/13/check-if-an-object-is-an-array-or-not/">Check if an object is an array or not</a>
+            <a href="/blog/2016/03/07/Question-13/">Use of delete operator</a>
           </li>
         
           <li>
-            <a href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+            <a href="/blog/2016/02/29/undefined-x1/">undefined x 1</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/02/21/Find-the-Output/">Find the Output</a>
           </li>
         
       </ul>
