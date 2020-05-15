@@ -81,7 +81,7 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Tower_of_Hanoi_4.gif?download" style="float:center; margin: 0 auto;" />
 
 <p>For solving this we can consider each tower or rod as an array. Each disk can be represented as an array element and movement of the items is only provided from the end of the array hence making it behave like a stack.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> A = [5,4,3,2,1]</span><br><span class="line"><span class="built_in">let</span> B = [];</span><br><span class="line"><span class="built_in">let</span> C = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> toh(s,t,h,n)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!n) &#123;</span><br><span class="line">  	n = s.length;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">if</span>( n &gt; 2) &#123;</span><br><span class="line">  	toh(s,h,t,n-1);</span><br><span class="line">    t.push(s.pop());</span><br><span class="line">    toh(h,t,s,n-1);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  	h.push(s.pop());</span><br><span class="line">  	t.push(s.pop());</span><br><span class="line">  	t.push(h.pop());</span><br><span class="line">  &#125; </span><br><span class="line">  </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toh(A,B,C);</span><br><span class="line"></span><br><span class="line">console.log(<span class="string">' A : '</span> + A);</span><br><span class="line">console.log(<span class="string">' B : '</span> + B);</span><br><span class="line">console.log(<span class="string">' C : '</span> + C);</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> A = [5,4,3,2,1]</span><br><span class="line"><span class="built_in">let</span> B = [];</span><br><span class="line"><span class="built_in">let</span> C = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> toh(s,t,h,n)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!n) &#123;</span><br><span class="line">  	n = s.length;</span><br><span class="line">  	&#125;</span><br><span class="line">	<span class="keyword">if</span>( n &gt; 2) &#123;</span><br><span class="line">  	toh(s,h,t,n-1);</span><br><span class="line">    t.push(s.pop());</span><br><span class="line">    toh(h,t,s,n-1);</span><br><span class="line">  	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  	h.push(s.pop());</span><br><span class="line">  	t.push(s.pop());</span><br><span class="line">  	t.push(h.pop());</span><br><span class="line">  	&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toh(A,B,C);</span><br><span class="line"></span><br><span class="line">console.log(<span class="string">' A : '</span> + A);</span><br><span class="line">console.log(<span class="string">' B : '</span> + B);</span><br><span class="line">console.log(<span class="string">' C : '</span> + C);</span><br></pre></td></tr></table></figure>
 <p>output of this will be-</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A : </span><br><span class="line">B : 5,4,3,2,1</span><br><span class="line">C :</span><br></pre></td></tr></table></figure>
 <p>In this code we can see that the logic for shifting two items from an array to other has been repeated again an again irrespective of the number of items in the array. So we can call the method to shift two items recursively.</p>
@@ -89,7 +89,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/15/tower-of-hanoi/" data-id="cka83kkc4000n6cu2f04p7rzh" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/15/tower-of-hanoi/" data-id="cka8aexns000o18u2995ne39z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka83kkbi00026cu2f9617407" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka8aexn4000218u29y2x2q4t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka83kkb600006cu27lyvgjnz" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka8aexms000018u2adntfdeb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/05/singleton-pattern/" data-id="cka83kkc5000o6cu29x31aufp" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/06/05/singleton-pattern/" data-id="cka8aexnt000p18u2d3arbpea" class="article-share-link">Share</a>
       
       
     </footer>
@@ -403,7 +403,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/27/IIFE/" data-id="cka83kkbo00066cu20yzq14xg" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/27/IIFE/" data-id="cka8aexn7000518u24vum2y8b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -448,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/20/difference-between-function-and-method/" data-id="cka83kkc0000i6cu26mexhdbo" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/20/difference-between-function-and-method/" data-id="cka8aexnn000i18u28jyaf3qp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,7 +484,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/" data-id="cka83kkc3000m6cu25yvkeb6y" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/" data-id="cka8aexnq000m18u25o7k0gpm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -530,7 +530,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/06/function-vs-method-vs-constructor/" data-id="cka83kkc1000k6cu287lu9goq" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/06/function-vs-method-vs-constructor/" data-id="cka8aexnp000k18u26iw47f3y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -573,7 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/30/Calculate-the-length-of-associative-array/" data-id="cka83kkbf00016cu24sb3ggk3" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/30/Calculate-the-length-of-associative-array/" data-id="cka8aexn2000118u24y8bbjgs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -613,7 +613,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/25/Question-20/" data-id="cka83kkbw000d6cu277xpdgyf" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/25/Question-20/" data-id="cka8aexnh000d18u25ff5hwq1" class="article-share-link">Share</a>
       
       
     </footer>
