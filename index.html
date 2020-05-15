@@ -51,6 +51,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-tower-of-hanoi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The Tower of Hanoi is a mathematical game or puzzle. It consists of three rods and a number of disks of different sizes, which can slide onto any rod. The puzzle starts with the disks in a neat stack in ascending order of size on one rod, the smallest at the top, thus making a conical shape.<br><img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Tower_of_Hanoi.jpeg?download" style="float:center; margin: 0 auto;" /><br>The objective of the puzzle is to move the entire stack to another rod, obeying the following simple rules:</p>
+<ul>
+<li>Only one disk can be moved at a time.</li>
+<li>Each move consists of taking the upper disk from one of the stacks and placing it on top of another stack or on an empty rod.</li>
+<li>No larger disk may be placed on top of a smaller disk.</li>
+</ul>
+<p>With 3 disks, the puzzle can be solved in 7 moves. The minimal number of moves required to solve a Tower of Hanoi puzzle is 2^n − 1, where n is the number of disks.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Tower_of_Hanoi_4.gif?download" style="float:center; margin: 0 auto;" />
+
+<p>For solving this we can consider each tower or rod as an array. Each disk can be represented as an array element and movement of the items is only provided from the end of the array hence making it behave like a stack.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> A = [5,4,3,2,1]</span><br><span class="line"><span class="built_in">let</span> B = [];</span><br><span class="line"><span class="built_in">let</span> C = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> toh(s,t,h,n)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!n) &#123;</span><br><span class="line">  	n = s.length;</span><br><span class="line">  &#125;</span><br><span class="line">	<span class="keyword">if</span>( n &gt; 2) &#123;</span><br><span class="line">  	toh(s,h,t,n-1);</span><br><span class="line">    t.push(s.pop());</span><br><span class="line">    toh(h,t,s,n-1);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  	h.push(s.pop());</span><br><span class="line">  	t.push(s.pop());</span><br><span class="line">  	t.push(h.pop());</span><br><span class="line">  &#125; </span><br><span class="line">  </span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">toh(A,B,C);</span><br><span class="line"></span><br><span class="line">console.log(<span class="string">' A : '</span> + A);</span><br><span class="line">console.log(<span class="string">' B : '</span> + B);</span><br><span class="line">console.log(<span class="string">' C : '</span> + C);</span><br></pre></td></tr></table></figure>
+<p>output of this will be-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A : </span><br><span class="line">B : 5,4,3,2,1</span><br><span class="line">C :</span><br></pre></td></tr></table></figure>
+<p>In this code we can see that the logic for shifting two items from an array to other has been repeated again an again irrespective of the number of items in the array. So we can call the method to shift two items recursively.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/15/tower-of-hanoi/" data-id="cka81vomc000lbsu218pu55af" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Cloning-an-Object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -92,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka6e1evu0007n8u2fwl91d4k" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="cka81volw0003bsu2362k9zk4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka6e1etr0000n8u24d0sac77" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="cka81vom00007bsu2a4bu0hxa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +280,7 @@
 
 
   
-    <article id="post-hoisting-of-function" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-IIFE" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -244,7 +292,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/04/12/hoisting-of-function/">Hoisting of function</a>
+      <a class="article-title" href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
     </h1>
   
 
@@ -252,179 +300,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Let’s take the following function expression</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> 12;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>In JavaScript <code>var</code> -declared variables and functions are <code>hoisted</code> . Let’s take function <code>hoisting</code> first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it’s declared. For example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo(); // Here foo is still undefined</span><br><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> 12;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>The code above behind the scene look something like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo(); // Here foo is undefined</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br><span class="line">foo(); // Now foo is defined here</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/12/hoisting-of-function/" data-id="cka6e1ewc000en8u28xlo3t88" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-function-declaration-format" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/04/05/function-declaration-format/">Function Declaration Format</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Some code</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">bar</span></span> () &#123;</span><br><span class="line">  // Some code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The main difference is that function <code>foo</code> is defined at <code>run-time</code> and is called a function expression, whereas function <code>bar</code> is defined at <code>parse time</code> and is called a function statement. To understand it better, let’s take a look at the code below :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Run-Time <span class="keyword">function</span> declaration</span><br><span class="line">  foo(); // Call foo <span class="keyword">function</span> here, It will give an error</span><br><span class="line">  var foo = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">"Hi I am inside Foo"</span>);</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Parse-Time <span class="keyword">function</span> declaration</span><br><span class="line">bar(); // Call bar <span class="keyword">function</span> here, It will not give an Error</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">"Hi I am inside Foo"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/05/function-declaration-format/" data-id="cka6e1ew6000bn8u2el2j896i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question-16" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/30/Question-16/">Reference error in function declaration</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// NFE (Named Function Expression)</span><br><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
-<p>The output will be Reference Error. To fix the bug we can try to rewrite the code a little bit:</p>
-<h3 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample 1"></a>Sample 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bar = <span class="function"><span class="title">function</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
-
-<h3 id="Sample-2"><a href="#Sample-2" class="headerlink" title="Sample 2"></a>Sample 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
-<p>The function definition can have only one reference letiable as a function name, In sample 1 bar is reference letiable which is pointing to anonymous function and in sample 2 we have function statement and bar is the function name.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123;</span><br><span class="line">  // foo is visible here</span><br><span class="line">  // bar is visible here</span><br><span class="line">  console.log(typeof bar()); // Works here :)</span><br><span class="line">&#125;;</span><br><span class="line">// foo is visible here</span><br><span class="line">// bar is undefined here</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/03/30/Question-16/" data-id="cka6e1evs0006n8u20sxqclfv" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question-15" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/23/Question-15/">Example of operator precedence</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> z = 1, y = z = typeof y;</span><br><span class="line">console.log(y);</span><br></pre></td></tr></table></figure>
-<p>The code above will print string <code>&quot;undefined&quot;</code> as output. According to associativity rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is <code>Right to Left</code> so first <code>typeof y</code> will evaluate first which is string <code>&quot;undefined&quot;</code> and assigned to <code>z</code> and then <code>y</code> would be assigned the value of z. The overall sequence will look like that:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> z;</span><br><span class="line">z = 1;</span><br><span class="line"><span class="built_in">let</span> y;</span><br><span class="line">z = typeof y;</span><br><span class="line">y = z;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/03/23/Question-15/" data-id="cka6e1evq0005n8u26n6zajtk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question-14" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/15/Question-14/">Addition of operators</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bar = <span class="literal">true</span>;</span><br><span class="line">console.log(bar + 0);   </span><br><span class="line">console.log(bar + <span class="string">"xyz"</span>);  </span><br><span class="line">console.log(bar + <span class="literal">true</span>);  </span><br><span class="line">console.log(bar + <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-<p>The code above will output <code>1, &quot;truexyz&quot;, 2, 1</code> as output. Here’s a general guideline for the plus operator:</p>
+        <p><strong><em><code>IIFE</code> a function that runs as soon as it’s defined.</em></strong> Usually it’s anonymous (doesn’t have a function name), but it also can be named.<br>Here’s an example of IIFE:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">"Hi, I'm IIFE!"</span>);</span><br><span class="line">&#125;)();</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE!"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>So, here’s how it works. Remember the difference between function statements<code>(function a () {})</code> and function expressions <code>(var a = function() {})</code>? So, IIFE is a function expression. To make it an expression we surround our function declaration into the parens. We do it to explicitly tell the parser that it’s an expression, not a statement (JS doesn’t allow statements in parens).</p>
+<p>After the function you can see the two <code>()</code> braces, this is how we run the function we just declared.</p>
+<p>That’s it. The rest is details.</p>
 <ul>
-<li>Number + Number -&gt; Addition</li>
-<li>Boolean + Number -&gt; Addition</li>
-<li>Boolean + Boolean -&gt; Addition</li>
-<li>Number + String -&gt; Concatenation</li>
-<li>String + Boolean -&gt; Concatenation</li>
-<li>String + String -&gt; Concatenation</li>
+<li><p>The function inside IIFE doesn’t have to be anonymous. This one will work perfectly fine and will help to detect your function in a stacktrace during debugging:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> <span class="function"><span class="title">myIIFEFunc</span></span>() &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE!"</span>);</span><br><span class="line">&#125;)();</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE!"</span></span><br></pre></td></tr></table></figure></li>
+<li><p>It can take some parameters:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> myIIFEFunc(param1) &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE, "</span> + param1);</span><br><span class="line">&#125;)(<span class="string">"Yuri"</span>);</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE, Yuri!"</span></span><br></pre></td></tr></table></figure>
+<p>  Here there value “Yuri” is passed to the param1 of the function.</p>
+</li>
+<li><p>It can return a value:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var result = (<span class="keyword">function</span> myIIFEFunc(param1) &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE, "</span> + param1);</span><br><span class="line"><span class="built_in">return</span> 1;</span><br><span class="line">&#125;)(<span class="string">"Yuri"</span>);</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE, Yuri!"</span></span><br><span class="line">// result variable will contain 1</span><br></pre></td></tr></table></figure></li>
+<li><p>You don’t have to surround the function declaration into parens, although it’s the most common way to define IIFE. Instead you can use any of the following forms:</p>
+<ul>
+<li><p><code>~function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
+</li>
+<li><p><code>!function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
+</li>
+<li><p><code>+function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
+</li>
+<li><p><code>-function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
+</li>
+<li><p><code>(function(){console.log(&quot;hi I&#39;m IIFE&quot;)}());</code></p>
+</li>
+<li><p><code>var i = function(){console.log(&quot;hi I&#39;m IIFE&quot;)}();</code></p>
+</li>
+<li><p><code>true &amp;&amp; function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }();</code></p>
+</li>
+<li><p><code>0, function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }();</code></p>
+</li>
+<li><p><code>new function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }</code></p>
+</li>
+<li><p><code>new function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }()</code></p>
+<p>Please don’t use all these forms to impress colleagues, but be prepared that you can encounter them in someone’s code.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="Applications-and-usefulness"><a href="#Applications-and-usefulness" class="headerlink" title="Applications and usefulness"></a>Applications and usefulness</h3><p>Variables and functions that you declare inside an IIFE are not visible to the outside world, so you can:</p>
+<ul>
+<li>Use the IIFE for isolating parts of the code to hide details of implementation.</li>
+<li>Specify the input interface of your code by passing commonly used global objects (window, document, jQuery, etc.) IIFE’s parameters, and then reference these global objects within the IIFE via a local scope.</li>
+<li>Use it in closures, when you use closures in loops.</li>
+<li>IIFE is the basis of in the module pattern in ES5 code, it helps to prevent polluting the global scope and provide the module interface to the outside.</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/03/15/Question-14/" data-id="cka6e1evp0004n8u2exw8gomd" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/27/IIFE/" data-id="cka81volx0004bsu253fb9ml0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -434,7 +361,7 @@
 
 
   
-    <article id="post-Question-13" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-difference-between-function-and-method" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -446,7 +373,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/03/07/Question-13/">Use of delete operator</a>
+      <a class="article-title" href="/blog/2016/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
     </h1>
   
 
@@ -454,14 +381,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"xyz"</span>, <span class="string">"xxxx"</span>, <span class="string">"test"</span>, <span class="string">"ryan"</span>, <span class="string">"apple"</span>];</span><br><span class="line">delete trees[3];</span><br><span class="line">console.log(trees.length);</span><br></pre></td></tr></table></figure>
-<p>The code above will output <code>5</code> as output. When we used <code>delete</code> operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using <code>delete</code> operator.</p>
-<p>So when delete operator removes an array element that deleted element is no longer present in the array. In place of value at deleted index undefined x 1 in chrome and undefined is placed at the index. If you do <code>console.log(trees)</code> output <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined × 1, &quot;apple&quot;]</code> in Chrome and in Firefox <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined, &quot;apple&quot;]</code>.</p>
-
+        <p>In JS, that difference is quite subtle. A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Function statement</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunc</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Calling the <span class="keyword">function</span></span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
+<p>Here myFunc() function call is not associated with object hence not invoked through any object.</p>
+<p>A function can take a form of immediately invoked function expression (IIFE):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous Self-invoking Function</span><br><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>Finally there are also arrow functions:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const myFunc = arg =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">"hello"</span>, arg)</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">A method is a piece of code that is called by its name and that is associated with the object. Methods are <span class="built_in">functions</span>. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`.</span><br><span class="line"></span><br><span class="line">Here are some examples of methods:</span><br><span class="line"></span><br><span class="line"><span class="comment">### Example 1</span></span><br><span class="line">```bash</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  attribute: <span class="string">"xyz"</span>,</span><br><span class="line">  myMethod: <span class="function"><span class="title">function</span></span> () &#123;  // Method</span><br><span class="line">    console.log(this.attribute);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Call the method</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
+<p>Here <code>obj1</code> is an object and <code>myMethod</code> is a method which is associated with <code>obj1</code>.</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p>In ES6 we have classes. There the methods will look like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class MyAwesomeClass &#123;</span><br><span class="line">  myMethod() &#123;</span><br><span class="line">    console.log(&quot;hi there&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const obj1 &#x3D; new MyAwesomeClass();</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
+<p>Understand: the method is not some kind of special type of a function, and it’s not about how you declare a function. It’s the way we <strong>call</strong> a function. Look at that:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">  prop1: <span class="string">"buddy"</span></span><br><span class="line">&#125;; </span><br><span class="line">var myFunc = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log(<span class="string">"Hi there"</span>, this);</span><br><span class="line">&#125;;</span><br><span class="line">// <span class="built_in">let</span><span class="string">'s call myFunc as a function: </span></span><br><span class="line"><span class="string">myFunc(); // will output "Hi there undefined" or "Hi there Window"</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">obj1.myMethod = myFunc;</span></span><br><span class="line"><span class="string">//now we'</span>re calling myFunc as a method of obj1, so this will point to obj1</span><br><span class="line">obj1.myMethod(); // will <span class="built_in">print</span> <span class="string">"Hi there"</span> following with obj1.</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/03/07/Question-13/" data-id="cka6e1evn0003n8u2gu3dbfc9" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/20/difference-between-function-and-method/" data-id="cka81vom8000fbsu24fy31hcb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,7 +406,7 @@
 
 
   
-    <article id="post-undefined-x1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-service-workers" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -483,7 +418,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/02/29/undefined-x1/">undefined x 1</a>
+      <a class="article-title" href="/blog/2016/05/13/service-workers/">What are Service Workers and when can you use them?</a>
     </h1>
   
 
@@ -491,19 +426,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"redwood"</span>, <span class="string">"bay"</span>, <span class="string">"cedar"</span>, <span class="string">"oak"</span>, <span class="string">"maple"</span>];</span><br><span class="line">delete trees[3];</span><br></pre></td></tr></table></figure>
-<ul>
-<li>When you run the code above and do <code>console.log(trees);</code> in chrome developer console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined × 1, &quot;maple&quot;]</code>.</li>
-<li>In the recent versions of Chrome you will see the word <code>empty</code> of <code>undefined x 1</code>.</li>
-<li>When you run the same code in Firefox browser console then you will get <code>[&quot;redwood&quot;, &quot;bay&quot;, &quot;cedar&quot;, undefined, &quot;maple&quot;]</code></li>
-</ul>
-<p>Clearly we can see that Chrome has its own way of displaying uninitialized index in arrays. However when you check <code>trees[3] === undefined</code>in any browser you will get similar output as <code>true</code>.</p>
-<p><strong>Note</strong>: Please remember that you need not check for the uninitialized index of the array in trees[3] === ‘undefined × 1’ it will give an error because ‘undefined × 1’ this is just way of displaying an uninitialized index of an array in chrome.</p>
+        <p>It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly known as Offline First.</p>
+<p>Service Workers actively use promises. A Service Worker has to be installed,activated and then it can react on fetch, push and sync events.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/" data-id="cka6e1ewa000dn8u2gea9cyjj" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/" data-id="cka81vomc000kbsu2fxc49ft5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -513,7 +442,7 @@
 
 
   
-    <article id="post-Find-the-Output" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-function-vs-method-vs-constructor" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -525,7 +454,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/02/21/Find-the-Output/">Find the Output</a>
+      <a class="article-title" href="/blog/2016/05/06/function-vs-method-vs-constructor/">Difference between Function, Method and Constructor calls in JavaScript</a>
     </h1>
   
 
@@ -533,20 +462,142 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="What-will-be-the-output-of-the-following-code"><a href="#What-will-be-the-output-of-the-following-code" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var output = (<span class="keyword">function</span>(x) &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(0); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
-<h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output 0 as output. <code>delete</code> operator is used to delete a property from an object. Here x is not an object it’s <strong><code>local variable</code></strong>. <code>delete</code> operator doesn’t affect local variables.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-1"><a href="#What-will-be-the-output-of-the-following-code-1" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = 1; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
-<h3 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>1</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is not an object it’s global variable of type <code>number</code>.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-2"><a href="#What-will-be-the-output-of-the-following-code-2" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = &#123; foo : 1&#125;; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x.foo; </span><br><span class="line">  <span class="built_in">return</span> x.foo; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
-<h3 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>undefined</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is an object which has foo as a property and from a self-invoking function, we are deleting the <code>foo</code> property of object <code>x</code> and after deletion, we are trying to reference deleted property <code>foo</code> which result <code>undefined</code>.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-3"><a href="#What-will-be-the-output-of-the-following-code-3" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Employee = &#123;</span><br><span class="line">  company: <span class="string">'xyz'</span></span><br><span class="line">&#125;</span><br><span class="line">var emp1 = Object.create(Employee); </span><br><span class="line">delete emp1.company</span><br><span class="line">console.log(emp1.company);</span><br></pre></td></tr></table></figure>
-<h3 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output xyz as output. Here emp1 object got company as prototype property. delete operator doesn’t delete prototype property.</p>
-<p><code>emp1</code> object doesn’t have company as its own property. you can test it <code>console.log(emp1.hasOwnProperty(&#39;company&#39;));</code> <code>//output : false</code> However, we can delete company property directly from Employee object using delete Employee.company or we can also delete from emp1 object using <code>__proto__</code> property <code>delete emp1.__proto__.company.</code></p>
+        <p>If your are familiar with Object-oriented programming, More likely familiar to thinking of functions, methods, and class constructors as three separate things. But In JavaScript, these are just three different usage patterns of one single construct.</p>
+<p>functions : The simplest usages of function call:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> helloWorld(name) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">"hello world, "</span> + name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">helloWorld(<span class="string">"JS Geeks"</span>); // <span class="string">"hello world JS Geeks"</span></span><br></pre></td></tr></table></figure>
+<p>Methods in JavaScript are nothing more than object properties that are functions.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">  helloWorld : <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">"hello world, "</span> + this.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  name: <span class="string">'John Carter'</span></span><br><span class="line">&#125;</span><br><span class="line">obj.helloWorld(); // // <span class="string">"hello world John Carter"</span></span><br></pre></td></tr></table></figure>
+<p>Notice how <code>helloWorld</code> refer to <code>this</code> properties of obj. Here it’s clear or you might have already understood that <code>this</code> gets bound to <code>obj</code>. But the interesting point that we can copy a reference to the same function <code>helloWorld</code> in another object and get a difference answer. Let see:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var obj2 = &#123;</span><br><span class="line">  helloWorld : obj.helloWorld,</span><br><span class="line">  name: <span class="string">'John Doe'</span></span><br><span class="line">&#125;</span><br><span class="line">obj2.helloWorld(); // <span class="string">"hello world John Doe"</span></span><br></pre></td></tr></table></figure>
+<p>You might be wonder what exactly happens in a method call here. Here we call the expression itself determine the binding of this <code>this</code>, The expression <code>obj2.helloWorld()</code> looks up the <code>helloWorld</code> property of obj and calls it with receiver object <code>obj2</code>.</p>
+<p>The third use of functions is as constructors. Like function and method, <code>constructors</code> are defined with function.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Employee(name, age) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">'John Doe'</span>, 28);</span><br><span class="line">emp1.name; // <span class="string">"John Doe"</span></span><br><span class="line">emp1.age; // 28</span><br></pre></td></tr></table></figure>
+<p>Unlike function calls and method calls, a constructor call <code>new Employee(&#39;John Doe&#39;, 28)</code> creates a brand new object and passes it as the value of <code>this</code>, and implicitly returns the new object as its result.</p>
+<p>The primary role of the constructor function is to initialize the object.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/21/Find-the-Output/" data-id="cka6e1ev30001n8u2azej8ok9" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/06/function-vs-method-vs-constructor/" data-id="cka81vomb000jbsu2d1oqdice" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Calculate-the-length-of-associative-array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/04/30/Calculate-the-length-of-associative-array/">Calculate the length of associative array</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var counterArray = &#123;</span><br><span class="line">  A : 3,</span><br><span class="line">  B : 4</span><br><span class="line">&#125;;</span><br><span class="line">counterArray[<span class="string">"C"</span>] = 1;</span><br></pre></td></tr></table></figure>
+<p>First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><p><code>Object</code> has <code>keys</code> method which can we used to calculate the length of object.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.keys(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><p>We can also calculate the length of object by iterating through the object and by doing a count of own property of object. This way we will ignore the properties that came from the object’s prototype chain:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getLength(object) &#123;</span><br><span class="line">  var count = 0;</span><br><span class="line">  <span class="keyword">for</span>(key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    // hasOwnProperty method check own property of object</span><br><span class="line">    <span class="keyword">if</span>(object.hasOwnProperty(key)) count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><p>All modern browsers (including IE9+) support the <code>getOwnPropertyNames</code> method, so we can calculate the length using the following code:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getOwnPropertyNames(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><p>Underscore and lodash libraries have the method <code>size</code> dedicated to calculate the object length. We don’t recommend to include one of these libraries just to use the <code>size</code> method, but if it’s already used in your project - why not?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.size(&#123;one: 1, two: 2, three: 3&#125;);</span><br><span class="line">=&gt; 3</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/30/Calculate-the-length-of-associative-array/" data-id="cka81vojw0000bsu2et9t21sq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-20" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/04/25/Question-20/">Difference between typeof and instanceof</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><code>typeof</code> is an operator that returns a string with the type of whatever you pass.</p>
+<p>The <code>typeof</code> operator checks if a value belongs to one of the seven basic types: <code>number</code>, <code>string</code>, <code>boolean</code>, <code>object</code>, <code>function</code>, <code>undefined</code> or <code>Symbol</code>.</p>
+<p><code>typeof(null)</code> will return <code>object</code>.</p>
+<p><code>instanceof</code> is much more intelligent: it works on the level of prototypes. In particular, it tests to see if the right operand appears anywhere in the prototype chain of the left. <code>instanceof</code> doesn’t work with primitive types. <code>instanceof</code> operator checks the current object and returns <code>true</code> if the object is of the specified type, for example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var dog = new Animal();</span><br><span class="line">dog instanceof Animal; // Output : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>Here dog instanceof Animal is true since dog inherits from Animal.prototype</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var name = new String(<span class="string">"xyz"</span>);</span><br><span class="line">name instanceof String; // Output : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/25/Question-20/" data-id="cka81vomd000mbsu2dc0w1ug8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-19" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/04/19/Question-19/">Example of Hoisting</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var salary = <span class="string">"1000$"</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log(<span class="string">"Original salary was "</span> + salary);</span><br><span class="line"></span><br><span class="line">  var salary = <span class="string">"5000$"</span>;</span><br><span class="line"></span><br><span class="line">  console.log(<span class="string">"My New Salary "</span> + salary);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>The code above will output: <code>undefined, 5000$</code> because of hoisting. In the code presented above, you might be expecting <code>salary</code> to retain it values from outer scope until the point that <code>salary</code> was re-declared in the inner scope. But due to <code>hoisting</code> salary value was <code>undefined</code> instead. To understand it better have a look of the following code, here <code>salary</code> variable is hoisted and declared at the top in function scope. When we print its value using <code>console.log</code> the result is <code>undefined</code>. Afterwards the variable is redeclared and the new value <code>&quot;5000$&quot;</code> is assigned to it.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var salary = <span class="string">"1000$"</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  var salary = undefined;</span><br><span class="line">  console.log(<span class="string">"Original salary was "</span> + salary);</span><br><span class="line"></span><br><span class="line">  salary = <span class="string">"5000$"</span>;</span><br><span class="line"></span><br><span class="line">  console.log(<span class="string">"My New Salary "</span> + salary);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/19/Question-19/" data-id="cka81vom6000dbsu29ve5dbxa" class="article-share-link">Share</a>
       
       
     </footer>
@@ -560,7 +611,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -579,7 +630,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -592,6 +643,10 @@
       <ul>
         
           <li>
+            <a href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
             <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
           </li>
         
@@ -600,15 +655,11 @@
           </li>
         
           <li>
-            <a href="/blog/2016/04/12/hoisting-of-function/">Hoisting of function</a>
+            <a href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
           </li>
         
           <li>
-            <a href="/blog/2016/04/05/function-declaration-format/">Function Declaration Format</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2016/03/30/Question-16/">Reference error in function declaration</a>
+            <a href="/blog/2016/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
           </li>
         
       </ul>

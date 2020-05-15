@@ -5,17 +5,17 @@
   
 
   
-  <title>Hoisting of function | msp Writes</title>
+  <title>Difference between typeof and instanceof | msp Writes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Let’s take the following function expression 123var foo &#x3D; function foo() &amp;#123;    return 12;&amp;#125;  In JavaScript var -declared variables and functions are hoisted . Let’s take function hoisting firs">
+  <meta name="description" content="typeof is an operator that returns a string with the type of whatever you pass. The typeof operator checks if a value belongs to one of the seven basic types: number, string, boolean, object, function">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hoisting of function">
-<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/04/12/hoisting-of-function/index.html">
+<meta property="og:title" content="Difference between typeof and instanceof">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/04/25/Question-20/index.html">
 <meta property="og:site_name" content="msp Writes">
-<meta property="og:description" content="Let’s take the following function expression 123var foo &#x3D; function foo() &amp;#123;    return 12;&amp;#125;  In JavaScript var -declared variables and functions are hoisted . Let’s take function hoisting firs">
+<meta property="og:description" content="typeof is an operator that returns a string with the type of whatever you pass. The typeof operator checks if a value belongs to one of the seven basic types: number, string, boolean, object, function">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-04-12T12:39:56.000Z">
-<meta property="article:modified_time" content="2020-05-14T04:29:34.184Z">
+<meta property="article:published_time" content="2016-04-25T04:35:33.000Z">
+<meta property="article:modified_time" content="2020-05-14T13:44:53.864Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -53,7 +53,7 @@
 
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hoisting-of-function" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Question-20" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -65,7 +65,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hoisting of function
+      Difference between typeof and instanceof
     </h1>
   
 
@@ -73,21 +73,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Let’s take the following function expression</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> 12;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>In JavaScript <code>var</code> -declared variables and functions are <code>hoisted</code> . Let’s take function <code>hoisting</code> first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it’s declared. For example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo(); // Here foo is still undefined</span><br><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> 12;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>The code above behind the scene look something like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo(); // Here foo is undefined</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br><span class="line">foo(); // Now foo is defined here</span><br></pre></td></tr></table></figure>
-
+        <p><code>typeof</code> is an operator that returns a string with the type of whatever you pass.</p>
+<p>The <code>typeof</code> operator checks if a value belongs to one of the seven basic types: <code>number</code>, <code>string</code>, <code>boolean</code>, <code>object</code>, <code>function</code>, <code>undefined</code> or <code>Symbol</code>.</p>
+<p><code>typeof(null)</code> will return <code>object</code>.</p>
+<p><code>instanceof</code> is much more intelligent: it works on the level of prototypes. In particular, it tests to see if the right operand appears anywhere in the prototype chain of the left. <code>instanceof</code> doesn’t work with primitive types. <code>instanceof</code> operator checks the current object and returns <code>true</code> if the object is of the specified type, for example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var dog = new Animal();</span><br><span class="line">dog instanceof Animal; // Output : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>Here dog instanceof Animal is true since dog inherits from Animal.prototype</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var name = new String(<span class="string">"xyz"</span>);</span><br><span class="line">name instanceof String; // Output : <span class="literal">true</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/12/hoisting-of-function/" data-id="cka81voma000ibsu2gjgpda8x" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/25/Question-20/" data-id="cka81vomd000mbsu2dc0w1ug8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -96,19 +92,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2016/04/19/Question-19/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2016/04/30/Calculate-the-length-of-associative-array/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Example of Hoisting
+          Calculate the length of associative array
         
       </div>
     </a>
   
   
-    <a href="/blog/2016/04/05/function-declaration-format/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/04/19/Question-19/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Function Declaration Format</div>
+      <div class="article-nav-title">Example of Hoisting</div>
     </a>
   
 </nav>

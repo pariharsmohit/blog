@@ -5,17 +5,17 @@
   
 
   
-  <title>Hoisting of function | msp Writes</title>
+  <title>What are Service Workers and when can you use them? | msp Writes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Let’s take the following function expression 123var foo &#x3D; function foo() &amp;#123;    return 12;&amp;#125;  In JavaScript var -declared variables and functions are hoisted . Let’s take function hoisting firs">
+  <meta name="description" content="It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly kn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hoisting of function">
-<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/04/12/hoisting-of-function/index.html">
+<meta property="og:title" content="What are Service Workers and when can you use them?">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/index.html">
 <meta property="og:site_name" content="msp Writes">
-<meta property="og:description" content="Let’s take the following function expression 123var foo &#x3D; function foo() &amp;#123;    return 12;&amp;#125;  In JavaScript var -declared variables and functions are hoisted . Let’s take function hoisting firs">
+<meta property="og:description" content="It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly kn">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2016-04-12T12:39:56.000Z">
-<meta property="article:modified_time" content="2020-05-14T04:29:34.184Z">
+<meta property="article:published_time" content="2016-05-13T13:40:33.000Z">
+<meta property="article:modified_time" content="2020-05-15T09:29:08.721Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -53,7 +53,7 @@
 
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hoisting-of-function" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-service-workers" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -65,7 +65,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hoisting of function
+      What are Service Workers and when can you use them?
     </h1>
   
 
@@ -73,21 +73,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Let’s take the following function expression</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> 12;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>In JavaScript <code>var</code> -declared variables and functions are <code>hoisted</code> . Let’s take function <code>hoisting</code> first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it’s declared. For example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo(); // Here foo is still undefined</span><br><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> 12;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>The code above behind the scene look something like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo(); // Here foo is undefined</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br><span class="line">foo(); // Now foo is defined here</span><br></pre></td></tr></table></figure>
+        <p>It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly known as Offline First.</p>
+<p>Service Workers actively use promises. A Service Worker has to be installed,activated and then it can react on fetch, push and sync events.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/04/12/hoisting-of-function/" data-id="cka81voma000ibsu2gjgpda8x" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/" data-id="cka81vomc000kbsu2fxc49ft5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -96,19 +88,19 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/2016/04/19/Question-19/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2016/05/20/difference-between-function-and-method/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Example of Hoisting
+          Difference between a method and a function in JavaScript?
         
       </div>
     </a>
   
   
-    <a href="/blog/2016/04/05/function-declaration-format/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/2016/05/06/function-vs-method-vs-constructor/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Function Declaration Format</div>
+      <div class="article-nav-title">Difference between Function, Method and Constructor calls in JavaScript</div>
     </a>
   
 </nav>

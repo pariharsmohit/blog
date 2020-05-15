@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Calculate the length of associative array | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="12345var counterArray &#x3D; &amp;#123;  A : 3,  B : 4&amp;#125;;counterArray[&quot;C&quot;] &#x3D; 1; First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in funct">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Calculate the length of associative array">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/04/30/Calculate-the-length-of-associative-array/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="12345var counterArray &#x3D; &amp;#123;  A : 3,  B : 4&amp;#125;;counterArray[&quot;C&quot;] &#x3D; 1; First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in funct">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-04-30T13:40:33.000Z">
+<meta property="article:modified_time" content="2020-05-15T04:04:30.177Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Calculate-the-length-of-associative-array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Calculate the length of associative array
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var counterArray = &#123;</span><br><span class="line">  A : 3,</span><br><span class="line">  B : 4</span><br><span class="line">&#125;;</span><br><span class="line">counterArray[<span class="string">"C"</span>] = 1;</span><br></pre></td></tr></table></figure>
+<p>First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><p><code>Object</code> has <code>keys</code> method which can we used to calculate the length of object.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.keys(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><p>We can also calculate the length of object by iterating through the object and by doing a count of own property of object. This way we will ignore the properties that came from the object’s prototype chain:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getLength(object) &#123;</span><br><span class="line">  var count = 0;</span><br><span class="line">  <span class="keyword">for</span>(key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    // hasOwnProperty method check own property of object</span><br><span class="line">    <span class="keyword">if</span>(object.hasOwnProperty(key)) count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><p>All modern browsers (including IE9+) support the <code>getOwnPropertyNames</code> method, so we can calculate the length using the following code:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getOwnPropertyNames(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><p>Underscore and lodash libraries have the method <code>size</code> dedicated to calculate the object length. We don’t recommend to include one of these libraries just to use the <code>size</code> method, but if it’s already used in your project - why not?</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.size(&#123;one: 1, two: 2, three: 3&#125;);</span><br><span class="line">=&gt; 3</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/04/30/Calculate-the-length-of-associative-array/" data-id="cka81vojw0000bsu2et9t21sq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2016/05/06/function-vs-method-vs-constructor/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Difference between Function, Method and Constructor calls in JavaScript
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/04/25/Question-20/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Difference between typeof and instanceof</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
