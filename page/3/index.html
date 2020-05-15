@@ -51,6 +51,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Empty-an-Array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/02/06/Empty-an-Array/">Empty an Array in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em>For instance:</em></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var arrayList =  [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p><strong><em>How can we empty the array above?</em></strong></p>
+<p>There are a couple of ways by which we can empty an array, So let’s discuss all the possible way by which we can empty an array.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList = [];</span><br></pre></td></tr></table></figure>
+<p>The code above will set the variable arrayList to a new empty array. This is recommended if you don’t have references to the original array arrayList anywhere else because It will actually create a new empty array. You should be careful with this way of empty the array, because if you have referenced this array from another variable, then the original reference array will remain unchanged, Only use this way if you have only referenced the array by its original variable arrayList.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList = []; // Empty the array</span><br><span class="line">console.log(anotherArrayList); // Output [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.length = 0;</span><br></pre></td></tr></table></figure>
+<p>The code above will clear the existing array by setting its length to 0. This way of emptying an array will also update all the reference variables that point to the original array.</p>
+<p>For instance:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.length = 0; // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayList.splice(0, arrayList.length);</span><br></pre></td></tr></table></figure>
+<p>Above implementation will also work perfectly. This way of empty the array will also update all the references of the original array.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var arrayList = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>]; // Created array</span><br><span class="line">var anotherArrayList = arrayList;  // Referenced arrayList by another variable</span><br><span class="line">arrayList.splice(0, arrayList.length); // Empty the array by setting length to 0</span><br><span class="line">console.log(anotherArrayList); // Output []</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(arrayList.length) &#123;</span><br><span class="line">  arrayList.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Above implementation can also empty the array. But not recommended to use often.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="cka83kkbm00046cu23zjz77gj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Question-5" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -87,7 +138,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="cka81vom4000bbsu2cs2y84kp" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="cka83kkbx000e6cu2184wcw4o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -127,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="cka81voma000hbsu283fchlnu" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="cka83kkby000g6cu21upw5uej" class="article-share-link">Share</a>
       
       
     </footer>
@@ -164,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="cka81volj0001bsu27gdwhsyy" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="cka83kkbk00036cu247axbkwm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka81volz0006bsu20xpfhc5g" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="cka83kkbq00076cu27x3df74l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/01/Undefined-and-Not-Defined/" data-id="cka81vom5000cbsu267nfhf6e" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/01/Undefined-and-Not-Defined/" data-id="cka83kkbx000f6cu29p0jczfl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +329,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -303,11 +354,11 @@
           </li>
         
           <li>
-            <a href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
+            <a href="/blog/2016/06/05/singleton-pattern/">Singleton Pattern</a>
           </li>
         
           <li>
-            <a href="/blog/2016/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
+            <a href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
           </li>
         
       </ul>

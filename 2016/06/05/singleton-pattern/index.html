@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Singleton Pattern | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Singleton Pattern">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2016/06/05/singleton-pattern/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2016-06-05T14:09:20.000Z">
+<meta property="article:modified_time" content="2020-05-15T10:46:55.065Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-singleton-pattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Singleton Pattern
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application. In JavaScript, Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages.</p>
+<p>There are two important points in the traditional definition of Singleton pattern:</p>
+<ul>
+<li>There should be only one instance allowed for a class and</li>
+<li>We should allow global point of access to that single instance</li>
+</ul>
+<p>Let me define singleton pattern in JavaScript context:</p>
+<blockquote>
+<p>It is an object that is used to create    namespace and group together a related set of methods and attributes (encapsulation) and if we allow to initiate then it can be initiated only once.</p>
+</blockquote>
+<p>In JavaScript, we can create singleton though object literal. However, there is some another way but that I will cover in next post.</p>
+<p>A singleton object consists of two parts: The object itself, containing the members (Both methods and attributes) within it, and global variable used to access it. The variable is global so that object can be accessed anywhere in the page, this is a key feature of the singleton pattern.</p>
+<h3 id="JavaScript-A-Singleton-as-a-Namespace"><a href="#JavaScript-A-Singleton-as-a-Namespace" class="headerlink" title="JavaScript: A Singleton as a Namespace"></a>JavaScript: A Singleton as a Namespace</h3><p>As I have already stated above that singleton can be used to declare Namespace in JavaScript. NameSpacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, and it is very easy to wipe out variable by mistake or a function, or even a class without even knowing it. A common example which happens frequently when you are working with another team member parallel,</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findUserName(id) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* Later <span class="keyword">in</span> the page another programmer</span><br><span class="line">added code */</span><br><span class="line">var findUserName = $(<span class="string">'#user_list'</span>);</span><br><span class="line"></span><br><span class="line">/* You are trying to call :( */</span><br><span class="line">console.log(findUserName())</span><br></pre></td></tr></table></figure>
+<p>One of the best ways to prevent accidentally overwriting variable is to namespace your code within a singleton object.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*  Using Namespace */</span><br><span class="line"></span><br><span class="line">var MyNameSpace = &#123;</span><br><span class="line">  findUserName : <span class="keyword">function</span>(id) &#123;&#125;,</span><br><span class="line">  // Other methods and attribute go here as well</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* Later <span class="keyword">in</span> the page another programmer</span><br><span class="line">added code */</span><br><span class="line">var findUserName = $(<span class="string">'#user_list'</span>);</span><br><span class="line"></span><br><span class="line">/* You are trying to call and you make this time workable */</span><br><span class="line">console.log(MyNameSpace.findUserName());</span><br></pre></td></tr></table></figure>
+<h3 id="Singleton-Design-Pattern-Implementation"><a href="#Singleton-Design-Pattern-Implementation" class="headerlink" title="Singleton Design Pattern Implementation"></a>Singleton Design Pattern Implementation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/* Lazy Instantiation skeleton <span class="keyword">for</span> a singleton pattern */</span><br><span class="line"></span><br><span class="line">var MyNameSpace = &#123;&#125;;</span><br><span class="line">MyNameSpace.Singleton = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">  // Private attribute that holds the single instance</span><br><span class="line">  var singletonInstance;  </span><br><span class="line"></span><br><span class="line">  // All of the normal code goes here</span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    // Private members</span><br><span class="line">    var privateVar1 = <span class="string">"Nishant"</span>;</span><br><span class="line">    var privateVar2 = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">privateMethod1</span></span>() &#123;</span><br><span class="line">      // code stuff</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">privateMethod1</span></span>() &#123;</span><br><span class="line">      // code stuff</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      attribute1 : <span class="string">"Nishant"</span>,</span><br><span class="line">      publicMethod: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        alert(<span class="string">"Nishant"</span>);// some code logic</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> &#123;</span><br><span class="line">    // public method (Global access point to Singleton object)</span><br><span class="line">    getInstance: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">      //instance already exist <span class="keyword">then</span> <span class="built_in">return</span>  </span><br><span class="line">      <span class="keyword">if</span>(!singletonInstance) &#123;</span><br><span class="line">        singletonInstance = constructor();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> singletonInstance;           </span><br><span class="line">    &#125;           </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)();   </span><br><span class="line"></span><br><span class="line">// getting access of publicMethod</span><br><span class="line">console.log(MyNamespace.Singleton.getInstance().publicMethod());</span><br></pre></td></tr></table></figure>
+<p>The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/06/05/singleton-pattern/" data-id="cka83kkc5000o6cu29x31aufp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/05/09/Array-function/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Array.prototype.function()
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/05/27/IIFE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">IIFE (Immediately Invoked Function Expression)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/06/05/singleton-pattern/">Singleton Pattern</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
