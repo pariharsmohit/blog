@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>How to prevent modification of object in Javascript? | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object. There are three levels">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to prevent modification of object in Javascript?">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2017/02/09/prevent-modification-of-object/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object. There are three levels">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-02-09T15:37:46.000Z">
+<meta property="article:modified_time" content="2020-05-17T09:22:04.258Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-prevent-modification-of-object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      How to prevent modification of object in Javascript?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ECMAScript 5 introduce several methods to prevent modification of object which lock down object to ensure that no one, accidentally or otherwise, change functionality of Object.</p>
+<p>There are three levels of preventing modification:</p>
+<h2 id="1-Prevent-extensions"><a href="#1-Prevent-extensions" class="headerlink" title="1: Prevent extensions :"></a>1: Prevent extensions :</h2><p>No new properties or methods can be added to the object, but one can change the existing properties and method.</p>
+<p>For example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var employee = &#123;</span><br><span class="line">	name: <span class="string">"Nishant"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// lock the object </span><br><span class="line">Object.preventExtensions(employee);</span><br><span class="line"></span><br><span class="line">// Now try to change the employee object property name</span><br><span class="line">employee.name = <span class="string">"John"</span>; // work fine </span><br><span class="line"></span><br><span class="line">//Now try to add some new property to the object</span><br><span class="line">employee.age = 24; // fails silently unless it<span class="string">'s inside the strict mode</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Seal"><a href="#2-Seal" class="headerlink" title="2: Seal :"></a>2: Seal :</h2><p>It is same as prevent extension, in addition to this also prevent existing properties and methods from being deleted.</p>
+<p>To seal an object, we use <strong>Object.seal()</strong> method. you can check whether an object is sealed or not using <strong>Object.isSealed()</strong>;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var employee = &#123;</span><br><span class="line">	name: <span class="string">"Nishant"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Seal the object </span><br><span class="line">Object.seal(employee);</span><br><span class="line"></span><br><span class="line">console.log(Object.isExtensible(employee)); // <span class="literal">false</span></span><br><span class="line">console.log(Object.isSealed(employee)); // <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">delete employee.name // fails silently unless it<span class="string">'s in strict mode</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Trying to add new property will give an error</span></span><br><span class="line"><span class="string">employee.age = 30; // fails silently unless in strict mode</span></span><br></pre></td></tr></table></figure>
+<p>when an object is sealed, its existing properties and methods can’t be removed. Sealed object are also non-extensible.</p>
+<h2 id="3-Freeze"><a href="#3-Freeze" class="headerlink" title="3: Freeze :"></a>3: Freeze :</h2><p>Same as seal, In addition to this prevent existing properties methods from being modified (All properties and methods are read only).</p>
+<p>To freeze an object, use Object.freeze() method. We can also determine whether an object is frozen using Object.isFrozen();</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var employee = &#123;</span><br><span class="line">	name: <span class="string">"Nishant"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//Freeze the object</span><br><span class="line">Object.freeze(employee); </span><br><span class="line"></span><br><span class="line">// Seal the object </span><br><span class="line">Object.seal(employee);</span><br><span class="line"></span><br><span class="line">console.log(Object.isExtensible(employee)); // <span class="literal">false</span></span><br><span class="line">console.log(Object.isSealed(employee));     // <span class="literal">true</span></span><br><span class="line">console.log(Object.isFrozen(employee));     // <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">employee.name = <span class="string">"xyz"</span>; // fails silently unless <span class="keyword">in</span> strict mode</span><br><span class="line">employee.age = 30;     // fails silently unless <span class="keyword">in</span> strict mode</span><br><span class="line">delete employee.name   // fails silently unless it<span class="string">'s in strict mode</span></span><br></pre></td></tr></table></figure>
+<p>Frozen objects are considered both non-extensible and sealed.</p>
+<h2 id="Recommended"><a href="#Recommended" class="headerlink" title="Recommended:"></a>Recommended:</h2><p>If you are decided to prevent modification, sealed, freeze the object then use in strict mode so that you can catch the error.</p>
+<p>For example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"use strict"</span>;</span><br><span class="line"></span><br><span class="line">var employee = &#123;</span><br><span class="line">	name: <span class="string">"Nishant"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">//Freeze the object</span><br><span class="line">Object.freeze(employee); </span><br><span class="line"></span><br><span class="line">// Seal the object </span><br><span class="line">Object.seal(employee);</span><br><span class="line"></span><br><span class="line">console.log(Object.isExtensible(employee)); // <span class="literal">false</span></span><br><span class="line">console.log(Object.isSealed(employee));     // <span class="literal">true</span></span><br><span class="line">console.log(Object.isFrozen(employee));     // <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">employee.name = <span class="string">"xyz"</span>; // fails silently unless <span class="keyword">in</span> strict mode</span><br><span class="line">employee.age = 30;     // fails silently unless <span class="keyword">in</span> strict mode</span><br><span class="line">delete employee.name;  // fails silently unless it<span class="string">'s in strict mode</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/09/prevent-modification-of-object/" data-id="ckaauvbiz000r1su2dtawfyw8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2020/05/09/Array-function/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Array.prototype.function()
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2016/12/13/detect-reference-values/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Detection of reference values in JavaScript</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2017/02/09/prevent-modification-of-object/">How to prevent modification of object in Javascript?</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2016/12/13/detect-reference-values/">Detection of reference values in JavaScript</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
