@@ -51,6 +51,188 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-detect-reference-values" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/12/13/detect-reference-values/">Detection of reference values in JavaScript</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as <strong>Object, Array, Function, Date, null</strong> and <strong>Error</strong>.</p>
+<p>Detecting object using <code>typeof</code> operator</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof &#123;&#125;);           // object</span><br><span class="line">console.log(typeof []);           // object</span><br><span class="line">console.log(typeof new Array());  // object</span><br><span class="line">console.log(typeof null);         // object </span><br><span class="line">console.log(typeof new RegExp()); // object</span><br><span class="line">console.log(typeof new Date());   // object</span><br></pre></td></tr></table></figure>
+<p>But the downside of using typeof operator to detect an object is that typeof returns <code>object</code> for <code>null</code> (However this is fact that null is an object in JavaScript).</p>
+<p>The best way to detect an object of specific reference type using <code>instanceof</code> operator.</p>
+<blockquote>
+<p>Syntax : value <code>instanceof</code> constructor</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//Detecting an array</span><br><span class="line"><span class="keyword">if</span>(value instanceof Array)&#123;</span><br><span class="line">	console.log(<span class="string">"value is type of array"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Employee constructor <span class="keyword">function</span></span><br><span class="line"><span class="keyword">function</span> Employee(name)&#123;</span><br><span class="line">	this.name = name; // Public property</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">'John'</span>);</span><br><span class="line"></span><br><span class="line">console.log(emp1 instanceof Employee); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><code>instanceof</code> not only check the constructor which is used to create an object but also check it’s prototype chain see below example.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(emp1 instanceof Object); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/12/13/detect-reference-values/" data-id="ckbi9k2sy000s6su2744n80qc" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-constructor-functions-for-inheritance" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/11/29/constructor-functions-for-inheritance/">How to use constructor functions for inheritance in JavaScript?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Let’s say we have <code>Person</code> class which has name, age, salary properties and <strong><code>incrementSalary()</code></strong> method.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Person(name, age, salary) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.salary = salary;</span><br><span class="line">  this.incrementSalary = <span class="keyword">function</span> (byValue) &#123;</span><br><span class="line">    this.salary = this.salary + byValue;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now we wish to create Employee class which contains all the properties of Person class and wanted to add some additional properties into Employee class.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Employee(company)&#123;</span><br><span class="line">	this.company = company;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//Prototypal Inheritance </span><br><span class="line">Employee.prototype = new Person(<span class="string">"Nishant"</span>, 24,5000);</span><br></pre></td></tr></table></figure>
+<p>In the example above, <strong>Employee</strong> type inherits from <strong>Person</strong>. It does so by assigning a new instance of <code>Person</code> to <code>Employee</code> prototype. After that, every instance of <code>Employee</code> inherits its properties and methods from <code>Person</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//Prototypal Inheritance </span><br><span class="line">Employee.prototype = new Person(<span class="string">"Nishant"</span>, 24,5000);</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">"Google"</span>);</span><br><span class="line"></span><br><span class="line">console.log(emp1 instanceof Person); // <span class="literal">true</span></span><br><span class="line">console.log(emp1 instanceof Employee); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>Let’s understand Constructor inheritance</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Defined Person class</span><br><span class="line"><span class="keyword">function</span> Person(name)&#123;</span><br><span class="line">	this.name = name || <span class="string">"Nishant"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// obj inherit Person class properties and method </span><br><span class="line">Person.call(obj); // constructor inheritance</span><br><span class="line"></span><br><span class="line">console.log(obj); // Object &#123;name: <span class="string">"Nishant"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>Here we saw calling <strong><code>Person.call(obj)</code></strong> define the name properties from <code>Person</code> to <code>obj</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(name <span class="keyword">in</span> obj); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>Type-based inheritance is best used with developer defined constructor function rather than natively in JavaScript. In addition to this also allows flexibility in how we create similar type of object.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/11/29/constructor-functions-for-inheritance/" data-id="ckbi9k2sq000l6su262xgc4zk" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-is-array" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/11/21/is-array/">How to check if the value of a variable is an array?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We always encounter in such situation where we need to know whether value is type of array or not.</p>
+<p>For instance : the code below perform some operation based value type</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(value)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"value is an array"</span>)&#123;</span><br><span class="line">		// Then perform some operation</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		// otherwise</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Let’s discuss some way to detect an array in JavaScript.</p>
+<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1:"></a>Method 1:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value)&#123;</span><br><span class="line">	<span class="built_in">return</span> Object.prototype.toString.call(value) === <span class="string">'[object Array]'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This approach is most popular way to detecting a value of type array in JavaScript and recommended to use. This approach relies on the fact that, native toString() method on a given value produce a standard string in all browser.</p>
+<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2:"></a>Method 2:</h3><p>Duck typing test for array type detection</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Duck typing arrays</span><br><span class="line"><span class="keyword">function</span> isArray(value)&#123;</span><br><span class="line">	<span class="built_in">return</span> typeof value.sort === <span class="string">'function'</span>;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<p>As we can see above isArray method will return true if value object have sort method of type function. Now assume you have created a object with sort method</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bar = &#123;</span><br><span class="line">    sort: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        // Some code </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now when you check <strong><code>isArray(bar)</code></strong> then it will return true because bar object has sort method, But the fact is bar is not an array.</p>
+<p>So this method is not a best way to detect an array as you can see it’s not handle the case when some object has sort method.</p>
+<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3:"></a>Method 3:</h3><p>ECMAScript 5 has introduced <strong>Array.isArray()</strong> method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.</p>
+<p>In many JavaScript libraries you may see the code below for detecting an value of type array.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(value)&#123;</span><br><span class="line">   // ECMAScript 5 feature</span><br><span class="line">	<span class="keyword">if</span>(typeof Array.isArray === <span class="string">'function'</span>)&#123;</span><br><span class="line">		<span class="built_in">return</span> Array.isArray(value);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	   <span class="built_in">return</span> Object.prototype.toString.call(value) === <span class="string">'[object Array]'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4:"></a>Method 4:</h3><p>You can query the constructor name:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value) &#123;</span><br><span class="line">	<span class="built_in">return</span> value.constructor.name === <span class="string">"Array"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Method-5"><a href="#Method-5" class="headerlink" title="Method 5:"></a>Method 5:</h3><p>You check if a given value is an instanceof Array:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value) &#123;</span><br><span class="line">	<span class="built_in">return</span> value instanceof Array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/11/21/is-array/" data-id="ckbi9k2t4000v6su26b0khh69" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-es5-example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/10/01/es5-example/">ES5 Example</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, 3000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>For ES6, you can just replace <code>var i</code> with <code>let i</code>.</p>
+<p>For ES5, you need to create a function scope like here:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="keyword">function</span>(j) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      console.log(<span class="string">'The index of this number is: '</span> + j)</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;(i), 3000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This can also achieve by forEach (allows you to keep that variable within the forEach’s scope)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line">arr.forEach(<span class="keyword">function</span>(i) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, 3000);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/10/01/es5-example/" data-id="ckbi9k2sx000r6su22bjefl2p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-what-is-NaN" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -81,7 +263,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/09/16/what-is-NaN/" data-id="ckabdl2q80011g8u26jsg8ebp" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/09/16/what-is-NaN/" data-id="ckbi9k2td00116su224w894qq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +308,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/08/05/check-for-key-in-object/" data-id="ckabdl2p6000hg8u247wmd371" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/08/05/check-for-key-in-object/" data-id="ckbi9k2tp00156su22ulwe488" class="article-share-link">Share</a>
       
       
     </footer>
@@ -179,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/07/10/what-are-promises/" data-id="ckabdl2q10010g8u20omqehch" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/07/10/what-are-promises/" data-id="ckbi9k2te00126su2cmid7617" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +398,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/07/03/clone-object-without-deepcloning/" data-id="ckabdl2p7000ig8u2cbw70tp5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/07/03/clone-object-without-deepcloning/" data-id="ckbi9k2sn000h6su2coqlfiot" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +438,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/26/detection-of-undefined-object/" data-id="ckabdl2pa000lg8u2alxe7jni" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/06/26/detection-of-undefined-object/" data-id="ckbi9k2t0000t6su22zy2dr3w" class="article-share-link">Share</a>
       
       
     </footer>
@@ -299,221 +481,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/18/ways-of-creating-objects/" data-id="ckabdl2pq000xg8u2f0n102dp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-singleton-pattern" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/05/singleton-pattern/">Singleton Pattern</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>The singleton pattern is an often used JavaScript design pattern. It provides a way to wrap the code into a logical unit that can be accessed through a single variable. The Singleton design pattern is used when only one instance of an object is needed throughout the lifetime of an application. In JavaScript, Singleton pattern have many uses, they can be used for NameSpacing, which reduce the number of global variables in your page (prevent from polluting global space), organizing the code in a consistent manner, which increase the readability and maintainability of your pages.</p>
-<p>There are two important points in the traditional definition of Singleton pattern:</p>
-<ul>
-<li>There should be only one instance allowed for a class and</li>
-<li>We should allow global point of access to that single instance</li>
-</ul>
-<p>Let me define singleton pattern in JavaScript context:</p>
-<blockquote>
-<p>It is an object that is used to create    namespace and group together a related set of methods and attributes (encapsulation) and if we allow to initiate then it can be initiated only once.</p>
-</blockquote>
-<p>In JavaScript, we can create singleton though object literal. However, there is some another way but that I will cover in next post.</p>
-<p>A singleton object consists of two parts: The object itself, containing the members (Both methods and attributes) within it, and global variable used to access it. The variable is global so that object can be accessed anywhere in the page, this is a key feature of the singleton pattern.</p>
-<h3 id="JavaScript-A-Singleton-as-a-Namespace"><a href="#JavaScript-A-Singleton-as-a-Namespace" class="headerlink" title="JavaScript: A Singleton as a Namespace"></a>JavaScript: A Singleton as a Namespace</h3><p>As I have already stated above that singleton can be used to declare Namespace in JavaScript. NameSpacing is a large part of responsible programming in JavaScript. Because everything can be overwritten, and it is very easy to wipe out variable by mistake or a function, or even a class without even knowing it. A common example which happens frequently when you are working with another team member parallel,</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findUserName(id) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* Later <span class="keyword">in</span> the page another programmer</span><br><span class="line">added code */</span><br><span class="line">var findUserName = $(<span class="string">'#user_list'</span>);</span><br><span class="line"></span><br><span class="line">/* You are trying to call :( */</span><br><span class="line">console.log(findUserName())</span><br></pre></td></tr></table></figure>
-<p>One of the best ways to prevent accidentally overwriting variable is to namespace your code within a singleton object.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*  Using Namespace */</span><br><span class="line"></span><br><span class="line">var MyNameSpace = &#123;</span><br><span class="line">  findUserName : <span class="keyword">function</span>(id) &#123;&#125;,</span><br><span class="line">  // Other methods and attribute go here as well</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/* Later <span class="keyword">in</span> the page another programmer</span><br><span class="line">added code */</span><br><span class="line">var findUserName = $(<span class="string">'#user_list'</span>);</span><br><span class="line"></span><br><span class="line">/* You are trying to call and you make this time workable */</span><br><span class="line">console.log(MyNameSpace.findUserName());</span><br></pre></td></tr></table></figure>
-<h3 id="Singleton-Design-Pattern-Implementation"><a href="#Singleton-Design-Pattern-Implementation" class="headerlink" title="Singleton Design Pattern Implementation"></a>Singleton Design Pattern Implementation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">/* Lazy Instantiation skeleton <span class="keyword">for</span> a singleton pattern */</span><br><span class="line"></span><br><span class="line">var MyNameSpace = &#123;&#125;;</span><br><span class="line">MyNameSpace.Singleton = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">  // Private attribute that holds the single instance</span><br><span class="line">  var singletonInstance;  </span><br><span class="line"></span><br><span class="line">  // All of the normal code goes here</span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">constructor</span></span>() &#123;</span><br><span class="line">    // Private members</span><br><span class="line">    var privateVar1 = <span class="string">"Nishant"</span>;</span><br><span class="line">    var privateVar2 = [1,2,3,4,5];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">privateMethod1</span></span>() &#123;</span><br><span class="line">      // code stuff</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">privateMethod1</span></span>() &#123;</span><br><span class="line">      // code stuff</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">      attribute1 : <span class="string">"Nishant"</span>,</span><br><span class="line">      publicMethod: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        alert(<span class="string">"Nishant"</span>);// some code logic</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">return</span> &#123;</span><br><span class="line">    // public method (Global access point to Singleton object)</span><br><span class="line">    getInstance: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">      //instance already exist <span class="keyword">then</span> <span class="built_in">return</span>  </span><br><span class="line">      <span class="keyword">if</span>(!singletonInstance) &#123;</span><br><span class="line">        singletonInstance = constructor();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="built_in">return</span> singletonInstance;           </span><br><span class="line">    &#125;           </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;)();   </span><br><span class="line"></span><br><span class="line">// getting access of publicMethod</span><br><span class="line">console.log(MyNamespace.Singleton.getInstance().publicMethod());</span><br></pre></td></tr></table></figure>
-<p>The singleton implemented above is easy to understand. The singleton class maintains a static reference to the lone singleton instance and return that reference from the static getInstance() method.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/05/singleton-pattern/" data-id="ckabdl2pm000ug8u2946je19p" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-IIFE" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/05/27/IIFE/">IIFE (Immediately Invoked Function Expression)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong><em><code>IIFE</code> is a function that runs as soon as it’s defined.</em></strong> Usually it’s anonymous (doesn’t have a function name), but it also can be named.<br>Here’s an example of IIFE:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  console.log(<span class="string">"Hi, I'm IIFE!"</span>);</span><br><span class="line">&#125;)();</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE!"</span></span><br></pre></td></tr></table></figure>
-<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h3><p>So, here’s how it works. Remember the difference between function statements<code>(function a () {})</code> and function expressions <code>(var a = function() {})</code>? So, IIFE is a function expression. To make it an expression we surround our function declaration into the parens. We do it to explicitly tell the parser that it’s an expression, not a statement (JS doesn’t allow statements in parens).</p>
-<p>After the function you can see the two <code>()</code> braces, this is how we run the function we just declared.</p>
-<p>That’s it. The rest is details.</p>
-<ul>
-<li><p>The function inside IIFE doesn’t have to be anonymous. This one will work perfectly fine and will help to detect your function in a stacktrace during debugging:</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> <span class="function"><span class="title">myIIFEFunc</span></span>() &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE!"</span>);</span><br><span class="line">&#125;)();</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE!"</span></span><br></pre></td></tr></table></figure></li>
-<li><p>It can take some parameters:</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> myIIFEFunc(param1) &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE, "</span> + param1);</span><br><span class="line">&#125;)(<span class="string">"Yuri"</span>);</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE, Yuri!"</span></span><br></pre></td></tr></table></figure>
-<p>  Here there value “Yuri” is passed to the param1 of the function.</p>
-</li>
-<li><p>It can return a value:</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var result = (<span class="keyword">function</span> myIIFEFunc(param1) &#123;</span><br><span class="line">console.log(<span class="string">"Hi, I'm IIFE, "</span> + param1);</span><br><span class="line"><span class="built_in">return</span> 1;</span><br><span class="line">&#125;)(<span class="string">"Yuri"</span>);</span><br><span class="line">// outputs <span class="string">"Hi, I'm IIFE, Yuri!"</span></span><br><span class="line">// result variable will contain 1</span><br></pre></td></tr></table></figure></li>
-<li><p>You don’t have to surround the function declaration into parens, although it’s the most common way to define IIFE. Instead you can use any of the following forms:</p>
-<ul>
-<li><p><code>~function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
-</li>
-<li><p><code>!function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
-</li>
-<li><p><code>+function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
-</li>
-<li><p><code>-function(){console.log(&quot;hi I&#39;m IIFE&quot;)}()</code></p>
-</li>
-<li><p><code>(function(){console.log(&quot;hi I&#39;m IIFE&quot;)}());</code></p>
-</li>
-<li><p><code>var i = function(){console.log(&quot;hi I&#39;m IIFE&quot;)}();</code></p>
-</li>
-<li><p><code>true &amp;&amp; function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }();</code></p>
-</li>
-<li><p><code>0, function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }();</code></p>
-</li>
-<li><p><code>new function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }</code></p>
-</li>
-<li><p><code>new function(){ console.log(&quot;hi I&#39;m IIFE&quot;) }()</code></p>
-<p>Please don’t use all these forms to impress colleagues, but be prepared that you can encounter them in someone’s code.</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="Applications-and-usefulness"><a href="#Applications-and-usefulness" class="headerlink" title="Applications and usefulness"></a>Applications and usefulness</h3><p>Variables and functions that you declare inside an IIFE are not visible to the outside world, so you can:</p>
-<ul>
-<li>Use the IIFE for isolating parts of the code to hide details of implementation.</li>
-<li>Specify the input interface of your code by passing commonly used global objects (window, document, jQuery, etc.) IIFE’s parameters, and then reference these global objects within the IIFE via a local scope.</li>
-<li>Use it in closures, when you use closures in loops.</li>
-<li>IIFE is the basis of in the module pattern in ES5 code, it helps to prevent polluting the global scope and provide the module interface to the outside.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/27/IIFE/" data-id="ckabdl2os0003g8u2347gh2rw" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-difference-between-function-and-method" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In JS, that difference is quite subtle. A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Function statement</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunc</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Calling the <span class="keyword">function</span></span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
-<p>Here myFunc() function call is not associated with object hence not invoked through any object.</p>
-<p>A function can take a form of immediately invoked function expression (IIFE):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous Self-invoking Function</span><br><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p>Finally there are also arrow functions:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const myFunc = arg =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">"hello"</span>, arg)</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">A method is a piece of code that is called by its name and that is associated with the object. Methods are <span class="built_in">functions</span>. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`.</span><br><span class="line"></span><br><span class="line">Here are some examples of methods:</span><br><span class="line"></span><br><span class="line"><span class="comment">### Example 1</span></span><br><span class="line">```bash</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  attribute: <span class="string">"xyz"</span>,</span><br><span class="line">  myMethod: <span class="function"><span class="title">function</span></span> () &#123;  // Method</span><br><span class="line">    console.log(this.attribute);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Call the method</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
-<p>Here <code>obj1</code> is an object and <code>myMethod</code> is a method which is associated with <code>obj1</code>.</p>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p>In ES6 we have classes. There the methods will look like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class MyAwesomeClass &#123;</span><br><span class="line">  myMethod() &#123;</span><br><span class="line">    console.log(&quot;hi there&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const obj1 &#x3D; new MyAwesomeClass();</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
-<p>Understand: the method is not some kind of special type of a function, and it’s not about how you declare a function. It’s the way we <strong>call</strong> a function. Look at that:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">  prop1: <span class="string">"buddy"</span></span><br><span class="line">&#125;; </span><br><span class="line">var myFunc = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log(<span class="string">"Hi there"</span>, this);</span><br><span class="line">&#125;;</span><br><span class="line">// <span class="built_in">let</span><span class="string">'s call myFunc as a function: </span></span><br><span class="line"><span class="string">myFunc(); // will output "Hi there undefined" or "Hi there Window"</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">obj1.myMethod = myFunc;</span></span><br><span class="line"><span class="string">//now we'</span>re calling myFunc as a method of obj1, so this will point to obj1</span><br><span class="line">obj1.myMethod(); // will <span class="built_in">print</span> <span class="string">"Hi there"</span> following with obj1.</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/20/difference-between-function-and-method/" data-id="ckabdl2pb000mg8u2bu4o2ji6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-service-workers" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/05/13/service-workers/">What are Service Workers and when can you use them?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It’s a technology that allows your web application to use cached resources first, and provide default experience offline, before getting more data from the network later. This principle is commonly known as Offline First.</p>
-<p>Service Workers actively use promises. A Service Worker has to be installed,activated and then it can react on fetch, push and sync events.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/05/13/service-workers/" data-id="ckabdl2pr000yg8u20gzl2y1m" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/06/18/ways-of-creating-objects/" data-id="ckbi9k2tq00166su23mkpb4xc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -527,7 +495,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/">&amp;laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/3/">Next &amp;raquo;</a>
+    <a class="extend prev" rel="prev" href="/blog/">&amp;laquo; Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/3/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -546,7 +514,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -571,11 +539,11 @@
           </li>
         
           <li>
-            <a href="/blog/2017/03/06/test-string-as-a-literal-and-as-an-object/">Test string as a literal and as an object</a>
+            <a href="/blog/2018/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
           </li>
         
           <li>
-            <a href="/blog/2017/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every mesaage logged using console.log</a>
+            <a href="/blog/2017/08/03/find-the%20-longest-word/">Find the Longest Word in a String</a>
           </li>
         
       </ul>

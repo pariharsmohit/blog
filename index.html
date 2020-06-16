@@ -89,7 +89,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/15/tower-of-hanoi/" data-id="ckabdl2pt000zg8u29c7uc8vl" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/15/tower-of-hanoi/" data-id="ckbi9k2tc00106su2dnou6bdy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +140,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="ckabdl2ov0006g8u2gay4f64x" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/11/Cloning-an-Object/" data-id="ckbi9k2s500046su2bpru490t" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +270,199 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="ckabdl2ms0000g8u240v8h62t" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/05/09/Array-function/" data-id="ckbi9k2s000016su24b0c4nei" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-angular-to-gihub-pages" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Github pages is a Github feature that allows you to host a static website or web app for free, and it’s as simple as putting the files in a gh-pages branch of your project’s repository. The Angular CLI, along with a node package called angular-cli-ghpages make it even easier to deploy to Github pages.</p>
+</blockquote>
+<p>First install the angular-cli-ghpages globally:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g angular-cli-ghpages</span><br></pre></td></tr></table></figure>
+<p>Now use the Angular CLI with the –base-href flag to build your project and set the correct base href loaction:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng build --prod --base-href &quot;&lt;repo-name&gt;&quot;</span><br></pre></td></tr></table></figure>
+<p>If the <code>--base-href</code> is not set then we can just use</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ng build --prod</span><br></pre></td></tr></table></figure>
+<p>Then it’s as simple as running angular-cli-ghpages. You can use the ngh shorthand:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ngh</span><br></pre></td></tr></table></figure>
+<p>And done! Your app will now be hosted at <a href="https://username.github.io/app-name/" target="_blank" rel="noopener">https://username.github.io/app-name/</a></p>
+<p>You can optionally add a message to the commit when deploying:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ngh --message&#x3D;&quot;First deploy&quot;</span><br></pre></td></tr></table></figure>
+<p>You can also specify which branch to deploy:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ngh --branch&#x3D;production</span><br></pre></td></tr></table></figure>
+<p>And finally, you can always do a dry run before actually deploying to see the output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ngh --dry-run</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2018/11/24/angular-to-gihub-pages/" data-id="ckbi9k2sp000k6su26bas39rs" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-find-the -longest-word" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/08/03/find-the%20-longest-word/">Find the Longest Word in a String</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em><code>In this problem we are going to return the length of the longest word in a string.</code></em></strong></p>
+<p>We provide <strong><code>Math.max</code></strong> with the length of each word as argument, and it will simply return the highest of all.</p>
+<p>Let’s analyze everything inside the <strong><code>Math.max</code></strong> parenthesees to understand how we do that.</p>
+<p><strong><code>str.split(&quot; &quot;)</code></strong> splits the string into an array, taking spaces as separators. It returns this array: [“The”,”quick,“brown”,“fox”,“jumped”,“over”,“the”,“lazy”,“dog”].</p>
+<p>Then, we will make another array, made from the lengths of each element of the <strong><code>str.split(&quot; &quot;)</code></strong> array with <strong><code>map()</code></strong>.</p>
+<p><strong><code>str.split(&quot; &quot;).map(word =&gt; word.length)</code></strong> returns [3, 5, 5, 3, 6, 4, 3, 4, 3]</p>
+<p>Finally, we pass the array as argument for the <strong><code>Math.max</code></strong> function with the spread operator <strong><code>...</code></strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findLongestWordLength(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> Math.max(...str.split(<span class="string">" "</span>).map(word =&gt; word.length));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>or<br>We can do this by using the <strong>‘reduce()`</strong> method also.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findLongestWordLength(s) &#123;</span><br><span class="line">  <span class="built_in">return</span> s.split(<span class="string">' '</span>)</span><br><span class="line">    .reduce(<span class="keyword">function</span>(x, y) &#123;</span><br><span class="line">      <span class="built_in">return</span> Math.max(x, y.length)</span><br><span class="line">    &#125;, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/08/03/find-the%20-longest-word/" data-id="ckbi9k2ss000o6su259na70mx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-reverse-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/05/07/reverse-a-string/">Reverse a string the JavaScript way</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We need to take the string and reverse it, so if it originally reads ‘hello’, it will now read ‘olleh’.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="keyword">for</span> (var reversedStr = <span class="string">""</span>, i = str.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">    reversedStr += str[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> reversedStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Starting at the last character of the string passed to the function, we build a new string reversedStr from str.</p>
+</li>
+<li><p>During each iteration of the for loop, reversedStr gets concatenated with itself and the current character.</p>
+</li>
+<li><p>Finally, we return the final value of reversedStr.</p>
+</li>
+</ul>
+<h3 id="We-can-do-this-finally-by-using-the-JavaScript-functions-like-this"><a href="#We-can-do-this-finally-by-using-the-JavaScript-functions-like-this" class="headerlink" title="We can do this finally by using the JavaScript functions like this-"></a>We can do this finally by using the JavaScript functions like this-</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> str</span><br><span class="line">    .split(<span class="string">""</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>for example:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseString(<span class="string">"Greetings from Earth"</span>);</span><br></pre></td></tr></table></figure>
+<p>this will return</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"htraE morf sgniteerG"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Our goal is to take the input, <code>str</code>, and return it in reverse. Our first step is to split the string by characters using <code>split(&#39;&#39;)</code>. Notice that we don’t leave anything in between the single quotes, this tells the function to split the string by each character.</p>
+</li>
+<li><p>Using the <code>split()</code> function will turn our string into an array of characters, keep that in mind as we move forward.</p>
+</li>
+<li><p>Next we chain the <code>reverse()</code> function, which takes our array of characters and reverses them.</p>
+</li>
+<li><p>Finally, we chain <code>join(&#39;&#39;)</code> to put our characters back together into a string. Notice once again that we left no spaces in the argument for join, this makes sure that the array of characters is joined back together by each character.</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/05/07/reverse-a-string/" data-id="ckbi9k2tf00136su24bfy008u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Copy-text-to-clipboard" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We are going to copy the text from the text input in the HTML page and we want to do that on the click of a button.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> value=<span class="string">"Hello World"</span> id=<span class="string">"myInput"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;button onclick=<span class="string">"myFunction()"</span>&gt;Copy text&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+<p>Now the function definition will look like this:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunction</span></span>() &#123;</span><br><span class="line">  <span class="built_in">let</span> copyText = document.getElementById(<span class="string">"myInput"</span>);</span><br><span class="line">  copyText.select();</span><br><span class="line">  document.execCommand(<span class="string">"copy"</span>);</span><br><span class="line">  alert(<span class="string">"Copied the text: "</span> + copyText.value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We can test this code here</p>
+<iframe width="100%" height="100" src="//jsfiddle.net/mohitmogambo/5pf6ec1u/4/embedded/result/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="1"></iframe>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/04/13/Copy-text-to-clipboard/" data-id="ckbi9k2s700066su2ek4x4rox" class="article-share-link">Share</a>
       
       
     </footer>
@@ -307,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckabdl2qb0012g8u299r15e4e" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbi9k2tb000z6su28s5kfgau" class="article-share-link">Share</a>
       
       
     </footer>
@@ -329,7 +521,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every mesaage logged using console.log</a>
+      <a class="article-title" href="/blog/2017/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every message logged using console.log</a>
     </h1>
   
 
@@ -347,7 +539,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/15/add-prefix-to-console.log/" data-id="ckabdl2p3000eg8u2210ehd66" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/15/add-prefix-to-console.log/" data-id="ckbi9k2sq000m6su2bzy2fkg3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -396,189 +588,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/09/prevent-modification-of-object/" data-id="ckabdl2po000vg8u2a91xars0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-detect-reference-values" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/13/detect-reference-values/">Detection of reference values in JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as <strong>Object, Array, Function, Date, null</strong> and <strong>Error</strong>.</p>
-<p>Detecting object using <code>typeof</code> operator</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof &#123;&#125;);           // object</span><br><span class="line">console.log(typeof []);           // object</span><br><span class="line">console.log(typeof new Array());  // object</span><br><span class="line">console.log(typeof null);         // object </span><br><span class="line">console.log(typeof new RegExp()); // object</span><br><span class="line">console.log(typeof new Date());   // object</span><br></pre></td></tr></table></figure>
-<p>But the downside of using typeof operator to detect an object is that typeof returns <code>object</code> for <code>null</code> (However this is fact that null is an object in JavaScript).</p>
-<p>The best way to detect an object of specific reference type using <code>instanceof</code> operator.</p>
-<blockquote>
-<p>Syntax : value <code>instanceof</code> constructor</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//Detecting an array</span><br><span class="line"><span class="keyword">if</span>(value instanceof Array)&#123;</span><br><span class="line">	console.log(<span class="string">"value is type of array"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Employee constructor <span class="keyword">function</span></span><br><span class="line"><span class="keyword">function</span> Employee(name)&#123;</span><br><span class="line">	this.name = name; // Public property</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">'John'</span>);</span><br><span class="line"></span><br><span class="line">console.log(emp1 instanceof Employee); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><code>instanceof</code> not only check the constructor which is used to create an object but also check it’s prototype chain see below example.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(emp1 instanceof Object); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/12/13/detect-reference-values/" data-id="ckabdl2pf000pg8u24jlb1r5d" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-constructor-functions-for-inheritance" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/11/29/constructor-functions-for-inheritance/">How to use constructor functions for inheritance in JavaScript?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Let say we have <code>Person</code> class which has name, age, salary properties and <strong><code>incrementSalary()</code></strong> method.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Person(name, age, salary) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.age = age;</span><br><span class="line">  this.salary = salary;</span><br><span class="line">  this.incrementSalary = <span class="keyword">function</span> (byValue) &#123;</span><br><span class="line">    this.salary = this.salary + byValue;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Now we wish to create Employee class which contains all the properties of Person class and wanted to add some additional properties into Employee class.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Employee(company)&#123;</span><br><span class="line">	this.company = company;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//Prototypal Inheritance </span><br><span class="line">Employee.prototype = new Person(<span class="string">"Nishant"</span>, 24,5000);</span><br></pre></td></tr></table></figure>
-<p>In the example above, <strong>Employee</strong> type inherits from <strong>Person</strong>. It does so by assigning a new instance of <code>Person</code> to <code>Employee</code> prototype. After that, every instance of <code>Employee</code> inherits its properties and methods from <code>Person</code>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//Prototypal Inheritance </span><br><span class="line">Employee.prototype = new Person(<span class="string">"Nishant"</span>, 24,5000);</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">"Google"</span>);</span><br><span class="line"></span><br><span class="line">console.log(emp1 instanceof Person); // <span class="literal">true</span></span><br><span class="line">console.log(emp1 instanceof Employee); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>Let’s understand Constructor inheritance</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//Defined Person class</span><br><span class="line"><span class="keyword">function</span> Person(name)&#123;</span><br><span class="line">	this.name = name || <span class="string">"Nishant"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// obj inherit Person class properties and method </span><br><span class="line">Person.call(obj); // constructor inheritance</span><br><span class="line"></span><br><span class="line">console.log(obj); // Object &#123;name: <span class="string">"Nishant"</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>Here we saw calling <strong><code>Person.call(obj)</code></strong> define the name properties from <code>Person</code> to <code>obj</code>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(name <span class="keyword">in</span> obj); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>Type-based inheritance is best used with developer defined constructor function rather than natively in JavaScript. In addition to this also allows flexibility in how we create similar type of object.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/11/29/constructor-functions-for-inheritance/" data-id="ckabdl2ph000rg8u20gnqcm5x" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-is-array" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/11/21/is-array/">How to check if the value of a variable is an array?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>We always encounter in such situation where we need to know whether value is type of array or not.</p>
-<p>For instance : the code below perform some operation based value type</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(value)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="string">"value is an array"</span>)&#123;</span><br><span class="line">		// Then perform some operation</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		// otherwise</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Let’s discuss some way to detect an array in JavaScript.</p>
-<h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1:"></a>Method 1:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value)&#123;</span><br><span class="line">	<span class="built_in">return</span> Object.prototype.toString.call(value) === <span class="string">'[object Array]'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This approach is most popular way to detecting a value of type array in JavaScript and recommended to use. This approach relies on the fact that, native toString() method on a given value produce a standard string in all browser.</p>
-<h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2:"></a>Method 2:</h3><p>Duck typing test for array type detection</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Duck typing arrays</span><br><span class="line"><span class="keyword">function</span> isArray(value)&#123;</span><br><span class="line">	<span class="built_in">return</span> typeof value.sort === <span class="string">'function'</span>;</span><br><span class="line">&#125;</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<p>As we can see above isArray method will return true if value object have sort method of type function. Now assume you have created a object with sort method</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bar = &#123;</span><br><span class="line">    sort: <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">        // Some code </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Now when you check <strong><code>isArray(bar)</code></strong> then it will return true because bar object has sort method, But the fact is bar is not an array.</p>
-<p>So this method is not a best way to detect an array as you can see it’s not handle the case when some object has sort method.</p>
-<h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3:"></a>Method 3:</h3><p>ECMAScript 5 has introduced <strong>Array.isArray()</strong> method to detect an array type value. The sole purpose of this method is accurately detecting whether a value is an array or not.</p>
-<p>In many JavaScript libraries you may see the code below for detecting an value of type array.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(value)&#123;</span><br><span class="line">   // ECMAScript 5 feature</span><br><span class="line">	<span class="keyword">if</span>(typeof Array.isArray === <span class="string">'function'</span>)&#123;</span><br><span class="line">		<span class="built_in">return</span> Array.isArray(value);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	   <span class="built_in">return</span> Object.prototype.toString.call(value) === <span class="string">'[object Array]'</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4:"></a>Method 4:</h3><p>You can query the constructor name:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value) &#123;</span><br><span class="line">	<span class="built_in">return</span> value.constructor.name === <span class="string">"Array"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Method-5"><a href="#Method-5" class="headerlink" title="Method 5:"></a>Method 5:</h3><p>You check if a given value is an instanceof Array:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isArray(value) &#123;</span><br><span class="line">	<span class="built_in">return</span> value instanceof Array;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/11/21/is-array/" data-id="ckabdl2pl000tg8u20gffgyjz" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-es5-example" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/10/01/es5-example/">ES5 Example</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, 3000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>For ES6, you can just replace <code>var i</code> with <code>let i</code>.</p>
-<p>For ES5, you need to create a function scope like here:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line"><span class="keyword">for</span> (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">  setTimeout(<span class="keyword">function</span>(j) &#123;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      console.log(<span class="string">'The index of this number is: '</span> + j)</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;(i), 3000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This can also achieve by forEach (allows you to keep that variable within the forEach’s scope)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 32, 65, 2];</span><br><span class="line">arr.forEach(<span class="keyword">function</span>(i) &#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(<span class="string">'The index of this number is: '</span> + i);</span><br><span class="line">  &#125;, 3000);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/10/01/es5-example/" data-id="ckabdl2pc000og8u2e1fs8qmd" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/09/prevent-modification-of-object/" data-id="ckbi9k2t3000u6su25ebq0g50" class="article-share-link">Share</a>
       
       
     </footer>
@@ -592,7 +602,7 @@
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/2/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -611,7 +621,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -636,11 +646,11 @@
           </li>
         
           <li>
-            <a href="/blog/2017/03/06/test-string-as-a-literal-and-as-an-object/">Test string as a literal and as an object</a>
+            <a href="/blog/2018/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
           </li>
         
           <li>
-            <a href="/blog/2017/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every mesaage logged using console.log</a>
+            <a href="/blog/2017/08/03/find-the%20-longest-word/">Find the Longest Word in a String</a>
           </li>
         
       </ul>

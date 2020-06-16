@@ -51,6 +51,163 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Question-16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/30/Question-16/">Reference error in function declaration</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// NFE (Named Function Expression)</span><br><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+<p>The output will be Reference Error. To fix the bug we can try to rewrite the code a little bit:</p>
+<h3 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample 1"></a>Sample 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bar = <span class="function"><span class="title">function</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-2"><a href="#Sample-2" class="headerlink" title="Sample 2"></a>Sample 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+<p>The function definition can have only one reference letiable as a function name, In sample 1 bar is reference letiable which is pointing to anonymous function and in sample 2 we have function statement and bar is the function name.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123;</span><br><span class="line">  // foo is visible here</span><br><span class="line">  // bar is visible here</span><br><span class="line">  console.log(typeof bar()); // Works here :)</span><br><span class="line">&#125;;</span><br><span class="line">// foo is visible here</span><br><span class="line">// bar is undefined here</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/30/Question-16/" data-id="ckbi9k2sc000a6su2aup9am3s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-15" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/23/Question-15/">Example of operator precedence</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> z = 1, y = z = typeof y;</span><br><span class="line">console.log(y);</span><br></pre></td></tr></table></figure>
+<p>The code above will print string <code>&quot;undefined&quot;</code> as output. According to associativity rule operator with the same precedence are processed based on their associativity property of operator. Here associativity of the assignment operator is <code>Right to Left</code> so first <code>typeof y</code> will evaluate first which is string <code>&quot;undefined&quot;</code> and assigned to <code>z</code> and then <code>y</code> would be assigned the value of z. The overall sequence will look like that:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> z;</span><br><span class="line">z = 1;</span><br><span class="line"><span class="built_in">let</span> y;</span><br><span class="line">z = typeof y;</span><br><span class="line">y = z;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/23/Question-15/" data-id="ckbi9k2sa00086su26moa0lf6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-14" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/15/Question-14/">Addition of operators</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var bar = <span class="literal">true</span>;</span><br><span class="line">console.log(bar + 0);   </span><br><span class="line">console.log(bar + <span class="string">"xyz"</span>);  </span><br><span class="line">console.log(bar + <span class="literal">true</span>);  </span><br><span class="line">console.log(bar + <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<p>The code above will output <code>1, &quot;truexyz&quot;, 2, 1</code> as output. Here’s a general guideline for the plus operator:</p>
+<ul>
+<li>Number + Number -&gt; Addition</li>
+<li>Boolean + Number -&gt; Addition</li>
+<li>Boolean + Boolean -&gt; Addition</li>
+<li>Number + String -&gt; Concatenation</li>
+<li>String + Boolean -&gt; Concatenation</li>
+<li>String + String -&gt; Concatenation</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/15/Question-14/" data-id="ckbi9k2sb00096su2fo686i9k" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Question-13" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2016/03/07/Question-13/">Use of delete operator</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var trees = [<span class="string">"xyz"</span>, <span class="string">"xxxx"</span>, <span class="string">"test"</span>, <span class="string">"ryan"</span>, <span class="string">"apple"</span>];</span><br><span class="line">delete trees[3];</span><br><span class="line">console.log(trees.length);</span><br></pre></td></tr></table></figure>
+<p>The code above will output <code>5</code> as output. When we used <code>delete</code> operator for deleting an array element then, the array length is not affected by this. This holds even if you deleted all elements of an array using <code>delete</code> operator.</p>
+<p>So when delete operator removes an array element that deleted element is no longer present in the array. In place of value at deleted index undefined x 1 in chrome and undefined is placed at the index. If you do <code>console.log(trees)</code> output <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined × 1, &quot;apple&quot;]</code> in Chrome and in Firefox <code>[&quot;xyz&quot;, &quot;xxxx&quot;, &quot;test&quot;, undefined, &quot;apple&quot;]</code>.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2016/03/07/Question-13/" data-id="ckbi9k2sn000i6su2cg711vej" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-undefined-x1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -83,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/" data-id="ckabdl2pq000wg8u2bpme4w95" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/29/undefined-x1/" data-id="ckbi9k2ta000y6su216g877mt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -126,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/21/Find-the-Output/" data-id="ckabdl2ot0004g8u2cg5rd10o" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/21/Find-the-Output/" data-id="ckbi9k2s900076su2de4n3ayn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckabdl2p9000kg8u28l9844fp" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckbi9k2so000j6su27caccdk8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -227,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="ckabdl2op0001g8u2bd8bcymj" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/02/06/Empty-an-Array/" data-id="ckbi9k2s300026su22aakcn67" class="article-share-link">Share</a>
       
       
     </footer>
@@ -273,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="ckabdl2oz000bg8u276f277lq" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/29/Question-5/" data-id="ckbi9k2se000b6su29vtagm28" class="article-share-link">Share</a>
       
       
     </footer>
@@ -313,125 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="ckabdl2p2000dg8u235su5dxh" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Drawback-of-declaring-methods-directly-in-JavaScript-Objects" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/">The drawback of declaring methods directly in JavaScript objects</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>One of the drawback of declaring methods directly in JavaScript objects is that they are very memory inefficient. When you do that, a new copy of the method is created for each instance of an object. Let’s see it on example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var Employee = <span class="keyword">function</span> (name, company, salary) &#123;</span><br><span class="line">  this.name = name || <span class="string">""</span>;       </span><br><span class="line">  this.company = company || <span class="string">""</span>;</span><br><span class="line">  this.salary = salary || 5000;</span><br><span class="line"></span><br><span class="line">  // We can create a method like this:</span><br><span class="line">  this.formatSalary = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> <span class="string">"$ "</span> + this.salary;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// we can also create method <span class="keyword">in</span> Employee<span class="string">'s prototype:</span></span><br><span class="line"><span class="string">Employee.prototype.formatSalary2 = function() &#123;</span></span><br><span class="line"><span class="string">    return "$ " + this.salary;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//creating objects</span></span><br><span class="line"><span class="string">var emp1 = new Employee('</span>Yuri Garagin<span class="string">', '</span>Company 1<span class="string">', 1000000);</span></span><br><span class="line"><span class="string">var emp2 = new Employee('</span>Dinesh Gupta<span class="string">', '</span>Company 2<span class="string">', 1039999);</span></span><br><span class="line"><span class="string">var emp3 = new Employee('</span>Erich Fromm<span class="string">', '</span>Company 3<span class="string">', 1299483);</span></span><br></pre></td></tr></table></figure>
-<p>Here each instance variable <code>emp1</code>, <code>emp2</code>, <code>emp3</code> has own copy of <code>formatSalary</code> method. However the <code>formatSalary2</code> will only be added once to an object <code>Employee.prototype</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="ckabdl2ou0005g8u2cmzrhj6l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question 2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/01/08/Question%202/">For which value of x the results of the following statements are not the same?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>For which value of x the results of the following statements are not the same?</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//  <span class="keyword">if</span>( x &lt;= 100 ) &#123;...&#125;</span><br><span class="line"><span class="keyword">if</span>( !(x &gt; 100) ) &#123;...&#125;</span><br></pre></td></tr></table></figure>
-<p><strong><em><code>Solution</code></em></strong><br><code>NaN &lt;= 100</code> is <code>false</code> and <code>NaN &gt; 100</code> is also <code>false</code>, so if the value of <code>x</code> is <code>NaN</code>, the statements are not the same.</p>
-<p>The same holds true for any value of x that being converted to Number, returns <code>NaN</code>, e.g.: <code>undefined</code>, [1,2,5], <code>{a:22}</code> , etc.</p>
-<p>This is why you need to pay attention when you deal with numeric variables. NaN can’t be equal, less than or more than any other numeric value, so the only reliable way to check if the value is NaN, is to use <code>isNaN()</code> function.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/08/Question%202/" data-id="ckabdl2ow0007g8u21yjk4uvk" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Undefined-and-Not-Defined" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/01/01/Undefined-and-Not-Defined/">Undefined vs Not Defined</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In JavaScript if you try to use a variable that doesn’t exist and has not been declared, then JavaScript will throw an error <code>var name is not defined</code> and the script will stop executing thereafter. But If you use <code>typeof undeclared_variable</code> then it will return <code>undefined</code>.</p>
-<p>Before starting further discussion let’s understand the difference between declaration and definition.</p>
-<p><code>var x</code> is a declaration because you are not defining what value it holds yet, but you are declaring its existence and the need for memory allocation.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> x; // declaring x</span><br><span class="line">console.log(x); // output: undefined</span><br></pre></td></tr></table></figure>
-<p><code>var x = 1</code> is both declaration and definition (also we can say we are doing initialisation), Here declaration and assignment of value happen inline for variable x, In JavaScript every variable declaration and function declaration brings to the top of its current scope in which it’s declared then assignment happen in order this term is called <em><code>hoisting</code></em>.</p>
-<p>A variable can be declared but not defined. When we try to access it, It will result <code>undefined</code>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var x; // Declaration</span><br><span class="line">typeof x === <span class="string">'undefined'</span>; // Will <span class="built_in">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p>A variable can be neither declared nor defined. When we try to reference such variable then the result will be not defined.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(y);  // Output: ReferenceError: y is not defined</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/01/01/Undefined-and-Not-Defined/" data-id="ckabdl2p1000cg8u2ht3p1jki" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2016/01/22/What-is-closure/" data-id="ckbi9k2si000e6su22dta9rkf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -445,7 +484,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/blog/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/blog/">1</a><a class="page-number" href="/blog/page/2/">2</a><a class="page-number" href="/blog/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/5/">Next &amp;raquo;</a>
   </nav>
 
 </section>
@@ -464,7 +503,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
     </div>
   </div>
 
@@ -489,11 +528,11 @@
           </li>
         
           <li>
-            <a href="/blog/2017/03/06/test-string-as-a-literal-and-as-an-object/">Test string as a literal and as an object</a>
+            <a href="/blog/2018/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
           </li>
         
           <li>
-            <a href="/blog/2017/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every mesaage logged using console.log</a>
+            <a href="/blog/2017/08/03/find-the%20-longest-word/">Find the Longest Word in a String</a>
           </li>
         
       </ul>
