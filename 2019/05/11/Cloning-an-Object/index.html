@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Cloning an Object | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Here we are going to create a function which will clone or copy an object to another object. If the Object only contains primitive value such as strings, numbers, booleans etc. We can use the function">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cloning an Object">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="Here we are going to create a function which will clone or copy an object to another object. If the Object only contains primitive value such as strings, numbers, booleans etc. We can use the function">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-05-11T17:55:50.000Z">
+<meta property="article:modified_time" content="2020-06-18T10:40:01.522Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Cloning-an-Object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Cloning an Object
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Here we are going to create a function which will clone or copy an object to another object.</p>
+<p>If the Object only contains primitive value such as <strong><code>strings</code></strong>, <strong><code>numbers</code></strong>, <strong><code>booleans</code></strong> etc. We can use the function <strong><em><code>Object.assign()</code></em></strong>. </p>
+<p><strong><em><code>Object.assign()</code></em></strong> function takes two arguments -</p>
+<ol>
+<li>new object which is going to be generated</li>
+<li>source object from which the data is to be copied.</li>
+</ol>
+<p>Example:- </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> swift = &#123;</span><br><span class="line">    brand: <span class="string">'Maruti'</span>,</span><br><span class="line">    fuel: <span class="string">'petrol'</span>,</span><br><span class="line">    doors: 4,</span><br><span class="line">    <span class="built_in">type</span>: <span class="string">'hatchback'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> baleno = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">Object.assign(baleno, swift);</span><br><span class="line"></span><br><span class="line">baleno.type = <span class="string">'premium hatchback'</span>;</span><br><span class="line"></span><br><span class="line">console.log(baleno, swift);</span><br></pre></td></tr></table></figure>
+<p>This results in:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;brand: <span class="string">"Maruti"</span>, fuel: <span class="string">"petrol"</span>, doors: 4, <span class="built_in">type</span>: <span class="string">"hatchback"</span>&#125;</span><br><span class="line">&#123;brand: <span class="string">"Maruti"</span>, fuel: <span class="string">"petrol"</span>, doors: 4, <span class="built_in">type</span>: <span class="string">"premium hatchback"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>This solution does not allows us to peform deep cloning. <em>Deep Cloning</em> stands for copying the object which contains objects inside it as its properties.<br>For that purpose we can use <strong><em><code>JSON.parse(JSON.stringify(source_object))</code></em></strong>. This method first converts the whole <code>source-object</code> into a string and then parse(resolve into its component parts) it to another object.</p>
+<p>Apart from doing the above two we can simply create our own function that will do the same using the recursion.<br>For Example:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bmw = &#123;</span><br><span class="line">  model: <span class="string">'x4'</span>,</span><br><span class="line">  fuel: <span class="string">'petrol'</span>,</span><br><span class="line">  engine: &#123;</span><br><span class="line">  	<span class="built_in">type</span>: <span class="string">'v6'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">let</span> car = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="built_in">clone</span>(src)&#123;</span><br><span class="line">    <span class="built_in">let</span> result = &#123;&#125;;</span><br><span class="line">    <span class="built_in">let</span> keys = Object.keys(src);</span><br><span class="line">    //[<span class="string">'model'</span>, <span class="string">'fuel'</span>, <span class="string">'engine'</span>];</span><br><span class="line">    keys.forEach(key =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span>(typeof src[key] === <span class="string">"object"</span>) &#123;</span><br><span class="line">            result[key] = <span class="built_in">clone</span>(src[key]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            result[key] = src[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  <span class="built_in">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">car = <span class="built_in">clone</span>(bmw);</span><br><span class="line"></span><br><span class="line">car.fuel = <span class="string">'disel'</span>;</span><br><span class="line">car.engine.type=<span class="string">'v8'</span>;</span><br><span class="line"></span><br><span class="line">console.log(car,bmw);</span><br></pre></td></tr></table></figure>
+<p>This results in-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;model: <span class="string">"x4"</span>, fuel: <span class="string">"disel"</span>, engine: &#123;<span class="built_in">type</span>: <span class="string">"v8"</span>&#125;&#125;</span><br><span class="line">&#123;model: <span class="string">"x4"</span>, fuel: <span class="string">"petrol"</span>, engine: &#123;<span class="built_in">type</span>: <span class="string">"v6"</span>&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>In this we are providing an <strong><code>if statement</code></strong> which compares the keys inside the object and if the key returns value equal to the <code>object</code> we will call the same function again, but this time inside the conditional statement.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbknri6u0002q4u28lre258t" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2019/10/17/Array-function/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Array.prototype.function()
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2019/04/13/Copy-text-to-clipboard/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Copy text to clipboard</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/10/17/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

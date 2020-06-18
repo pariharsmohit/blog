@@ -51,7 +51,7 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-detect-reference-values" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-test-string-as-a-literal-and-as-an-object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
     
@@ -63,7 +63,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/12/13/detect-reference-values/">Detection of reference values in JavaScript</a>
+      <a class="article-title" href="/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/">Test string as a literal and as an object</a>
     </h1>
   
 
@@ -71,22 +71,54 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>In Javascript Object are called as reference type, Any value other then primitive is definitely a reference type. There are several built-in reference type such as <strong>Object, Array, Function, Date, null</strong> and <strong>Error</strong>.</p>
-<p>Detecting object using <code>typeof</code> operator</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof &#123;&#125;);           // object</span><br><span class="line">console.log(typeof []);           // object</span><br><span class="line">console.log(typeof new Array());  // object</span><br><span class="line">console.log(typeof null);         // object </span><br><span class="line">console.log(typeof new RegExp()); // object</span><br><span class="line">console.log(typeof new Date());   // object</span><br></pre></td></tr></table></figure>
-<p>But the downside of using typeof operator to detect an object is that typeof returns <code>object</code> for <code>null</code> (However this is fact that null is an object in JavaScript).</p>
-<p>The best way to detect an object of specific reference type using <code>instanceof</code> operator.</p>
-<blockquote>
-<p>Syntax : value <code>instanceof</code> constructor</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//Detecting an array</span><br><span class="line"><span class="keyword">if</span>(value instanceof Array)&#123;</span><br><span class="line">	console.log(<span class="string">"value is type of array"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// Employee constructor <span class="keyword">function</span></span><br><span class="line"><span class="keyword">function</span> Employee(name)&#123;</span><br><span class="line">	this.name = name; // Public property</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var emp1 = new Employee(<span class="string">'John'</span>);</span><br><span class="line"></span><br><span class="line">console.log(emp1 instanceof Employee); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<p><code>instanceof</code> not only check the constructor which is used to create an object but also check it’s prototype chain see below example.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(emp1 instanceof Object); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+        <p>For example: We can create string using string literal and using String constructor function.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// using string literal</span><br><span class="line">var ltrlStr = <span class="string">"Hi I am string literal"</span>;</span><br><span class="line">// using String constructor <span class="keyword">function</span> </span><br><span class="line">var objStr = new String(<span class="string">"Hi I am string object"</span>);</span><br></pre></td></tr></table></figure>
+<p>We can use <code>typeof</code> operator to test string literal and <code>instanceof</code> operator to test String object.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> isString(str) &#123;</span><br><span class="line">	<span class="built_in">return</span> typeof(str) == <span class="string">'string'</span> || str instanceof String;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var ltrlStr = <span class="string">"Hi I am string literal"</span>;</span><br><span class="line">var objStr = new String(<span class="string">"Hi I am string object"</span>);</span><br><span class="line">console.log(isString(ltrlStr)); // <span class="literal">true</span></span><br><span class="line">console.log(isString(objStr)); // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/12/13/detect-reference-values/" data-id="ckbi9k2sy000s6su2744n80qc" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbknri7n0010q4u2ckqe2wa8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-add-prefix-to-console.log" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/02/15/add-prefix-to-console.log/">A log function which will add a prefix to every message logged using console.log</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>For example, If you log <code>console.log(&quot;Some message&quot;)</code> then output should be <strong>(your message) Some message</strong></p>
+<p>Logging error message or some informative message is always required when you dealing with client side JavaScript using console.log method. Some time you want to add some prefix to identify message generated log from your application hence you would like to prefix your app name in every console.log.</p>
+<p>A general way to do this keep adding your app name in every console.log message like</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(<span class="string">'your app name'</span> + <span class="string">'some error message'</span>);</span><br></pre></td></tr></table></figure>
+<p>But doing in this way you have to write your app name everytime when you log message using console.</p>
+<p>There are some best way we can achieve this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">appLog</span></span>() &#123;</span><br><span class="line">  var args = Array.prototype.slice.call(arguments);</span><br><span class="line">  args.unshift(<span class="string">'your app name'</span>);</span><br><span class="line">  console.log.apply(console, args);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">appLog(<span class="string">"Some error message"</span>); </span><br><span class="line">//output of above console: <span class="string">'your app name Some error message'</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2018/02/15/add-prefix-to-console.log/" data-id="ckbknri78000iq4u2c45t1oti" class="article-share-link">Share</a>
       
       
     </footer>
@@ -108,7 +140,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/11/29/constructor-functions-for-inheritance/">How to use constructor functions for inheritance in JavaScript?</a>
+      <a class="article-title" href="/blog/2017/11/29/constructor-functions-for-inheritance/">How to use constructor functions for inheritance in JavaScript?</a>
     </h1>
   
 
@@ -131,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/11/29/constructor-functions-for-inheritance/" data-id="ckbi9k2sq000l6su262xgc4zk" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/29/constructor-functions-for-inheritance/" data-id="ckbknri7b000mq4u2aemu1rdb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -153,7 +185,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/11/21/is-array/">How to check if the value of a variable is an array?</a>
+      <a class="article-title" href="/blog/2017/11/21/is-array/">How to check if the value of a variable is an array?</a>
     </h1>
   
 
@@ -184,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/11/21/is-array/" data-id="ckbi9k2t4000v6su26b0khh69" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/21/is-array/" data-id="ckbknri7k000vq4u20p2627lr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -206,7 +238,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/10/01/es5-example/">ES5 Example</a>
+      <a class="article-title" href="/blog/2017/10/01/es5-example/">ES5 Example</a>
     </h1>
   
 
@@ -223,7 +255,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/10/01/es5-example/" data-id="ckbi9k2sx000r6su22bjefl2p" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/10/01/es5-example/" data-id="ckbknri7g000qq4u2gqma1y4c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -245,7 +277,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/09/16/what-is-NaN/">What is NaN, why do we need it, and when can it break the page?</a>
+      <a class="article-title" href="/blog/2017/09/16/what-is-NaN/">What is NaN, why do we need it, and when can it break the page?</a>
     </h1>
   
 
@@ -263,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/09/16/what-is-NaN/" data-id="ckbi9k2td00116su224w894qq" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbknri7r0015q4u26vy89mjw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -285,7 +317,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/08/05/check-for-key-in-object/">How to check whether a key exist in a JavaScript object or not?</a>
+      <a class="article-title" href="/blog/2017/08/05/check-for-key-in-object/">How to check whether a key exist in a JavaScript object or not?</a>
     </h1>
   
 
@@ -308,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/08/05/check-for-key-in-object/" data-id="ckbi9k2tp00156su22ulwe488" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/08/05/check-for-key-in-object/" data-id="ckbknri79000kq4u222bz3tr5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -330,7 +362,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/07/10/what-are-promises/">What are promises and how they are useful?</a>
+      <a class="article-title" href="/blog/2017/07/10/what-are-promises/">What are promises and how they are useful?</a>
     </h1>
   
 
@@ -361,44 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/07/10/what-are-promises/" data-id="ckbi9k2te00126su2cmid7617" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-clone-object-without-deepcloning" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/07/03/clone-object-without-deepcloning/">Function to clone an object without deep cloning</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>We will create a function called <code>Clone</code> which takes an object and creates an object of it but not copy deep property of object</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Clone(object)&#123;</span><br><span class="line">  var newObject = &#123;&#125;;</span><br><span class="line">  <span class="keyword">for</span>(var key <span class="keyword">in</span> object)&#123;</span><br><span class="line">  	newObject[key] = object[key];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> newObject;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>this function can be used as-</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var objectLit = &#123;foo : <span class="string">'Bar'</span>&#125;; </span><br><span class="line">    var cloneObj = Clone(obj); // Clone is the <span class="keyword">function</span> <span class="built_in">which</span> you have to write </span><br><span class="line">    console.log(cloneObj === Clone(objectLit)); // this should <span class="built_in">return</span> <span class="literal">false</span></span><br><span class="line">    console.log(cloneObj == Clone(objectLit)); // this should <span class="built_in">return</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/07/03/clone-object-without-deepcloning/" data-id="ckbi9k2sn000h6su2coqlfiot" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/07/10/what-are-promises/" data-id="ckbknri7q0014q4u2e7tw7853" class="article-share-link">Share</a>
       
       
     </footer>
@@ -420,7 +415,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/26/detection-of-undefined-object/">Best way to detect undefined object property in JavaScript</a>
+      <a class="article-title" href="/blog/2017/06/26/detection-of-undefined-object/">Best way to detect undefined object property in JavaScript</a>
     </h1>
   
 
@@ -438,7 +433,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/26/detection-of-undefined-object/" data-id="ckbi9k2t0000t6su22zy2dr3w" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/06/26/detection-of-undefined-object/" data-id="ckbknri7c000oq4u295kmh3d6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -460,7 +455,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/blog/2016/06/18/ways-of-creating-objects/">Ways of creating objects in JavaScript</a>
+      <a class="article-title" href="/blog/2017/06/18/ways-of-creating-objects/">Ways of creating objects in JavaScript</a>
     </h1>
   
 
@@ -481,7 +476,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2016/06/18/ways-of-creating-objects/" data-id="ckbi9k2tq00166su23mkpb4xc" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/06/18/ways-of-creating-objects/" data-id="ckbknri7q0013q4u2bhkg78gd" class="article-share-link">Share</a>
       
       
     </footer>
@@ -514,7 +509,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/11/">November 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/11/">November 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/01/">January 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 
@@ -527,23 +522,23 @@
       <ul>
         
           <li>
-            <a href="/blog/2020/05/15/tower-of-hanoi/">Tower of Hanoi</a>
+            <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
           </li>
         
           <li>
-            <a href="/blog/2020/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
           </li>
         
           <li>
-            <a href="/blog/2020/05/09/Array-function/">Array.prototype.function()</a>
+            <a href="/blog/2019/10/17/Array-function/">Array.prototype.function()</a>
           </li>
         
           <li>
-            <a href="/blog/2018/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
+            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
           </li>
         
           <li>
-            <a href="/blog/2017/08/03/find-the%20-longest-word/">Find the Longest Word in a String</a>
+            <a href="/blog/2019/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
           </li>
         
       </ul>
