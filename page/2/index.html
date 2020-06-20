@@ -51,6 +51,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-difference-between-function-and-method" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In JS, that difference is quite subtle. A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Function statement</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunc</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Calling the <span class="keyword">function</span></span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
+<p>Here myFunc() function call is not associated with object hence not invoked through any object.</p>
+<p>A function can take a form of immediately invoked function expression (IIFE):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous Self-invoking Function</span><br><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>Finally there are also arrow functions:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const myFunc = arg =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">"hello"</span>, arg)</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">A method is a piece of code that is called by its name and that is associated with the object. Methods are <span class="built_in">functions</span>. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`.</span><br><span class="line"></span><br><span class="line">Here are some examples of methods:</span><br><span class="line"></span><br><span class="line"><span class="comment">### Example 1</span></span><br><span class="line">```bash</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  attribute: <span class="string">"xyz"</span>,</span><br><span class="line">  myMethod: <span class="function"><span class="title">function</span></span> () &#123;  // Method</span><br><span class="line">    console.log(this.attribute);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Call the method</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
+<p>Here <code>obj1</code> is an object and <code>myMethod</code> is a method which is associated with <code>obj1</code>.</p>
+<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p>In ES6 we have classes. There the methods will look like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class MyAwesomeClass &#123;</span><br><span class="line">  myMethod() &#123;</span><br><span class="line">    console.log(&quot;hi there&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const obj1 &#x3D; new MyAwesomeClass();</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
+<p>Understand: the method is not some kind of special type of a function, and it’s not about how you declare a function. It’s the way we <strong>call</strong> a function. Look at that:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">  prop1: <span class="string">"buddy"</span></span><br><span class="line">&#125;; </span><br><span class="line">var myFunc = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log(<span class="string">"Hi there"</span>, this);</span><br><span class="line">&#125;;</span><br><span class="line">// <span class="built_in">let</span><span class="string">'s call myFunc as a function: </span></span><br><span class="line"><span class="string">myFunc(); // will output "Hi there undefined" or "Hi there Window"</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">obj1.myMethod = myFunc;</span></span><br><span class="line"><span class="string">//now we'</span>re calling myFunc as a method of obj1, so this will point to obj1</span><br><span class="line">obj1.myMethod(); // will <span class="built_in">print</span> <span class="string">"Hi there"</span> following with obj1.</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2018/05/20/difference-between-function-and-method/" data-id="ckbnx67r8000uiku208hed9ji" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-reverse-a-string" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -100,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/05/07/reverse-a-string/" data-id="ckbn6ebxl000w4su206al1s0w" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/05/07/reverse-a-string/" data-id="ckbnx67r9000wiku2get3bx2k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbn6ebxq00114su21nd5ffjt" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbnx67rg0012iku27wxl35nk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -177,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/02/15/add-prefix-to-console.log/" data-id="ckbn6ebx4000l4su2cslgcgzg" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/02/15/add-prefix-to-console.log/" data-id="ckbnx67qa000fiku256wwf2yr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -222,7 +267,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/11/29/constructor-functions-for-inheritance/" data-id="ckbn6ebx1000j4su2bp5n8fzk" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/29/constructor-functions-for-inheritance/" data-id="ckbnx67qx000miku28dmj9wte" class="article-share-link">Share</a>
       
       
     </footer>
@@ -275,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/11/21/is-array/" data-id="ckbn6ebxg000t4su26jdp1dze" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/21/is-array/" data-id="ckbnx67r9000viku21v87h0z8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -314,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/10/01/es5-example/" data-id="ckbn6ebx7000o4su2bv7d29b6" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/10/01/es5-example/" data-id="ckbnx67r1000riku27umk61r5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -354,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbn6ebyl00164su21lmv7a70" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbnx67rx0015iku2175z4rfg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -399,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/08/05/check-for-key-in-object/" data-id="ckbn6ebx5000m4su2bsgs95b8" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/08/05/check-for-key-in-object/" data-id="ckbnx67qz000oiku23fu84o02" class="article-share-link">Share</a>
       
       
     </footer>
@@ -452,47 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/07/10/what-are-promises/" data-id="ckbn6ebyk00154su24ugv8825" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-detection-of-undefined-object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/06/26/detection-of-undefined-object/">Best way to detect undefined object property in JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Consider the code below.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var person = &#123;</span><br><span class="line">	name: <span class="string">'Nishant'</span>,</span><br><span class="line">	age : 24</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Here the <code>person</code> object has a <code>name</code> and <code>age</code> property. Now we are trying to access the <strong>salary</strong> property which we haven’t declared on the person object so while accessing it will return undefined. So how we will ensure whether property is undefined or not before performing some operation over it?</p>
-<h3 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a>Explanation:</h3><p>We can use <code>typeof</code> operator to check undefined</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(typeof someProperty === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">	console.log(<span class="string">'something is undefined here'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Now we are trying to access salary property of person object.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(typeof person.salary === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">	console.log(<span class="string">"salary is undefined here because we haven't declared"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/06/26/detection-of-undefined-object/" data-id="ckbn6ebxb000p4su2382icrw7" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/07/10/what-are-promises/" data-id="ckbnx67rh0013iku2gu35cemq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,7 +530,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 

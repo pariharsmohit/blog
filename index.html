@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/04/03/semicolons-in-javascript/" data-id="ckbn6ebxn000x4su2hzig21k2" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/04/03/semicolons-in-javascript/" data-id="ckbnx67rc000ziku2hzxi8vo5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbn6ebxp000z4su2fkyr5xbr" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbnx67rd0010iku2h2dt71eb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbn6ebwz000h4su27vra9huz" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbnx67qt000kiku22kojb1rw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbn6ebw600004su24lh7a9z7" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbnx67p70000iku27n508cou" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbn6ebwh00024su248fj48un" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbnx67pl0002iku2c3fpbsti" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +416,78 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbn6ebwd00014su2fp0cddnu" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbnx67pm0003iku20748bhpf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-arrow-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2019/03/13/arrow-function/">Arrow Functions =&gt; When to use and when not to?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="https://raw.githubusercontent.com/mohitsparihar/massets/master/arrow-function.svg" style="float:center; margin: 0 auto;" />
+
+<h2 id="ES6-Arrow-Functions"><a href="#ES6-Arrow-Functions" class="headerlink" title="ES6 Arrow Functions"></a>ES6 Arrow Functions</h2><p>Introduced as part of the ECMAScript 6, arrow functions went viral. The new syntax to declare functions is wonderful, saving us time and enhancing clarity in many situations, removing all the distracting, unnecessary, chunk that usually came with declaring a JS function.</p>
+<p>Let’s take an example of a regular function declaration, and the same function using arrow functions:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">welcome</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">"Welcome!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And with ES6 Arrow Functions</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const welcome = () =&gt; <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
+<p>Let’s look at another example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const f = list.map(<span class="keyword">function</span>(item) &#123; <span class="built_in">return</span> item; &#125;)</span><br></pre></td></tr></table></figure>
+<p>vs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const f = list.map((item) =&gt; item)</span><br></pre></td></tr></table></figure>
+<p>Ain’t that beautiful?</p>
+<p>However, we need to be careful, as the differences between the 2 declarations are not just syntax, and thus it cannot be applied in every situation. Let’s now take a look at situations under which using Arrow Functions is not the right way.</p>
+<h2 id="Object-Methods"><a href="#Object-Methods" class="headerlink" title="Object Methods"></a>Object Methods</h2><p>Take a look at the following example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const article = &#123;</span><br><span class="line">  claps: 0,</span><br><span class="line">  clap: () =&gt; &#123;</span><br><span class="line">    this.claps++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, it would be intuitive to think that every time we call <code>article.clap()</code> the attribute <code>article.claps</code> would increase by one, initially from 0 to 1. However, this is not the case, the value of claps will sadly remain the same and this article will never get to be popular.</p>
+<blockquote>
+<h2 id="As-MDN-states"><a href="#As-MDN-states" class="headerlink" title="As  MDN states:"></a>As  MDN states:</h2></blockquote>
+<blockquote>
+<p>An arrow function expression is a syntactically compact alternative to a regular function expression, although without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill suited as methods, and they cannot be used as constructors.</p>
+</blockquote>
+<p>meaning that in our case, the enclosed scope would be the <strong><code>window</code></strong> object. Invoking the method <code>clap()</code> would simply attempt to increment the property claps on the window object.</p>
+<p>However, if instead, we use the traditional syntax:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const article = &#123;</span><br><span class="line">  claps: 0,</span><br><span class="line">  clap: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    this.claps++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Live Example:</p>
+<h2 id="Object-Prototype"><a href="#Object-Prototype" class="headerlink" title="Object Prototype"></a>Object Prototype</h2><p>Similar to the example above, object prototypes will evaluate this as the window object, like in the following example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Article &#123;</span><br><span class="line">  constructor(title) &#123;</span><br><span class="line">    this.title = title;</span><br><span class="line">    this.shared = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Article.prototype.share = () =&gt; &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Similarly, to the previous case the method <code>share()</code> won’t work due to the enclosed scope to the window object. And again the solution will look familiar:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Article.prototype.share2 = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Live Example:</p>
+<h2 id="Callback-functions-with-dynamic-context"><a href="#Callback-functions-with-dynamic-context" class="headerlink" title="Callback functions with dynamic context"></a>Callback functions with dynamic context</h2><p>In the next example we will take a look at the dynamic context in callbacks, like those in events:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">  this.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Again the similarities with previous examples are obvious, same as before the enclosed scope is affecting the meaning of this.</p>
+<p>Live Example:</p>
+<p>A way to workaround a solution is to use an arrow function and use the event object to access the object in that function, however, this does not solve the enclosing of the scope, but it does work for this particular example</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">  e.target.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Makes-the-code-less-readable"><a href="#Makes-the-code-less-readable" class="headerlink" title="Makes the code less readable"></a>Makes the code less readable</h2><p>Sometimes the use of arrow functions will make the code unreadable, not very likely but can happen, don’t use them then. The idea behind it is to make our code clearer, so make sure it stays that way.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2019/03/13/arrow-function/" data-id="ckbnx67qc000hiku2efo01v35" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +536,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbn6ebxs00134su24bx4eely" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbnx67sg0017iku2cz2o9i5n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -510,7 +581,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbn6ebx6000n4su2bfet06qy" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbnx67qy000niku25mpghp8q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -553,52 +624,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbn6ebxc000q4su27fxrf4sb" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-difference-between-function-and-method" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/05/20/difference-between-function-and-method/">Difference between a method and a function in JavaScript?</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In JS, that difference is quite subtle. A function is a piece of code that is called by name and function itself not associated with any object and not defined inside any object. It can be passed data to operate on (i.e. parameter) and can optionally return data (the return value).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// Function statement</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">myFunc</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Calling the <span class="keyword">function</span></span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
-<p>Here myFunc() function call is not associated with object hence not invoked through any object.</p>
-<p>A function can take a form of immediately invoked function expression (IIFE):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Anonymous Self-invoking Function</span><br><span class="line">(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  // Do some stuff;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<p>Finally there are also arrow functions:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const myFunc = arg =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">"hello"</span>, arg)</span><br><span class="line">&#125;</span><br><span class="line">``` </span><br><span class="line">A method is a piece of code that is called by its name and that is associated with the object. Methods are <span class="built_in">functions</span>. When you call a method like this `obj1.myMethod()`, the reference to `obj1` gets assigned (bound) to `this` variable. In other words, the value of `this` will be `obj1` inside `myMethod`.</span><br><span class="line"></span><br><span class="line">Here are some examples of methods:</span><br><span class="line"></span><br><span class="line"><span class="comment">### Example 1</span></span><br><span class="line">```bash</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">  attribute: <span class="string">"xyz"</span>,</span><br><span class="line">  myMethod: <span class="function"><span class="title">function</span></span> () &#123;  // Method</span><br><span class="line">    console.log(this.attribute);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// Call the method</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
-<p>Here <code>obj1</code> is an object and <code>myMethod</code> is a method which is associated with <code>obj1</code>.</p>
-<h3 id="Example-2"><a href="#Example-2" class="headerlink" title="Example 2"></a>Example 2</h3><p>In ES6 we have classes. There the methods will look like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class MyAwesomeClass &#123;</span><br><span class="line">  myMethod() &#123;</span><br><span class="line">    console.log(&quot;hi there&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const obj1 &#x3D; new MyAwesomeClass();</span><br><span class="line">obj1.myMethod();</span><br></pre></td></tr></table></figure>
-<p>Understand: the method is not some kind of special type of a function, and it’s not about how you declare a function. It’s the way we <strong>call</strong> a function. Look at that:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;</span><br><span class="line">  prop1: <span class="string">"buddy"</span></span><br><span class="line">&#125;; </span><br><span class="line">var myFunc = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">  console.log(<span class="string">"Hi there"</span>, this);</span><br><span class="line">&#125;;</span><br><span class="line">// <span class="built_in">let</span><span class="string">'s call myFunc as a function: </span></span><br><span class="line"><span class="string">myFunc(); // will output "Hi there undefined" or "Hi there Window"</span></span><br><span class="line"><span class="string"> </span></span><br><span class="line"><span class="string">obj1.myMethod = myFunc;</span></span><br><span class="line"><span class="string">//now we'</span>re calling myFunc as a method of obj1, so this will point to obj1</span><br><span class="line">obj1.myMethod(); // will <span class="built_in">print</span> <span class="string">"Hi there"</span> following with obj1.</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/05/20/difference-between-function-and-method/" data-id="ckbn6ebxf000s4su26c028efh" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbnx67qz000piku251br6ano" class="article-share-link">Share</a>
       
       
     </footer>
@@ -631,7 +657,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 

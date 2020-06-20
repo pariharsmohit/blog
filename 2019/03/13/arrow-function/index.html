@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Arrow Functions =&gt; When to use and when not to? | msp Writes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="ES6 Arrow FunctionsIntroduced as part of the ECMAScript 6, arrow functions went viral. The new syntax to declare functions is wonderful, saving us time and enhancing clarity in many situations, remo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arrow Functions &#x3D;&gt; When to use and when not to?">
+<meta property="og:url" content="https://mohitsparihar.github.io/blog/2019/03/13/arrow-function/index.html">
+<meta property="og:site_name" content="msp Writes">
+<meta property="og:description" content="ES6 Arrow FunctionsIntroduced as part of the ECMAScript 6, arrow functions went viral. The new syntax to declare functions is wonderful, saving us time and enhancing clarity in many situations, remo">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/mohitsparihar/massets/master/arrow-function.svg">
+<meta property="article:published_time" content="2019-03-13T07:56:40.000Z">
+<meta property="article:modified_time" content="2020-06-20T17:31:03.030Z">
+<meta property="article:author" content="Mohit Singh Parihar">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/mohitsparihar/massets/master/arrow-function.svg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="msp Writes" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">msp Writes</a>
+      </h1>
+
+      <nav>
+        <ul>
+        
+          <li><a class="main-nav-link" href="/blog/">Home</a></li>
+        
+          <li><a class="main-nav-link" href="/blog/archives">Archives</a></li>
+        
+      </ul>
+      </nav>
+
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-arrow-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Arrow Functions =&gt; When to use and when not to?
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="https://raw.githubusercontent.com/mohitsparihar/massets/master/arrow-function.svg" style="float:center; margin: 0 auto;" />
+
+<h2 id="ES6-Arrow-Functions"><a href="#ES6-Arrow-Functions" class="headerlink" title="ES6 Arrow Functions"></a>ES6 Arrow Functions</h2><p>Introduced as part of the ECMAScript 6, arrow functions went viral. The new syntax to declare functions is wonderful, saving us time and enhancing clarity in many situations, removing all the distracting, unnecessary, chunk that usually came with declaring a JS function.</p>
+<p>Let’s take an example of a regular function declaration, and the same function using arrow functions:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">welcome</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="string">"Welcome!"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>And with ES6 Arrow Functions</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const welcome = () =&gt; <span class="string">"Welcome!"</span></span><br></pre></td></tr></table></figure>
+<p>Let’s look at another example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const f = list.map(<span class="keyword">function</span>(item) &#123; <span class="built_in">return</span> item; &#125;)</span><br></pre></td></tr></table></figure>
+<p>vs</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const f = list.map((item) =&gt; item)</span><br></pre></td></tr></table></figure>
+<p>Ain’t that beautiful?</p>
+<p>However, we need to be careful, as the differences between the 2 declarations are not just syntax, and thus it cannot be applied in every situation. Let’s now take a look at situations under which using Arrow Functions is not the right way.</p>
+<h2 id="Object-Methods"><a href="#Object-Methods" class="headerlink" title="Object Methods"></a>Object Methods</h2><p>Take a look at the following example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const article = &#123;</span><br><span class="line">  claps: 0,</span><br><span class="line">  clap: () =&gt; &#123;</span><br><span class="line">    this.claps++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this example, it would be intuitive to think that every time we call <code>article.clap()</code> the attribute <code>article.claps</code> would increase by one, initially from 0 to 1. However, this is not the case, the value of claps will sadly remain the same and this article will never get to be popular.</p>
+<blockquote>
+<h2 id="As-MDN-states"><a href="#As-MDN-states" class="headerlink" title="As  MDN states:"></a>As  MDN states:</h2></blockquote>
+<blockquote>
+<p>An arrow function expression is a syntactically compact alternative to a regular function expression, although without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill suited as methods, and they cannot be used as constructors.</p>
+</blockquote>
+<p>meaning that in our case, the enclosed scope would be the <strong><code>window</code></strong> object. Invoking the method <code>clap()</code> would simply attempt to increment the property claps on the window object.</p>
+<p>However, if instead, we use the traditional syntax:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const article = &#123;</span><br><span class="line">  claps: 0,</span><br><span class="line">  clap: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    this.claps++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Live Example:</p>
+<h2 id="Object-Prototype"><a href="#Object-Prototype" class="headerlink" title="Object Prototype"></a>Object Prototype</h2><p>Similar to the example above, object prototypes will evaluate this as the window object, like in the following example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Article &#123;</span><br><span class="line">  constructor(title) &#123;</span><br><span class="line">    this.title = title;</span><br><span class="line">    this.shared = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Article.prototype.share = () =&gt; &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Similarly, to the previous case the method <code>share()</code> won’t work due to the enclosed scope to the window object. And again the solution will look familiar:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Article.prototype.share2 = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Live Example:</p>
+<h2 id="Callback-functions-with-dynamic-context"><a href="#Callback-functions-with-dynamic-context" class="headerlink" title="Callback functions with dynamic context"></a>Callback functions with dynamic context</h2><p>In the next example we will take a look at the dynamic context in callbacks, like those in events:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">  this.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Again the similarities with previous examples are obvious, same as before the enclosed scope is affecting the meaning of this.</p>
+<p>Live Example:</p>
+<p>A way to workaround a solution is to use an arrow function and use the event object to access the object in that function, however, this does not solve the enclosing of the scope, but it does work for this particular example</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">  e.target.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Makes-the-code-less-readable"><a href="#Makes-the-code-less-readable" class="headerlink" title="Makes the code less readable"></a>Makes the code less readable</h2><p>Sometimes the use of arrow functions will make the code unreadable, not very likely but can happen, don’t use them then. The idea behind it is to make our code clearer, so make sure it stays that way.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2019/03/13/arrow-function/" data-id="ckbnx67qc000hiku2efo01v35" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2019/04/13/Copy-text-to-clipboard/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Copy text to clipboard
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/2019/02/09/prevent-modification-of-object/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">How to prevent modification of object in Javascript?</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/2020/04/03/semicolons-in-javascript/">You don&#39;t need SEMICOLON in JAVASCRIPT</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/11/24/angular-to-gihub-pages/">Deploying an Angular App to Github Pages</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/10/17/Array-function/">Array.prototype.function()</a>
+          </li>
+        
+          <li>
+            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Mohit Singh Parihar<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css">
+
+  
+<script src="/blog/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
