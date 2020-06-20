@@ -51,6 +51,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-reverse-a-string" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2018/05/07/reverse-a-string/">Reverse a string the JavaScript way</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>We need to take the string and reverse it, so if it originally reads ‘hello’, it will now read ‘olleh’.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="keyword">for</span> (var reversedStr = <span class="string">""</span>, i = str.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">    reversedStr += str[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> reversedStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Starting at the last character of the string passed to the function, we build a new string reversedStr from str.</p>
+</li>
+<li><p>During each iteration of the for loop, reversedStr gets concatenated with itself and the current character.</p>
+</li>
+<li><p>Finally, we return the final value of reversedStr.</p>
+</li>
+</ul>
+<h3 id="We-can-do-this-finally-by-using-the-JavaScript-functions-like-this"><a href="#We-can-do-this-finally-by-using-the-JavaScript-functions-like-this" class="headerlink" title="We can do this finally by using the JavaScript functions like this-"></a>We can do this finally by using the JavaScript functions like this-</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> str</span><br><span class="line">    .split(<span class="string">""</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>for example:-</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseString(<span class="string">"Greetings from Earth"</span>);</span><br></pre></td></tr></table></figure>
+<p>this will return</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"htraE morf sgniteerG"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Our goal is to take the input, <code>str</code>, and return it in reverse. Our first step is to split the string by characters using <code>split(&#39;&#39;)</code>. Notice that we don’t leave anything in between the single quotes, this tells the function to split the string by each character.</p>
+</li>
+<li><p>Using the <code>split()</code> function will turn our string into an array of characters, keep that in mind as we move forward.</p>
+</li>
+<li><p>Next we chain the <code>reverse()</code> function, which takes our array of characters and reverses them.</p>
+</li>
+<li><p>Finally, we chain <code>join(&#39;&#39;)</code> to put our characters back together into a string. Notice once again that we left no spaces in the argument for join, this makes sure that the array of characters is joined back together by each character.</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2018/05/07/reverse-a-string/" data-id="ckbn6ebxl000w4su206al1s0w" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-test-string-as-a-literal-and-as-an-object" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -78,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbknri7n0010q4u2ckqe2wa8" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/03/06/test-string-as-a-literal-and-as-an-object/" data-id="ckbn6ebxq00114su21nd5ffjt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/02/15/add-prefix-to-console.log/" data-id="ckbknri78000iq4u2c45t1oti" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/02/15/add-prefix-to-console.log/" data-id="ckbn6ebx4000l4su2cslgcgzg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -163,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/11/29/constructor-functions-for-inheritance/" data-id="ckbknri7b000mq4u2aemu1rdb" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/29/constructor-functions-for-inheritance/" data-id="ckbn6ebx1000j4su2bp5n8fzk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -216,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/11/21/is-array/" data-id="ckbknri7k000vq4u20p2627lr" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/11/21/is-array/" data-id="ckbn6ebxg000t4su26jdp1dze" class="article-share-link">Share</a>
       
       
     </footer>
@@ -255,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/10/01/es5-example/" data-id="ckbknri7g000qq4u2gqma1y4c" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/10/01/es5-example/" data-id="ckbn6ebx7000o4su2bv7d29b6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +354,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbknri7r0015q4u26vy89mjw" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbn6ebyl00164su21lmv7a70" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +399,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/08/05/check-for-key-in-object/" data-id="ckbknri79000kq4u222bz3tr5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/08/05/check-for-key-in-object/" data-id="ckbn6ebx5000m4su2bsgs95b8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -393,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/07/10/what-are-promises/" data-id="ckbknri7q0014q4u2e7tw7853" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/07/10/what-are-promises/" data-id="ckbn6ebyk00154su24ugv8825" class="article-share-link">Share</a>
       
       
     </footer>
@@ -433,50 +492,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/06/26/detection-of-undefined-object/" data-id="ckbknri7c000oq4u295kmh3d6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ways-of-creating-objects" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/06/18/ways-of-creating-objects/">Ways of creating objects in JavaScript</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Method-1-Function-based"><a href="#Method-1-Function-based" class="headerlink" title="Method 1: Function based"></a>Method 1: Function based</h3><p>This method is useful if we want to create several similar objects. In the code sample below, we wrote the function <code>Employee</code> and used it as a constructor by calling it with the <code>new</code> operator.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Employee(fName, lName, age, salary)&#123;</span><br><span class="line">	this.firstName = fName;</span><br><span class="line">	this.lastName = lName;</span><br><span class="line">	this.age = age;</span><br><span class="line">	this.salary = salary;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Creating multiple object <span class="built_in">which</span> have similar property but diff value assigned to object property.</span><br><span class="line">var employee1 = new Employee(<span class="string">'John'</span>, <span class="string">'Moto'</span>, 24, <span class="string">'5000$'</span>);</span><br><span class="line">var employee2 = new Employee(<span class="string">'Ryan'</span>, <span class="string">'Jor'</span>, 26, <span class="string">'3000$'</span>);</span><br><span class="line">var employee3 = new Employee(<span class="string">'Andre'</span>, <span class="string">'Salt'</span>, 26, <span class="string">'4000$'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="Method-2-Object-Literal"><a href="#Method-2-Object-Literal" class="headerlink" title="Method 2: Object Literal"></a>Method 2: Object Literal</h3><p>Object Literal is best way to create an object and this is used frequently. Below is code sample for create employee object which contains property as well as method.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var employee = &#123;</span><br><span class="line">	name : <span class="string">'Nishant'</span>,</span><br><span class="line">	salary : 245678,</span><br><span class="line">	getName : <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		<span class="built_in">return</span> this.name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>The code sample below is Nested Object Literal, Here address is an object inside employee object.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var employee = &#123;</span><br><span class="line">	name : <span class="string">'Nishant'</span>,</span><br><span class="line">	salary : 245678,</span><br><span class="line">	address : &#123;</span><br><span class="line">		addressLine1 : <span class="string">'BITS Pilani'</span>,</span><br><span class="line">		addressLine2 : <span class="string">'Vidya Vihar'</span>.</span><br><span class="line">		phoneNumber: &#123;</span><br><span class="line">		  workPhone: 7098889765,</span><br><span class="line">		  homePhone: 1234567898</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Method-3-From-Object-using-new-keyword"><a href="#Method-3-From-Object-using-new-keyword" class="headerlink" title="Method 3: From Object using new keyword"></a>Method 3: From <code>Object</code> using <code>new</code> keyword</h3><p>In the code below, a sample object has been created using <code>Object</code>‘s constructor function.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var employee = new Object(); // Created employee object using new keywords and Object()</span><br><span class="line">employee.name = <span class="string">'Nishant'</span>;</span><br><span class="line">employee.getName = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	<span class="built_in">return</span> this.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Method-4-Using-Object-create"><a href="#Method-4-Using-Object-create" class="headerlink" title="Method 4: Using Object.create"></a>Method 4: Using <code>Object.create</code></h3><p><code>Object.create(obj)</code> will create a new object and set the <code>obj</code> as its prototype. It’s a modern way to create objects that inherit properties from other objects. <code>Object.create</code> function doesn’t run the constructor. You can use <code>Object.create(null)</code> when you don’t want your object to inherit the properties of <code>Object</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/06/18/ways-of-creating-objects/" data-id="ckbknri7q0013q4u2bhkg78gd" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/06/26/detection-of-undefined-object/" data-id="ckbn6ebxb000p4su2382icrw7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -509,7 +525,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 
@@ -520,6 +536,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2020/04/03/semicolons-in-javascript/">You don&#39;t need SEMICOLON in JAVASCRIPT</a>
+          </li>
         
           <li>
             <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
@@ -535,10 +555,6 @@
         
           <li>
             <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
           </li>
         
       </ul>

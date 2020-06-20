@@ -51,6 +51,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Question-16" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/03/30/Question-16/">Reference error in function declaration</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// NFE (Named Function Expression)</span><br><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+<p>The output will be Reference Error. To fix the bug we can try to rewrite the code a little bit:</p>
+<h3 id="Sample-1"><a href="#Sample-1" class="headerlink" title="Sample 1"></a>Sample 1</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> bar = <span class="function"><span class="title">function</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+
+<h3 id="Sample-2"><a href="#Sample-2" class="headerlink" title="Sample 2"></a>Sample 2</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123; <span class="built_in">return</span> 12; &#125;;</span><br><span class="line">typeof bar();</span><br></pre></td></tr></table></figure>
+<p>The function definition can have only one reference letiable as a function name, In sample 1 bar is reference letiable which is pointing to anonymous function and in sample 2 we have function statement and bar is the function name.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">let</span> foo = <span class="keyword">function</span> <span class="function"><span class="title">bar</span></span>() &#123;</span><br><span class="line">  // foo is visible here</span><br><span class="line">  // bar is visible here</span><br><span class="line">  console.log(typeof bar()); // Works here :)</span><br><span class="line">&#125;;</span><br><span class="line">// foo is visible here</span><br><span class="line">// bar is undefined here</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/30/Question-16/" data-id="ckbn6ebww000e4su27mxv9pg4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Question-15" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -77,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/23/Question-15/" data-id="ckbknri72000bq4u2e9xt6an1" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/23/Question-15/" data-id="ckbn6ebwq00094su20xf949tp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,7 +161,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/15/Question-14/" data-id="ckbknri71000aq4u234v2h9qv" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/15/Question-14/" data-id="ckbn6ebwp00084su26oux513j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -158,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/07/Question-13/" data-id="ckbknri700009q4u2g9ai3k21" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/07/Question-13/" data-id="ckbn6ebws000a4su227f9fj28" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/01/undefined-x1/" data-id="ckbknri7p0012q4u20ri07a0e" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/01/undefined-x1/" data-id="ckbn6ebxr00124su2g2jkcdt8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -243,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/21/Find-the-Output/" data-id="ckbknri6y0006q4u2cefjcgg4" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/21/Find-the-Output/" data-id="ckbn6ebwt000b4su2cz2k4ga8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -293,7 +333,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckbknri7a000lq4u2a6vabroc" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckbn6ebx0000i4su22t94gxuc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -344,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/06/Empty-an-Array/" data-id="ckbknri6x0005q4u29lkf3573" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/06/Empty-an-Array/" data-id="ckbn6ebwi00034su2discd3o1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/29/Question-5/" data-id="ckbknri75000fq4u269vxeq4p" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/29/Question-5/" data-id="ckbn6ebwx000f4su2buvt5fwc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -430,44 +470,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/22/What-is-closure/" data-id="ckbknri77000hq4u2fh6bflt6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Drawback-of-declaring-methods-directly-in-JavaScript-Objects" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/">The drawback of declaring methods directly in JavaScript objects</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>One of the drawback of declaring methods directly in JavaScript objects is that they are very memory inefficient. When you do that, a new copy of the method is created for each instance of an object. Let’s see it on example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var Employee = <span class="keyword">function</span> (name, company, salary) &#123;</span><br><span class="line">  this.name = name || <span class="string">""</span>;       </span><br><span class="line">  this.company = company || <span class="string">""</span>;</span><br><span class="line">  this.salary = salary || 5000;</span><br><span class="line"></span><br><span class="line">  // We can create a method like this:</span><br><span class="line">  this.formatSalary = <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">      <span class="built_in">return</span> <span class="string">"$ "</span> + this.salary;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// we can also create method <span class="keyword">in</span> Employee<span class="string">'s prototype:</span></span><br><span class="line"><span class="string">Employee.prototype.formatSalary2 = function() &#123;</span></span><br><span class="line"><span class="string">    return "$ " + this.salary;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//creating objects</span></span><br><span class="line"><span class="string">var emp1 = new Employee('</span>Yuri Garagin<span class="string">', '</span>Company 1<span class="string">', 1000000);</span></span><br><span class="line"><span class="string">var emp2 = new Employee('</span>Dinesh Gupta<span class="string">', '</span>Company 2<span class="string">', 1039999);</span></span><br><span class="line"><span class="string">var emp3 = new Employee('</span>Erich Fromm<span class="string">', '</span>Company 3<span class="string">', 1299483);</span></span><br></pre></td></tr></table></figure>
-<p>Here each instance variable <code>emp1</code>, <code>emp2</code>, <code>emp3</code> has own copy of <code>formatSalary</code> method. However the <code>formatSalary2</code> will only be added once to an object <code>Employee.prototype</code>.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="ckbknri6w0004q4u219vy42v4" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/22/What-is-closure/" data-id="ckbn6ebwz000g4su2a5mb89n7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -500,7 +503,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 
@@ -511,6 +514,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2020/04/03/semicolons-in-javascript/">You don&#39;t need SEMICOLON in JAVASCRIPT</a>
+          </li>
         
           <li>
             <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
@@ -526,10 +533,6 @@
         
           <li>
             <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
           </li>
         
       </ul>

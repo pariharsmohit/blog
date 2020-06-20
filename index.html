@@ -51,6 +51,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-semicolons-in-javascript" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2020/04/03/semicolons-in-javascript/">You don&#39;t need SEMICOLON in JAVASCRIPT</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong><em><code>Yes, It&#39;s true</code></em></strong></p>
+<h3 id="Because"><a href="#Because" class="headerlink" title="Because"></a>Because</h3><p>JavaScript <strong>does not strictly require semicolons</strong>. When there is a place where a semicolon was needed, it <strong>adds it behind the scenes</strong>.</p>
+<h3 id="Automatic-semicolon-insertion"><a href="#Automatic-semicolon-insertion" class="headerlink" title="Automatic semicolon insertion"></a>Automatic semicolon insertion</h3><p>JavaScript parser will automatically <strong>add a semicolon</strong> when, during thr <strong>parsing</strong> of the source code, it finds these <strong>particular situations</strong> which are:-</p>
+<ol>
+<li>when the next line starts with <strong>code that breaks the current one</strong>(code can spawn multiple lines)</li>
+<li>when the <strong>next line starts with a ‘}’</strong>, closing the currenet block</li>
+<li>when the <strong>end</strong> of the source code file is reached</li>
+<li>when there is a <strong><code>return</code></strong> statement on its own line</li>
+<li>when there is <strong><code>break</code></strong> statement on its own line</li>
+<li>when there is a <strong><code>throw</code></strong> statement on its own line</li>
+<li>when there is a <strong><code>continue</code></strong> statement on its own line.</li>
+</ol>
+<h3 id="When-not-rely-on-this"><a href="#When-not-rely-on-this" class="headerlink" title="When not rely on this"></a>When not rely on this</h3><p><strong>Consider the code</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const a &#x3D; 1</span><br><span class="line">const b &#x3D; 2</span><br><span class="line">const c &#x3D; a + b</span><br><span class="line">(a + b).toString()</span><br></pre></td></tr></table></figure>
+<p><strong>OUTPUT:</strong><br>TypeError : b is not a function</p>
+<p>JavaScript tries to interpret it as</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a &#x3D; 1</span><br><span class="line">const b &#x3D; 2</span><br><span class="line">const c &#x3D; a + b(a + b).toString()</span><br></pre></td></tr></table></figure>
+<p><strong>HENCE,</strong><br>b is understood as a function.</p>
+<h3 id="SO-BE-CAREFULL"><a href="#SO-BE-CAREFULL" class="headerlink" title="SO, BE CAREFULL"></a>SO, BE CAREFULL</h3><ul>
+<li>with <strong><code>return</code></strong> statements. If you return something, add it on the <strong>same line</strong> as the return(same for <strong><code>break, throw,continue</code></strong>)</li>
+<li><strong>never start a line with parentheses</strong>, those might be concatenated with the previous line to form a function call, or array element reference.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2020/04/03/semicolons-in-javascript/" data-id="ckbn6ebxn000x4su2hzig21k2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-tower-of-hanoi" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -89,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbknri7o0011q4u274u68727" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbn6ebxp000z4su2fkyr5xbr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbknri79000jq4u23p9t91bw" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbn6ebwz000h4su27vra9huz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -270,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbknri5r0000q4u2ctphdox9" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbn6ebw600004su24lh7a9z7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -321,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbknri6u0002q4u28lre258t" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbn6ebwh00024su248fj48un" class="article-share-link">Share</a>
       
       
     </footer>
@@ -360,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbknri6v0003q4u2cfjh6x1v" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbn6ebwd00014su2fp0cddnu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -409,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbknri7k000wq4u2b5t17vkc" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbn6ebxs00134su24bx4eely" class="article-share-link">Share</a>
       
       
     </footer>
@@ -454,7 +510,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbknri7b000nq4u2engbgiob" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbn6ebx6000n4su2bfet06qy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -497,7 +553,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbknri7h000rq4u23n9x0xp7" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbn6ebxc000q4su27fxrf4sb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -542,66 +598,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/05/20/difference-between-function-and-method/" data-id="ckbknri7f000pq4u23bo81smn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-reverse-a-string" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2018/05/07/reverse-a-string/">Reverse a string the JavaScript way</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>We need to take the string and reverse it, so if it originally reads ‘hello’, it will now read ‘olleh’.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="keyword">for</span> (var reversedStr = <span class="string">""</span>, i = str.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">    reversedStr += str[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> reversedStr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Starting at the last character of the string passed to the function, we build a new string reversedStr from str.</p>
-</li>
-<li><p>During each iteration of the for loop, reversedStr gets concatenated with itself and the current character.</p>
-</li>
-<li><p>Finally, we return the final value of reversedStr.</p>
-</li>
-</ul>
-<h3 id="We-can-do-this-finally-by-using-the-JavaScript-functions-like-this"><a href="#We-can-do-this-finally-by-using-the-JavaScript-functions-like-this" class="headerlink" title="We can do this finally by using the JavaScript functions like this-"></a>We can do this finally by using the JavaScript functions like this-</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> reverseString(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> str</span><br><span class="line">    .split(<span class="string">""</span>)</span><br><span class="line">    .reverse()</span><br><span class="line">    .join(<span class="string">""</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>for example:-</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reverseString(<span class="string">"Greetings from Earth"</span>);</span><br></pre></td></tr></table></figure>
-<p>this will return</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"htraE morf sgniteerG"</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Our goal is to take the input, <code>str</code>, and return it in reverse. Our first step is to split the string by characters using <code>split(&#39;&#39;)</code>. Notice that we don’t leave anything in between the single quotes, this tells the function to split the string by each character.</p>
-</li>
-<li><p>Using the <code>split()</code> function will turn our string into an array of characters, keep that in mind as we move forward.</p>
-</li>
-<li><p>Next we chain the <code>reverse()</code> function, which takes our array of characters and reverses them.</p>
-</li>
-<li><p>Finally, we chain <code>join(&#39;&#39;)</code> to put our characters back together into a string. Notice once again that we left no spaces in the argument for join, this makes sure that the array of characters is joined back together by each character.</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/05/07/reverse-a-string/" data-id="ckbknri7l000xq4u2fpy2czhp" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/05/20/difference-between-function-and-method/" data-id="ckbn6ebxf000s4su26c028efh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -634,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/08/">August 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/03/">March 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li></ul>
     </div>
   </div>
 
@@ -645,6 +642,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/2020/04/03/semicolons-in-javascript/">You don&#39;t need SEMICOLON in JAVASCRIPT</a>
+          </li>
         
           <li>
             <a href="/blog/2020/03/29/tower-of-hanoi/">Tower of Hanoi</a>
@@ -660,10 +661,6 @@
         
           <li>
             <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
-          </li>
-        
-          <li>
-            <a href="/blog/2019/04/13/Copy-text-to-clipboard/">Copy text to clipboard</a>
           </li>
         
       </ul>
