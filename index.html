@@ -97,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/04/03/semicolons-in-javascript/" data-id="ckbnx67rc000ziku2hzxi8vo5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/04/03/semicolons-in-javascript/" data-id="ckbnxjoqt000z4ku2ad6n5wkg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbnx67rd0010iku2h2dt71eb" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2020/03/29/tower-of-hanoi/" data-id="ckbnxjoqy00124ku23y18g7ez" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbnx67qt000kiku22kojb1rw" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/11/24/angular-to-gihub-pages/" data-id="ckbnxjoqb000k4ku2eh5ph01p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbnx67p70000iku27n508cou" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/10/17/Array-function/" data-id="ckbnxjopf00004ku2h3zpd2vl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -377,7 +377,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbnx67pl0002iku2c3fpbsti" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/05/11/Cloning-an-Object/" data-id="ckbnxjopq00024ku2hqu549ly" class="article-share-link">Share</a>
       
       
     </footer>
@@ -416,7 +416,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbnx67pm0003iku20748bhpf" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/04/13/Copy-text-to-clipboard/" data-id="ckbnxjops00034ku275wfhsxw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -471,15 +471,21 @@
 <p>However, if instead, we use the traditional syntax:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const article = &#123;</span><br><span class="line">  claps: 0,</span><br><span class="line">  clap: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    this.claps++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Live Example:</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mohitmogambo/5rb3q20y/3/embedded/result,js,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 <h2 id="Object-Prototype"><a href="#Object-Prototype" class="headerlink" title="Object Prototype"></a>Object Prototype</h2><p>Similar to the example above, object prototypes will evaluate this as the window object, like in the following example:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Article &#123;</span><br><span class="line">  constructor(title) &#123;</span><br><span class="line">    this.title = title;</span><br><span class="line">    this.shared = <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Article.prototype.share = () =&gt; &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>Similarly, to the previous case the method <code>share()</code> won’t work due to the enclosed scope to the window object. And again the solution will look familiar:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Article.prototype.share2 = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> this.shared = <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>Live Example:</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mohitmogambo/5rb3q20y/1/embedded/result,js,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 <h2 id="Callback-functions-with-dynamic-context"><a href="#Callback-functions-with-dynamic-context" class="headerlink" title="Callback functions with dynamic context"></a>Callback functions with dynamic context</h2><p>In the next example we will take a look at the dynamic context in callbacks, like those in events:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, () =&gt; &#123;</span><br><span class="line">  this.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>Again the similarities with previous examples are obvious, same as before the enclosed scope is affecting the meaning of this.</p>
 <p>Live Example:</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/mohitmogambo/5rb3q20y/6/embedded/result,js,html/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
 <p>A way to workaround a solution is to use an arrow function and use the event object to access the object in that function, however, this does not solve the enclosing of the scope, but it does work for this particular example</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = document.getElementById(<span class="string">'press'</span>);</span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, (e) =&gt; &#123;</span><br><span class="line">  e.target.classList.toggle(<span class="string">'worked'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h2 id="Makes-the-code-less-readable"><a href="#Makes-the-code-less-readable" class="headerlink" title="Makes the code less readable"></a>Makes the code less readable</h2><p>Sometimes the use of arrow functions will make the code unreadable, not very likely but can happen, don’t use them then. The idea behind it is to make our code clearer, so make sure it stays that way.</p>
@@ -487,7 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/03/13/arrow-function/" data-id="ckbnx67qc000hiku2efo01v35" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/03/13/arrow-function/" data-id="ckbnxjoq9000j4ku27e715v7k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -536,7 +542,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbnx67sg0017iku2cz2o9i5n" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2019/02/09/prevent-modification-of-object/" data-id="ckbnxjoqs000x4ku2ht1a4y7z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -581,7 +587,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbnx67qy000niku25mpghp8q" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/12/13/detect-reference-values/" data-id="ckbnxjoqe000o4ku2e462glb8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -624,7 +630,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbnx67qz000piku251br6ano" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbnxjoqn000s4ku2c0ec6ysu" class="article-share-link">Share</a>
       
       
     </footer>
