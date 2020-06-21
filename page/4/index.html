@@ -51,6 +51,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hoisting-of-function" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/04/12/hoisting-of-function/">Hoisting of function</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Let’s take the following function expression</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> 12;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>In JavaScript <code>var</code> -declared variables and functions are <code>hoisted</code> . Let’s take function <code>hoisting</code> first. Basically, the JavaScript interpreter looks ahead to find all the variable declaration and hoists them to the top of the function where it’s declared. For example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo(); // Here foo is still undefined</span><br><span class="line">var foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  <span class="built_in">return</span> 12;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>The code above behind the scene look something like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo(); // Here foo is undefined</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var foo = undefined;</span><br><span class="line">foo = <span class="keyword">function</span> <span class="function"><span class="title">foo</span></span>() &#123;</span><br><span class="line">  // Some code stuff</span><br><span class="line">&#125;</span><br><span class="line">foo(); // Now foo is defined here</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/04/12/hoisting-of-function/" data-id="ckbosbg3s000ux4u264a46a19" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-function-declaration-format" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -79,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/04/05/function-declaration-format/" data-id="ckbnxjoqo000t4ku2gst13ew8" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/04/05/function-declaration-format/" data-id="ckbosbg3t000vx4u22pct7bfx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -119,7 +163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/30/Question-16/" data-id="ckbnxjoq3000c4ku2ahm83194" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/30/Question-16/" data-id="ckbosbg3b000cx4u210h0ggnp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +199,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/23/Question-15/" data-id="ckbnxjoq1000b4ku21k2ycjks" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/23/Question-15/" data-id="ckbosbg350007x4u2g7y12yo9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -199,7 +243,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/15/Question-14/" data-id="ckbnxjoq1000a4ku25xmu2dzo" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/15/Question-14/" data-id="ckbosbg360008x4u264s985wm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -236,7 +280,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/07/Question-13/" data-id="ckbnxjoq000094ku26irt55ac" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/07/Question-13/" data-id="ckbosbg38000ax4u24i9dbckb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/03/01/undefined-x1/" data-id="ckbnxjor100144ku235rs2ph9" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/03/01/undefined-x1/" data-id="ckbosbg430013x4u2axw466gg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -308,20 +352,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="What-will-be-the-output-of-the-following-code"><a href="#What-will-be-the-output-of-the-following-code" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var output = (<span class="keyword">function</span>(x) &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(0); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+        <h2 id="What-will-be-the-output-of-the-following-code"><a href="#What-will-be-the-output-of-the-following-code" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> output = (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">delete</span> x; </span><br><span class="line">  <span class="keyword">return</span> x; </span><br><span class="line">&#125;)(<span class="number">0</span>); </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
 <h3 id="Answer"><a href="#Answer" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output 0 as output. <code>delete</code> operator is used to delete a property from an object. Here x is not an object it’s <strong><code>local variable</code></strong>. <code>delete</code> operator doesn’t affect local variables.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-1"><a href="#What-will-be-the-output-of-the-following-code-1" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = 1; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x; </span><br><span class="line">  <span class="built_in">return</span> x; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+<h2 id="What-will-be-the-output-of-the-following-code-1"><a href="#What-will-be-the-output-of-the-following-code-1" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> output = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">delete</span> x; </span><br><span class="line">  <span class="keyword">return</span> x; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
 <h3 id="Answer-1"><a href="#Answer-1" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>1</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is not an object it’s global variable of type <code>number</code>.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-2"><a href="#What-will-be-the-output-of-the-following-code-2" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var x = &#123; foo : 1&#125;; </span><br><span class="line">var output = (<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">  delete x.foo; </span><br><span class="line">  <span class="built_in">return</span> x.foo; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line">console.log(output);</span><br></pre></td></tr></table></figure>
+<h2 id="What-will-be-the-output-of-the-following-code-2"><a href="#What-will-be-the-output-of-the-following-code-2" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = &#123; <span class="attr">foo</span> : <span class="number">1</span>&#125;; </span><br><span class="line"><span class="keyword">var</span> output = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">delete</span> x.foo; </span><br><span class="line">  <span class="keyword">return</span> x.foo; </span><br><span class="line">&#125;)(); </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
 <h3 id="Answer-2"><a href="#Answer-2" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output <code>undefined</code> as output. <code>delete</code> operator is used to delete a property from an object. Here <code>x</code> is an object which has foo as a property and from a self-invoking function, we are deleting the <code>foo</code> property of object <code>x</code> and after deletion, we are trying to reference deleted property <code>foo</code> which result <code>undefined</code>.</p>
-<h2 id="What-will-be-the-output-of-the-following-code-3"><a href="#What-will-be-the-output-of-the-following-code-3" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Employee = &#123;</span><br><span class="line">  company: <span class="string">'xyz'</span></span><br><span class="line">&#125;</span><br><span class="line">var emp1 = Object.create(Employee); </span><br><span class="line">delete emp1.company</span><br><span class="line">console.log(emp1.company);</span><br></pre></td></tr></table></figure>
+<h2 id="What-will-be-the-output-of-the-following-code-3"><a href="#What-will-be-the-output-of-the-following-code-3" class="headerlink" title="What will be the output of the following code?"></a>What will be the output of the following code?</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Employee = &#123;</span><br><span class="line">  company: <span class="string">'xyz'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> emp1 = <span class="built_in">Object</span>.create(Employee); </span><br><span class="line"><span class="keyword">delete</span> emp1.company</span><br><span class="line"><span class="built_in">console</span>.log(emp1.company);</span><br></pre></td></tr></table></figure>
 <h3 id="Answer-3"><a href="#Answer-3" class="headerlink" title="Answer"></a>Answer</h3><p>The code above will output xyz as output. Here emp1 object got company as prototype property. delete operator doesn’t delete prototype property.</p>
 <p><code>emp1</code> object doesn’t have company as its own property. you can test it <code>console.log(emp1.hasOwnProperty(&#39;company&#39;));</code> <code>//output : false</code> However, we can delete company property directly from Employee object using delete Employee.company or we can also delete from emp1 object using <code>__proto__</code> property <code>delete emp1.__proto__.company.</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/21/Find-the-Output/" data-id="ckbnxjopv00054ku2d19fc9bm" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/21/Find-the-Output/" data-id="ckbosbg320004x4u264s56vpx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -371,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckbnxjoqd000n4ku27tu5gq3r" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/13/check-if-an-object-is-an-array-or-not/" data-id="ckbosbg3j000lx4u2f30u485d" class="article-share-link">Share</a>
       
       
     </footer>
@@ -422,53 +466,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/02/06/Empty-an-Array/" data-id="ckbnxjopw00064ku25dk4719o" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Question-5" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2017/01/29/Question-5/">Simple Example of Nested Functions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="A-mul-function-which-will-work-properly-when-invoked-with-following-syntax"><a href="#A-mul-function-which-will-work-properly-when-invoked-with-following-syntax" class="headerlink" title="A mul function which will work properly when invoked with following syntax."></a>A <strong><code>mul</code></strong> function which will work properly when invoked with following syntax.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(mul(2)(3)(4)); // output : 24</span><br><span class="line">console.log(mul(4)(3)(4)); // output : 48</span><br></pre></td></tr></table></figure>
-<p>Below is the code followed by the explanation of how it works:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> mul (x) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> (y) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (z) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">      <span class="built_in">return</span> x * y * z;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Here the <code>mul</code> function accepts the first argument and returns the anonymous function which takes the second parameter and returns the anonymous function which takes the third parameter and returns the multiplication of arguments which is being passed in successive</p>
-<p>In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by the function as well and passed as an argument in another function.</p>
-<ul>
-<li>A function is an instance of the Object type</li>
-<li>A function can have properties and has a link back to its constructor method</li>
-<li>A function can be stored as variable</li>
-<li>A function can be pass as a parameter to another function</li>
-<li>A function can be returned from another function</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/29/Question-5/" data-id="ckbnxjoq6000f4ku22om2are5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/02/06/Empty-an-Array/" data-id="ckbosbg340006x4u24f8h7dst" class="article-share-link">Share</a>
       
       
     </footer>
@@ -530,7 +528,7 @@
           </li>
         
           <li>
-            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/05/16/event-bubbling-capturing/">Event Bubbling and Event Capturing</a>
           </li>
         
       </ul>

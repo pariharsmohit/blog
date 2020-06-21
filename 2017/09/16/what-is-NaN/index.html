@@ -15,7 +15,7 @@
 <meta property="og:description" content="NaN stands for “not a number” and it can break your table of numbers when it has an arithmetic operation that is not allowed. Here are some examples of how you can get NaN: 123Math.sqrt(-5);Math.log(-">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-09-16T07:53:37.000Z">
-<meta property="article:modified_time" content="2020-06-18T06:53:46.215Z">
+<meta property="article:modified_time" content="2020-06-21T07:58:04.159Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -74,16 +74,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong><code>NaN</code></strong> stands for <em>“not a number”</em> and it can break your table of numbers when it has an arithmetic operation that is not allowed. Here are some examples of how you can get <strong><code>NaN</code></strong>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.sqrt(-5);</span><br><span class="line">Math.log(-1);</span><br><span class="line">parseFloat(<span class="string">"foo"</span>); /* this is common: you get JSON from the server, convert some strings from JSON to a number and end up with NaN <span class="keyword">in</span> your UI. */</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Math</span>.sqrt(<span class="number">-5</span>);</span><br><span class="line"><span class="built_in">Math</span>.log(<span class="number">-1</span>);</span><br><span class="line"><span class="built_in">parseFloat</span>(<span class="string">"foo"</span>); <span class="comment">/* this is common: you get JSON from the server, convert some strings from JSON to a number and end up with NaN in your UI. */</span></span><br></pre></td></tr></table></figure>
 <p><strong><code>NaN</code></strong> is not equal to any number, it’s not less or more than any number, also it’s not equal to itself:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">NaN !== NaN</span><br><span class="line">NaN &lt; 2 // <span class="literal">false</span></span><br><span class="line">NaN &gt; 2 // <span class="literal">false</span></span><br><span class="line">NaN === 2 // <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">NaN</span> !== <span class="literal">NaN</span></span><br><span class="line"><span class="literal">NaN</span> &lt; <span class="number">2</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">NaN</span> &gt; <span class="number">2</span> <span class="comment">// false</span></span><br><span class="line"><span class="literal">NaN</span> === <span class="number">2</span> <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
 <p>To check if the current value of the variable is <strong><code>NaN</code></strong>, you have to use the <strong><em><code>isNaN</code></em></strong> function. This is why we can often see NaN in the webpages: it requires special check which a lot of developers forget to do.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbnxjor300164ku26zrg409a" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/09/16/what-is-NaN/" data-id="ckbosbg460016x4u29kj85ckb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +157,7 @@
           </li>
         
           <li>
-            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/05/16/event-bubbling-capturing/">Event Bubbling and Event Capturing</a>
           </li>
         
       </ul>

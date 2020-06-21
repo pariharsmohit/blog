@@ -51,6 +51,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Question-5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2017/01/29/Question-5/">Simple Example of Nested Functions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="A-mul-function-which-will-work-properly-when-invoked-with-following-syntax"><a href="#A-mul-function-which-will-work-properly-when-invoked-with-following-syntax" class="headerlink" title="A mul function which will work properly when invoked with following syntax."></a>A <strong><code>mul</code></strong> function which will work properly when invoked with following syntax.</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(mul(2)(3)(4)); // output : 24</span><br><span class="line">console.log(mul(4)(3)(4)); // output : 48</span><br></pre></td></tr></table></figure>
+<p>Below is the code followed by the explanation of how it works:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> mul (x) &#123;</span><br><span class="line">  <span class="built_in">return</span> <span class="keyword">function</span> (y) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span> (z) &#123; // anonymous <span class="keyword">function</span></span><br><span class="line">      <span class="built_in">return</span> x * y * z;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Here the <code>mul</code> function accepts the first argument and returns the anonymous function which takes the second parameter and returns the anonymous function which takes the third parameter and returns the multiplication of arguments which is being passed in successive</p>
+<p>In Javascript function defined inside has access to outer function variable and function is the first class object so it can be returned by the function as well and passed as an argument in another function.</p>
+<ul>
+<li>A function is an instance of the Object type</li>
+<li>A function can have properties and has a link back to its constructor method</li>
+<li>A function can be stored as variable</li>
+<li>A function can be pass as a parameter to another function</li>
+<li>A function can be returned from another function</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/29/Question-5/" data-id="ckbosbg3h000jx4u2556gc7ac" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-What-is-closure" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     
@@ -74,14 +120,14 @@
         <p><strong><em><code>A closure is a function defined inside another function (called parent function) and has access to the variable which is declared and defined in parent function scope.</code></em></strong></p>
 <p>The closure has access to the variable in three scopes:</p>
 <p>Variable declared in his own scope<br>Variable declared in parent function scope<br>Variable declared in the global namespace</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var globalVar = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line">// Parent self invoking <span class="keyword">function</span></span><br><span class="line">(<span class="keyword">function</span> outerFunction (outerArg) &#123; // begin of scope outerFunction</span><br><span class="line">  // Variable declared <span class="keyword">in</span> outerFunction <span class="keyword">function</span> scope</span><br><span class="line">  var outerFuncVar = <span class="string">'x'</span>;    </span><br><span class="line">  // Closure self-invoking <span class="keyword">function</span></span><br><span class="line">  (<span class="keyword">function</span> innerFunction (innerArg) &#123; // begin of scope innerFunction</span><br><span class="line">    // variable declared <span class="keyword">in</span> innerFunction <span class="keyword">function</span> scope</span><br><span class="line">    var innerFuncVar = <span class="string">"y"</span>;</span><br><span class="line">    console.log(         </span><br><span class="line">      <span class="string">"outerArg = "</span> + outerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"outerFuncVar = "</span> + outerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerArg = "</span> + innerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerFuncVar = "</span> + innerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"globalVar = "</span> + globalVar);</span><br><span class="line">  // end of scope innerFunction</span><br><span class="line">  &#125;)(5); // Pass 5 as parameter</span><br><span class="line">// end of scope outerFunction</span><br><span class="line">&#125;)(7); // Pass 7 as parameter</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> globalVar = <span class="string">"abc"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Parent self invoking function</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">outerFunction</span> (<span class="params">outerArg</span>) </span>&#123; <span class="comment">// begin of scope outerFunction</span></span><br><span class="line">  <span class="comment">// Variable declared in outerFunction function scope</span></span><br><span class="line">  <span class="keyword">var</span> outerFuncVar = <span class="string">'x'</span>;    </span><br><span class="line">  <span class="comment">// Closure self-invoking function</span></span><br><span class="line">  (<span class="function"><span class="keyword">function</span> <span class="title">innerFunction</span> (<span class="params">innerArg</span>) </span>&#123; <span class="comment">// begin of scope innerFunction</span></span><br><span class="line">    <span class="comment">// variable declared in innerFunction function scope</span></span><br><span class="line">    <span class="keyword">var</span> innerFuncVar = <span class="string">"y"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(         </span><br><span class="line">      <span class="string">"outerArg = "</span> + outerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"outerFuncVar = "</span> + outerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerArg = "</span> + innerArg + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"innerFuncVar = "</span> + innerFuncVar + <span class="string">"\n"</span> +</span><br><span class="line">      <span class="string">"globalVar = "</span> + globalVar);</span><br><span class="line">  <span class="comment">// end of scope innerFunction</span></span><br><span class="line">  &#125;)(<span class="number">5</span>); <span class="comment">// Pass 5 as parameter</span></span><br><span class="line"><span class="comment">// end of scope outerFunction</span></span><br><span class="line">&#125;)(<span class="number">7</span>); <span class="comment">// Pass 7 as parameter</span></span><br></pre></td></tr></table></figure>
 <p><code>innerFunction</code> is closure which is defined inside <code>outerFunction</code> and has access to all variable which is declared and defined in <code>outerFunction</code> scope. In addition to this function defined inside the function as closure has access to the variable which is declared in <code>global namespace</code>.</p>
 <p>Output of above code would be:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">outerArg = 7</span><br><span class="line">outerFuncVar = x</span><br><span class="line">innerArg = 5</span><br><span class="line">innerFuncVar = y</span><br><span class="line">globalVar = abc</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">outerArg = <span class="number">7</span></span><br><span class="line">outerFuncVar = x</span><br><span class="line">innerArg = <span class="number">5</span></span><br><span class="line">innerFuncVar = y</span><br><span class="line">globalVar = abc</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/22/What-is-closure/" data-id="ckbnxjoq8000h4ku21cdt8uuh" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/22/What-is-closure/" data-id="ckbosbg3d000ex4u20l26fryw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -118,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="ckbnxjopt00044ku213wv00wx" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/15/Drawback-of-declaring-methods-directly-in-JavaScript-Objects/" data-id="ckbosbg370009x4u29tad4ncc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -157,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/08/Question%202/" data-id="ckbnxjopy00084ku2h75oezj5" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/08/Question%202/" data-id="ckbosbg3a000bx4u247csckqj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -199,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/01/01/Undefined-and-Not-Defined/" data-id="ckbnxjoq7000g4ku2633p8w30" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/01/01/Undefined-and-Not-Defined/" data-id="ckbosbg3c000dx4u2102g2b4r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +307,7 @@
           </li>
         
           <li>
-            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/05/16/event-bubbling-capturing/">Event Bubbling and Event Capturing</a>
           </li>
         
       </ul>

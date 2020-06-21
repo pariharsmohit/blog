@@ -15,7 +15,7 @@
 <meta property="og:description" content="In this problem we are going to return the length of the longest word in a string. We provide Math.max with the length of each word as argument, and it will simply return the highest of all. Let’s ana">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-08-03T05:50:26.000Z">
-<meta property="article:modified_time" content="2020-06-18T10:37:48.570Z">
+<meta property="article:modified_time" content="2020-06-21T08:00:35.400Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -80,13 +80,13 @@
 <p>Then, we will make another array, made from the lengths of each element of the <strong><code>str.split(&quot; &quot;)</code></strong> array with <strong><code>map()</code></strong>.</p>
 <p><strong><code>str.split(&quot; &quot;).map(word =&gt; word.length)</code></strong> returns [3, 5, 5, 3, 6, 4, 3, 4, 3]</p>
 <p>Finally, we pass the array as argument for the <strong><code>Math.max</code></strong> function with the spread operator <strong><code>...</code></strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findLongestWordLength(str) &#123;</span><br><span class="line">  <span class="built_in">return</span> Math.max(...str.split(<span class="string">" "</span>).map(word =&gt; word.length));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWordLength</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.max(...str.split(<span class="string">" "</span>).map(<span class="function"><span class="params">word</span> =&gt;</span> word.length));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>or<br>We can do this by using the <strong>‘reduce()`</strong> method also.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> findLongestWordLength(s) &#123;</span><br><span class="line">  <span class="built_in">return</span> s.split(<span class="string">' '</span>)</span><br><span class="line">    .reduce(<span class="keyword">function</span>(x, y) &#123;</span><br><span class="line">      <span class="built_in">return</span> Math.max(x, y.length)</span><br><span class="line">    &#125;, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWordLength</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> s.split(<span class="string">' '</span>)</span><br><span class="line">    .reduce(<span class="function"><span class="keyword">function</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Math</span>.max(x, y.length)</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbnxjoqn000s4ku2c0ec6ysu" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2018/08/03/find-the%20-longest-word/" data-id="ckbosbg3n000qx4u28gtpdy1b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +160,7 @@
           </li>
         
           <li>
-            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/05/16/event-bubbling-capturing/">Event Bubbling and Event Capturing</a>
           </li>
         
       </ul>

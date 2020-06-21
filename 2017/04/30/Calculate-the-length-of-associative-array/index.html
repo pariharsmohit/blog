@@ -15,7 +15,7 @@
 <meta property="og:description" content="12345var counterArray &#x3D; &amp;#123;  A : 3,  B : 4&amp;#125;;counterArray[&quot;C&quot;] &#x3D; 1; First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in funct">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2017-04-30T13:40:33.000Z">
-<meta property="article:modified_time" content="2020-06-18T06:48:44.808Z">
+<meta property="article:modified_time" content="2020-06-21T07:56:32.662Z">
 <meta property="article:author" content="Mohit Singh Parihar">
 <meta name="twitter:card" content="summary">
   
@@ -73,20 +73,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var counterArray = &#123;</span><br><span class="line">  A : 3,</span><br><span class="line">  B : 4</span><br><span class="line">&#125;;</span><br><span class="line">counterArray[<span class="string">"C"</span>] = 1;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> counterArray = &#123;</span><br><span class="line">  A : <span class="number">3</span>,</span><br><span class="line">  B : <span class="number">4</span></span><br><span class="line">&#125;;</span><br><span class="line">counterArray[<span class="string">"C"</span>] = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <p>First of all, in case of JavaScript an associative array is the same as an object. Secondly, even though is no built-in function or property available to calculate the length/size an object, we can write such function ourselves.</p>
 <h3 id="Method-1"><a href="#Method-1" class="headerlink" title="Method 1"></a>Method 1</h3><p><code>Object</code> has <code>keys</code> method which can we used to calculate the length of object.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.keys(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.keys(counterArray).length; <span class="comment">// Output 3</span></span><br></pre></td></tr></table></figure>
 <h3 id="Method-2"><a href="#Method-2" class="headerlink" title="Method 2"></a>Method 2</h3><p>We can also calculate the length of object by iterating through the object and by doing a count of own property of object. This way we will ignore the properties that came from the object’s prototype chain:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> getLength(object) &#123;</span><br><span class="line">  var count = 0;</span><br><span class="line">  <span class="keyword">for</span>(key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    // hasOwnProperty method check own property of object</span><br><span class="line">    <span class="keyword">if</span>(object.hasOwnProperty(key)) count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">object</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(key <span class="keyword">in</span> object) &#123;</span><br><span class="line">    <span class="comment">// hasOwnProperty method check own property of object</span></span><br><span class="line">    <span class="keyword">if</span>(object.hasOwnProperty(key)) count++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Method-3"><a href="#Method-3" class="headerlink" title="Method 3"></a>Method 3</h3><p>All modern browsers (including IE9+) support the <code>getOwnPropertyNames</code> method, so we can calculate the length using the following code:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.getOwnPropertyNames(counterArray).length; // Output 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyNames(counterArray).length; <span class="comment">// Output 3</span></span><br></pre></td></tr></table></figure>
 <h3 id="Method-4"><a href="#Method-4" class="headerlink" title="Method 4"></a>Method 4</h3><p>Underscore and lodash libraries have the method <code>size</code> dedicated to calculate the object length. We don’t recommend to include one of these libraries just to use the <code>size</code> method, but if it’s already used in your project - why not?</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.size(&#123;one: 1, two: 2, three: 3&#125;);</span><br><span class="line">=&gt; 3</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.size(&#123;<span class="attr">one</span>: <span class="number">1</span>, <span class="attr">two</span>: <span class="number">2</span>, <span class="attr">three</span>: <span class="number">3</span>&#125;);</span><br><span class="line">=&gt; <span class="number">3</span></span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mohitsparihar.github.io/blog/2017/04/30/Calculate-the-length-of-associative-array/" data-id="ckbnxjopo00014ku2guk20jr8" class="article-share-link">Share</a>
+      <a data-url="https://mohitsparihar.github.io/blog/2017/04/30/Calculate-the-length-of-associative-array/" data-id="ckbosbg2x0001x4u2bseyf36y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -160,7 +160,7 @@
           </li>
         
           <li>
-            <a href="/blog/2019/05/11/Cloning-an-Object/">Cloning an Object</a>
+            <a href="/blog/2019/05/16/event-bubbling-capturing/">Event Bubbling and Event Capturing</a>
           </li>
         
       </ul>
