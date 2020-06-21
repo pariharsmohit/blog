@@ -1,0 +1,107 @@
+---
+title: Sass
+date: 2020-05-06 19:10:33
+tags:
+---
+what is needed to start learning sass-
+* vscode
+* live sass compiler
+
+Syntax supported by the sass compiler
+1. `.scss` extension
+    * @mixin button-base() {
+        @include typography(button);
+
+        display: inline-flex;
+        position: relative;
+        height: $button-height;
+        border: none;
+        vertical-align: middle;
+
+        &:hover { cursor: pointer;}
+    }
+    valid css is valid sass.
+
+2. INDENTED SYNTAX
+    * @mixin button-base()
+    @include typography(button)
+
+    display: inline-flex
+    positon: relative
+    height: $button-height
+    border: none
+    vertical-align: middle
+
+    &:hover
+        cursor: pointer
+
+# designCourse video
+
+use sass in vscode
+create 1. index.html
+        2. main.scss
+
+compiling sass code:-
+we can use gulp or we can use the vscode extension from vsdode known as Live Sass compiler.
+in vs code we will then see a watch sass button
+
+it automatically generates a map file and a css file.
+
+## variables in sass
+also known as custom properties
+syntax: 
+    $mycolor: #005dff;
+
+    body {
+        background-color: $mycolor;
+    }
+
+## sass maps
+maps are smilar to class in javascript or any other programming language. They contain a set of properties and their respective values for the later use in the scss code.
+
+    $colors: (
+        $primary: #005dff,
+        accent: #fff6bb
+    );
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        background-color: map-get($colors, primary);
+        //css clip-path generator: benettfeely.com/clip/
+
+    }
+## functions
+    @function color($color-name) {
+        @return map-get($colors, $color-name)
+    }
+
+    body{
+        background-color: color(primary); 
+    }
+
+lighten in css
+property: lighten(color-name, value-to-lighten-by)
+
+## mixins
+mixin contain a part if code that is going to repeated again again in the program.
+Instead of writing the code again and again we can create a mixin and write our repeated code inside it and then we can call that mixin whenever we want to write that repeated code
+    $desktop: 840px;
+
+    @mixin desktop {
+        @media (min-width: #{$desktop}) {
+            @contents;
+        }
+    }
+
+    @include desktop {
+
+    }
+
+## extension
+@extend <tag-name or id-name or class-name from where to inherit the style>
+
+this allows us to inherit all the code from a particluar element and use it.
+
+ 

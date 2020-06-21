@@ -1,19 +1,21 @@
 #header
-  height: banner-height
   position: relative
-  border-bottom: 1px solid color-border
+  background-color: black
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 30% auto
+
   &:before, &:after
     content: ""
     position: absolute
     left: 0
     right: 0
     height: 40px
-  &:before
-    top: 0
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-  &:after
-    bottom: 0
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+
+nav
+  justify-self: right
+  ul li
+    display: inline
 
 #header-outer
   height: 100%
